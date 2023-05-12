@@ -37222,24 +37222,24 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-18 22:49:16 +0000">04/18/2022</time>
+    <time datetime="2023-05-09 18:15:21 +0000">05/09/2023</time>
     
   
 
 <span>Contributors
-  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-ahibbard">
-    <img  class="avatar avatar-small"
-          alt="netapp-ahibbard"
-          width="20" height="20"
-          src="https://avatars.githubusercontent.com/u/85892662?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
   <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-lenida">
     <img  class="avatar avatar-small"
           alt="netapp-lenida"
           width="20" height="20"
           src="https://avatars.githubusercontent.com/u/54081920?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-ahibbard">
+    <img  class="avatar avatar-small"
+          alt="netapp-ahibbard"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/85892662?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -37307,6 +37307,20 @@ For more information, see <a href="../peering/create-cluster-relationship-93-lat
 </div>
 <div class="paragraph">
 <p>For <code>-month</code>, <code>-dayofweek</code>, and <code>-hour</code>, you can specify <code>all</code> to run the job every month, day of the week, and hour, respectively.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/ontap/images/note.svg" alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The minimum supported schedule (RPO) for FlexVol volumes in an SVM SnapMirror relationship is 15 minutes. The minimum supported schedule (RPO) for FlexGroup volumes in an SVM SnapMirror relationship is 30 minutes.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>The following example creates a job schedule named <code>my_weekly</code> that runs on Saturdays at 3:00 a.m.:</p>
