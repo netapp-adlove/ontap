@@ -37222,7 +37222,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-05-03 18:08:39 +0000">05/03/2023</time>
+    <time datetime="2023-05-16 18:59:40 +0000">05/16/2023</time>
     
   
 
@@ -37281,6 +37281,21 @@
 </li>
 <li>
 <p>rhel-8-for-x86_64-appstream-rpms</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>RHEL 9.x</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>rhel-9-for-x86_64-baseos-rpms</p>
+</li>
+<li>
+<p>rhel-9-for-x86_64-appstream-rpms</p>
 </li>
 </ul>
 </div></div></td>
@@ -37408,9 +37423,48 @@ repolist: 46,205
 <div class="listingblock">
 <div class="content">
 <pre>[root@localhost ~]# subscription-manager repos --enable rhel-8-for-x86_64-baseos-rpms
-[root@localhost ~]# subscription-manager repos --enable rhel-8-for-x86_64-appstream-rpms
 Repository 'rhel-8-for-x86_64-baseos-rpms' is enabled for this system.
+[root@localhost ~]# subscription-manager repos --enable rhel-8-for-x86_64-appstream-rpms
 Repository 'rhel-8-for-x86_64-appstream-rpms' is enabled for this system.</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Run the <code>yum repolist</code> command.</p>
+<div class="paragraph">
+<p>The newly subscribed repositories should appear in the list.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</details>
+<details id="rhel9x">
+<summary class="title">Procedure for RHEL 9.x operating system</summary>
+<div class="content">
+<div class="paragraph">
+<p>Use this procedure if your operating system is <strong>RHEL 9.x</strong> to enable access to repositories:</p>
+</div>
+<div class="olist arabic">
+<div class="title">Steps</div>
+<ol class="arabic">
+<li>
+<p>Subscribe to the required repository:</p>
+<div class="paragraph">
+<p><code>subscription-manager repos --enable rhel-9-for-x86_64-baseos-rpms</code></p>
+</div>
+<div class="paragraph">
+<p><code>subscription-manager repos --enable rhel-9-for-x86_64-appstream-rpms</code></p>
+</div>
+<div class="paragraph">
+<p>The following example shows the execution of this command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>[root@localhost ~]# subscription-manager repos --enable rhel-9-for-x86_64-baseos-rpms
+Repository 'rhel-9-for-x86_64-baseos-rpms' is enabled for this system.
+[root@localhost ~]# subscription-manager repos --enable rhel-9-for-x86_64-appstream-rpms
+Repository 'rhel-9-for-x86_64-appstream-rpms' is enabled for this system.</pre>
 </div>
 </div>
 </li>
