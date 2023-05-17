@@ -37330,6 +37330,18 @@
 </tr>
 </tbody>
 </table>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/ontap/images/note.svg" alt="Note">
+</td>
+<td class="content">
+ When migrating from an AFF cluster to a FAS cluster with hybrid aggregates, auto volume placement will attempt to perform a like to like aggregate match. For example, if the source cluster has 60 volumes, the volume placement will try to find an AFF aggregate on the destination to place the volumes. When there is no sufficient space on the AFF aggregates, the volumes will be placed on aggregates with non-flash disks.
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -37515,6 +37527,14 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock">Fanout relationships (the migrating source has a SnapMirror source volume with more than one destination)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Flash Pool</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
 <td class="tableblock halign-left valign-top"></td>
