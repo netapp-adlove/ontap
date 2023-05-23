@@ -176,7 +176,7 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/ontap/issues/new?body=Page%3A%20[Enable Autonomous Ransomware Protection by default in new volumes](https://docs.netapp.com/us-en/ontap/anti-ransomware/enable-default-task.html)&template=public-issue-template.md" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/discuss-sm.svg" alt="" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/ontap/blob/main/anti-ransomware/enable-default-task.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/edit-sm.svg" alt="" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/ontap/images/article-sm.svg" alt="" class="github-icon" />Learn how to contribute</a></div>
+  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/ontap/issues/new?template=new-from-page.yml&page-url=https://docs.netapp.com/us-en/ontap/anti-ransomware/enable-default-task.html&page-title=Enable Autonomous Ransomware Protection by default in new volumes" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/discuss-sm.svg" alt="" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/ontap/blob/main/anti-ransomware/enable-default-task.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/edit-sm.svg" alt="" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/ontap/images/article-sm.svg" alt="" class="github-icon" />Learn how to contribute</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">ON THIS PAGE</div>
@@ -16738,11 +16738,11 @@
         Data sovereignty
       </a></li><li 
       data-pdf-exists="true" 
-      data-pdf-filename="SnapLock WORM storage"
+      data-pdf-filename="Cloud WORM storage"
       data-li-level="4#" 
       class=" "
     ><a class="na-navbar-padding" href="/us-en/ontap/cloud/snaplock-worm-storage-concept.html">
-        SnapLock WORM storage
+        Cloud WORM storage
       </a></li></ul></li></ul></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Set up, upgrade and revert ONTAP"
@@ -37222,7 +37222,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-05-02 20:16:18 +0000">05/02/2023</time>
+    <time datetime="2023-05-18 20:49:38 +0000">05/18/2023</time>
     
   
 
@@ -37243,6 +37243,14 @@
           style="border-radius: 50%;"/>
   </a>
   
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-ahibbard">
+    <img  class="avatar avatar-small"
+          alt="netapp-ahibbard"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/85892662?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
   <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-thomi">
     <img  class="avatar avatar-small"
           alt="netapp-thomi"
@@ -37259,64 +37267,26 @@
 <div class="paragraph lead">
 <p>Beginning with ONTAP 9.10.1, you can configure storage VMs (SVMs) such that new volumes are enabled by default for Autonomous Ransomware Protection (ARP) in learning mode.</p>
 </div>
-<div class="ulist">
-<div class="title">What you&#8217;ll need</div>
-<ul>
-<li>
-<p>The correct license is installed for your ONTAP version.</p>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">ONTAP releases</th>
-<th class="tableblock halign-left valign-top">License</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>ONTAP 9.11.1 and later</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Anti_ransomware</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>ONTAP 9.10.1</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>MT_EK_MGMT (Multi-Tenant Key Management)</p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</li>
-<li>
-<p>Optional but recommended: Beginning in ONTAP 9.13.1, you can enable multi-admin verification (MAV) so that two or more authenticated user admins are required for anti-ransomware operations. <a href="../multi-admin-verify/enable-disable-task.html" target="_blank" rel="noopener">Learn more</a>.</p>
-</li>
-</ul>
-</div>
 <div class="paragraph">
 <div class="title">About this task</div>
-<p>New volumes are created by default with ARP in disabled mode, but you can change this setting in System Manager and at the CLI. Volumes enabled by default are set to ARP in learning mode. Beginning in ONTAP 9.13.1, adaptive learning has been added to ARP analytics and the switch from learning mode to active mode is done automatically.</p>
+<p>By default, new volumes are created with ARP in disabled mode. You can modify this setting in System Manager and with the CLI. Volumes enabled by default are set to ARP in learning mode.</p>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/ontap/images/note.svg" alt="Note">
-</td>
-<td class="content">
 <div class="paragraph">
-<p>Enabling ARP by default for new volumes in an SVM does not automatically enable ARP for existing volumes in that SVM. Learn how to <a href="enable-task.html">enable ARP in an existing volume</a>.</p>
+<p>ARP will only be enabled on volumes created in the SVM after you have changed the setting. ARP will not be enabled on existing volumes. Learn how to <a href="enable-task.html">enable ARP in an existing volume</a>.</p>
 </div>
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>Beginning in ONTAP 9.13.1, adaptive learning has been added to ARP analytics, and the switch from learning mode to active mode is done automatically. For more information, see <a href="index.html#learning-and-active-mode">Learning and active mode</a>.</p>
+</div>
+<div class="ulist">
+<div class="title">Before you begin</div>
+<ul>
+<li>
+<p>The <a href="index.html">correct license</a> must be installed for your ONTAP version.</p>
+</li>
+<li>
+<p>Beginning in ONTAP 9.13.1, it&#8217;s recommended you enable multi-admin verification (MAV) so that two or more authenticated user admins are required for anti-ransomware operations. <a href="../multi-admin-verify/enable-disable-task.html" target="_blank" rel="noopener">Learn more</a>.</p>
+</li>
+</ul>
 </div>
 <details>
 <summary class="title">Autonomous ARP switching from learning to active mode</summary>
@@ -37350,10 +37320,10 @@
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Click <strong>Storage &gt; Storage VMs</strong> and then select the storage VM that contains volumes you want to protect with ARP.</p>
+<p>Select <strong>Storage &gt; Storage VMs</strong> then select the storage VM that contains volumes you want to protect with ARP.</p>
 </li>
 <li>
-<p>In the <strong>Settings</strong> tab, [in the <strong>Security</strong> section], click <span class="image"><img src="../media/icon_pencil.gif" alt="pen icon"></span> in the <strong>Anti-ransomware</strong> box, then check the box to enable ARP for NAS volumes. Check the additional box to enable ARP on all eligible NAS volumes in the storage VM.</p>
+<p>Navigate to the <strong>Settings</strong> tab. Under <strong>Security</strong>, select <span class="image"><img src="../media/icon_pencil.gif" alt="pen icon"></span> in the <strong>Anti-ransomware</strong> box, then check the box to enable ARP for NAS volumes. Check the additional box to enable ARP on all eligible NAS volumes in the storage VM.</p>
 <div class="admonitionblock note">
 <table>
 <tr>

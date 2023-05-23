@@ -176,7 +176,7 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/ontap/issues/new?body=Page%3A%20[Create a replication job schedule](https://docs.netapp.com/us-en/ontap/data-protection/create-replication-job-schedule-task.html)&template=public-issue-template.md" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/discuss-sm.svg" alt="" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/ontap/blob/main/data-protection/create-replication-job-schedule-task.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/edit-sm.svg" alt="" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/ontap/images/article-sm.svg" alt="" class="github-icon" />Learn how to contribute</a></div>
+  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/ontap/issues/new?template=new-from-page.yml&page-url=https://docs.netapp.com/us-en/ontap/data-protection/create-replication-job-schedule-task.html&page-title=Create a replication job schedule" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/discuss-sm.svg" alt="" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/ontap/blob/main/data-protection/create-replication-job-schedule-task.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/edit-sm.svg" alt="" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/ontap/images/article-sm.svg" alt="" class="github-icon" />Learn how to contribute</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">ON THIS PAGE</div>
@@ -16738,11 +16738,11 @@
         Data sovereignty
       </a></li><li 
       data-pdf-exists="true" 
-      data-pdf-filename="SnapLock WORM storage"
+      data-pdf-filename="Cloud WORM storage"
       data-li-level="4#" 
       class=" "
     ><a class="na-navbar-padding" href="/us-en/ontap/cloud/snaplock-worm-storage-concept.html">
-        SnapLock WORM storage
+        Cloud WORM storage
       </a></li></ul></li></ul></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Set up, upgrade and revert ONTAP"
@@ -37222,11 +37222,19 @@
 <p class="page-details">
   
     
-    <time datetime="2021-11-09 17:08:08 +0000">11/09/2021</time>
+    <time datetime="2023-05-16 18:48:53 +0000">05/16/2023</time>
     
   
 
 <span>Contributors
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-lenida">
+    <img  class="avatar avatar-small"
+          alt="netapp-lenida"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/54081920?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
   <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-pcarriga">
     <img  class="avatar avatar-small"
           alt="netapp-pcarriga"
@@ -37263,6 +37271,20 @@
 </div>
 <div class="paragraph">
 <p><code>job schedule cron create -name <em>job_name</em> -vserver <em>Vserver_name</em> -month <em>month</em> -dayofweek <em>day_of_week</em> -day <em>day_of_month</em> -hour <em>hour</em> -minute <em>minute</em></code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/ontap/images/note.svg" alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The minimum supported schedule (RPO) for FlexVol volumes in a volume SnapMirror relationship is 5 minutes. The minimum supported schedule (RPO) for FlexGroup volumes in a volume SnapMirror relationship is 30 minutes.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>The following example creates a job schedule named <code>my_weekly</code> that runs on Saturdays at 3:00 a.m.:</p>

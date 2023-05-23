@@ -17,7 +17,7 @@
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
   <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="When Autonomous Ransomware Protection (ARP) detects abnormal activity in a protected volume, it issues a warning. You should evaluate the notification to det...">
-  <meta name="keywords" content=" Respond to abnormal activity, anti-ransomware abnormal activity, data entropy, unusual file extensions, potential ransomware attack, false positive, suspected ransomware attack, abnormal activity notification, security, ransomware alert message, detected abnormal volume, suspected file types, attack report, anti-ransomware attack, autonomous, ransomware, protection, arp"><!-- Icons -->
+  <meta name="keywords" content=" abnormal activity, data entropy, unusual file extensions, potential ransomware attack, false positive, ransomware attack, abnormal activity notification, ransomware alert, detected abnormal volume, suspected file types, attack report, anti-ransomware attack, ransomware ems"><!-- Icons -->
   <link rel="icon" href="/us-en/ontap/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed --><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -176,7 +176,7 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/ontap/issues/new?body=Page%3A%20[Respond to abnormal activity](https://docs.netapp.com/us-en/ontap/anti-ransomware/respond-abnormal-task.html)&template=public-issue-template.md" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/discuss-sm.svg" alt="" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/ontap/blob/main/anti-ransomware/respond-abnormal-task.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/edit-sm.svg" alt="" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/ontap/images/article-sm.svg" alt="" class="github-icon" />Learn how to contribute</a></div>
+  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/ontap/issues/new?template=new-from-page.yml&page-url=https://docs.netapp.com/us-en/ontap/anti-ransomware/respond-abnormal-task.html&page-title=Respond to abnormal activity" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/discuss-sm.svg" alt="" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/ontap/blob/main/anti-ransomware/respond-abnormal-task.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/edit-sm.svg" alt="" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/ontap/images/article-sm.svg" alt="" class="github-icon" />Learn how to contribute</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">ON THIS PAGE</div>
@@ -16738,11 +16738,11 @@
         Data sovereignty
       </a></li><li 
       data-pdf-exists="true" 
-      data-pdf-filename="SnapLock WORM storage"
+      data-pdf-filename="Cloud WORM storage"
       data-li-level="4#" 
       class=" "
     ><a class="na-navbar-padding" href="/us-en/ontap/cloud/snaplock-worm-storage-concept.html">
-        SnapLock WORM storage
+        Cloud WORM storage
       </a></li></ul></li></ul></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Set up, upgrade and revert ONTAP"
@@ -37222,7 +37222,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-05-01 18:18:35 +0000">05/01/2023</time>
+    <time datetime="2023-05-18 20:49:38 +0000">05/18/2023</time>
     
   
 
@@ -37240,6 +37240,14 @@
           alt="netapp-forry"
           width="20" height="20"
           src="https://avatars.githubusercontent.com/u/51911827?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-ahibbard">
+    <img  class="avatar avatar-small"
+          alt="netapp-ahibbard"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/85892662?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -37267,14 +37275,6 @@
 <div class="paragraph lead">
 <p>When Autonomous Ransomware Protection (ARP) detects abnormal activity in a protected volume, it issues a warning. You should evaluate the notification to determine whether the activity is expected and acceptable, or whether an attack is under way.</p>
 </div>
-<div class="ulist">
-<div class="title">What you&#8217;ll need</div>
-<ul>
-<li>
-<p>ARP is running in active mode.</p>
-</li>
-</ul>
-</div>
 <div class="paragraph">
 <div class="title">About this task</div>
 <p>ARP displays a list of suspected files when it detects any combination of high data entropy, abnormal volume activity with data encryption, and unusual file extensions.</p>
@@ -37299,7 +37299,10 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>In both cases, normal monitoring resumes after updating and clearing the notices; ARP records your evaluation, logs are updated with the new file types and using them for future analysis. However, in the case of a suspected attack, you must determine whether it is an attack, respond to it if it is, and restore protected data before clearing the notices. <a href="index.html#how-to-recover-data-in-ontap-after-a-ransomware-attack">Learn more about how to recover from a ransomware attack</a>.</p>
+<p>In both cases, normal monitoring resumes after updating and clearing the notices. ARP record your evaluation to its threat assessment, updated logs with the new file types, and uses them for future analysis.</p>
+</div>
+<div class="paragraph">
+<p>In the case of a suspected attack, you must determine whether it is an attack, respond to it if it is, and restore protected data before clearing the notices. <a href="index.html#how-to-recover-data-in-ontap-after-a-ransomware-attack">Learn more about how to recover from a ransomware attack</a>.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -37312,6 +37315,14 @@ There are no notices to clear if you restored an entire volume.
 </td>
 </tr>
 </table>
+</div>
+<div class="ulist">
+<div class="title">Before you begin</div>
+<ul>
+<li>
+<p>ARP must be running in active mode.</p>
+</li>
+</ul>
 </div>
 <div class="exampleblock tabbed-block">
 <div class="title">Example 1. Steps</div>
@@ -37500,6 +37511,14 @@ Number of Attacks: 1</pre>
 </div>
 </div>
 </div>
+</div>
+<div class="ulist">
+<div class="title">More information</div>
+<ul>
+<li>
+<p><a href="https://kb.netapp.com/onprem%2Fontap%2Fda%2FNAS%2FUnderstanding_Autonomous_Ransomware_Protection_attacks_and_the_Autonomous_Ransomware_Protection_snapshot#" target="_blank" rel="noopener">KB: Understanding Autonomous Ransomware Protection attacks and the Autonomous Ransomware Protection snapshot</a>.</p>
+</li>
+</ul>
 </div>
 
     </article>

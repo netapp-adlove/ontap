@@ -17,7 +17,7 @@
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
   <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="In the current release, ransomware protection is most suitable in NAS environments. Support for other environments will be available in future releases.">
-  <meta name="keywords" content=" anti-ransomware use cases and restrictions, anti-ransomware performance and frequency considerations, anti-ransomware workloads, anti-ransomware volume requirements, anti-ransomware performance, volumes, anti-ransomware encryption, anti-ransomware system configurations, autonomous ransomware protection, arp"><!-- Icons -->
+  <meta name="keywords" content=" anti-ransomware workloads, anti-ransomware requirements, anti-ransomware performance, volumes, anti-ransomware encryption, anti-ransomware system configurations, arp"><!-- Icons -->
   <link rel="icon" href="/us-en/ontap/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed --><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -176,7 +176,7 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/ontap/issues/new?body=Page%3A%20[Autonomous Ransomware Protection use cases and considerations](https://docs.netapp.com/us-en/ontap/anti-ransomware/use-cases-restrictions-concept.html)&template=public-issue-template.md" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/discuss-sm.svg" alt="" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/ontap/blob/main/anti-ransomware/use-cases-restrictions-concept.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/edit-sm.svg" alt="" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/ontap/images/article-sm.svg" alt="" class="github-icon" />Learn how to contribute</a></div>
+  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/ontap/issues/new?template=new-from-page.yml&page-url=https://docs.netapp.com/us-en/ontap/anti-ransomware/use-cases-restrictions-concept.html&page-title=Autonomous Ransomware Protection use cases and considerations" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/discuss-sm.svg" alt="" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/ontap/blob/main/anti-ransomware/use-cases-restrictions-concept.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/edit-sm.svg" alt="" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/ontap/images/article-sm.svg" alt="" class="github-icon" />Learn how to contribute</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">ON THIS PAGE</div>
@@ -16738,11 +16738,11 @@
         Data sovereignty
       </a></li><li 
       data-pdf-exists="true" 
-      data-pdf-filename="SnapLock WORM storage"
+      data-pdf-filename="Cloud WORM storage"
       data-li-level="4#" 
       class=" "
     ><a class="na-navbar-padding" href="/us-en/ontap/cloud/snaplock-worm-storage-concept.html">
-        SnapLock WORM storage
+        Cloud WORM storage
       </a></li></ul></li></ul></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Set up, upgrade and revert ONTAP"
@@ -37222,7 +37222,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-05-17 19:23:59 +0000">05/17/2023</time>
+    <time datetime="2023-05-19 17:54:36 +0000">05/19/2023</time>
     
   
 
@@ -37251,19 +37251,19 @@
           style="border-radius: 50%;"/>
   </a>
   
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-ahibbard">
+    <img  class="avatar avatar-small"
+          alt="netapp-ahibbard"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/85892662?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
   <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-thomi">
     <img  class="avatar avatar-small"
           alt="netapp-thomi"
           width="20" height="20"
           src="https://avatars.githubusercontent.com/u/54111336?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
-  <a target="_blank" class="ext-link-indicator" href="https://github.com/pixelchrome">
-    <img  class="avatar avatar-small"
-          alt="pixelchrome"
-          width="20" height="20"
-          src="https://avatars.githubusercontent.com/u/10322584?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -37275,6 +37275,14 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
+<p>The availability of Autonomous Ransomware Protection features depends on the version of ONTAP you are using.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="supported-and-unsupported-configurations">Supported and unsupported configurations</h2>
+<div class="sectionbody">
+<div class="paragraph">
 <p>ONTAP platform support:</p>
 </div>
 <div class="ulist">
@@ -37456,21 +37464,13 @@ ARP depends on distinguishing incoming data as encrypted or unencrypted. If the 
 </div>
 </div>
 <div class="sect1">
-<h2 id="how-automatic-snapshot-copies-work-when-ransomware-is-detected">How automatic Snapshot copies work when ransomware is detected</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>In order to obtain the best possible recovery point, ARP creates an automatic Snapshot copy as soon as it detects abnormal file activity. However, ARP does not immediately flag an alert; rather, analytics need to run and confirm that the suspicious activity matches a ransomware profile before generating an alert. This process could take up to 60 minutes. If the analytics determines the activity is not suspicious, then an alert is not generated, but the automatically created Snapshot copy remains present on the file system for a minimum of two days.</p>
-</div>
-<div class="paragraph">
-<p>Beginning with ONTAP 9.11.1, you can control the number and retention period for ARP Snapshot copies that are automatically generated in response to suspected ransomware attacks. Learn how to <a href="modify-automatic-shapshot-options-task.html">modify options for automatic Snapshot copies</a>.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
 <h2 id="multi-admin-verification-with-volumes-protected-with-autonomous-ransomware-protection-arp">Multi-admin verification with volumes protected with Autonomous Ransomware Protection (ARP)</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Beginning with ONTAP 9.13.1, you can enable multi-admin verification (MAV) for additional security with ARP. MAV ensures that at least two or more authenticated administrators are required to turn off ARP, pause ARP, or mark a suspected attack as a false positive on a protected volume. Learn how to <a href="../multi-admin-verify/enable-disable-task.html" target="_blank" rel="noopener">enable MAV for ARP-protected volumes</a>. You&#8217;ll need to define administrators for a MAV group and create MAV rules for the <code>security anti-ransomware volume disable</code>, <code>security anti-ransomware volume pause</code>, and <code>security anti-ransomware volume attack clear-suspect</code> ARP commands you want to protect. Each administrator in the MAV group must approve each new rule request and <a href="../multi-admin-verify/enable-disable-task.html" target="_blank" rel="noopener">add the MAV rule again</a> within MAV settings.</p>
+<p>Beginning with ONTAP 9.13.1, you can enable multi-admin verification (MAV) for additional security with ARP. MAV ensures that at least two or more authenticated administrators are required to turn off ARP, pause ARP, or mark a suspected attack as a false positive on a protected volume. Learn how to <a href="../multi-admin-verify/enable-disable-task.html" target="_blank" rel="noopener">enable MAV for ARP-protected volumes</a>.</p>
+</div>
+<div class="paragraph">
+<p>You need to define administrators for a MAV group and create MAV rules for the <code>security anti-ransomware volume disable</code>, <code>security anti-ransomware volume pause</code>, and <code>security anti-ransomware volume attack clear-suspect</code> ARP commands you want to protect. Each administrator in the MAV group must approve each new rule request and <a href="../multi-admin-verify/enable-disable-task.html" target="_blank" rel="noopener">add the MAV rule again</a> within MAV settings.</p>
 </div>
 </div>
 </div>

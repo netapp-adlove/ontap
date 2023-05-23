@@ -176,7 +176,7 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/ontap/issues/new?body=Page%3A%20[Guarantee throughput with QoS overview](https://docs.netapp.com/us-en/ontap/performance-admin/guarantee-throughput-qos-task.html)&template=public-issue-template.md" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/discuss-sm.svg" alt="" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/ontap/blob/main/performance-admin/guarantee-throughput-qos-task.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/edit-sm.svg" alt="" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/ontap/images/article-sm.svg" alt="" class="github-icon" />Learn how to contribute</a></div>
+  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/ontap/issues/new?template=new-from-page.yml&page-url=https://docs.netapp.com/us-en/ontap/performance-admin/guarantee-throughput-qos-task.html&page-title=Guarantee throughput with QoS overview" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/discuss-sm.svg" alt="" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/ontap/blob/main/performance-admin/guarantee-throughput-qos-task.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/edit-sm.svg" alt="" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/ontap/images/article-sm.svg" alt="" class="github-icon" />Learn how to contribute</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">ON THIS PAGE</div>
@@ -16738,11 +16738,11 @@
         Data sovereignty
       </a></li><li 
       data-pdf-exists="true" 
-      data-pdf-filename="SnapLock WORM storage"
+      data-pdf-filename="Cloud WORM storage"
       data-li-level="4#" 
       class=" "
     ><a class="na-navbar-padding" href="/us-en/ontap/cloud/snaplock-worm-storage-concept.html">
-        SnapLock WORM storage
+        Cloud WORM storage
       </a></li></ul></li></ul></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Set up, upgrade and revert ONTAP"
@@ -37222,7 +37222,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-04-17 14:31:38 +0000">04/17/2023</time>
+    <time datetime="2023-05-19 20:46:17 +0000">05/19/2023</time>
     
   
 
@@ -37271,16 +37271,14 @@
 <img src="/us-en/ontap/images/note.svg" alt="Note">
 </td>
 <td class="content">
-<div class="paragraph">
-<p>Throughput to workloads might exceed the specified ceiling by up to 10%, especially if a workload experiences rapid changes in throughput. The ceiling might be exceeded by up to 50% to handle bursts. Bursts occur on single nodes when tokens accumulate up to 150%</p>
-</div>
+Throughput to workloads might exceed the specified ceiling by up to 10%, especially if a workload experiences rapid changes in throughput. The ceiling might be exceeded by up to 50% to handle bursts. Bursts occur on single nodes when tokens accumulate up to 150%
 </td>
 </tr>
 </table>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../media/qos-ceiling.gif" alt="qos ceiling">
+<img src="../media/qos-ceiling.gif" alt="Chart comparing QoS before and after throughput ceiling applied.">
 </div>
 </div>
 </div>
@@ -37298,9 +37296,7 @@
 <img src="/us-en/ontap/images/tip.svg" alt="Tip">
 </td>
 <td class="content">
-<div class="paragraph">
-<p>As the examples suggest, a throughput ceiling throttles throughput directly. A throughput floor throttles throughput indirectly, by giving priority to the workloads for which the floor has been set.</p>
-</div>
+As the examples suggest, a throughput ceiling throttles throughput directly. A throughput floor throttles throughput indirectly, by giving priority to the workloads for which the floor has been set.
 </td>
 </tr>
 </table>
@@ -37333,7 +37329,7 @@ The option of enabling/disabling the new behavior of floors v2 is available in O
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../media/qos-floor.gif" alt="qos floor">
+<img src="../media/qos-floor.gif" alt="Two charts comparing QoS throughput before and after a floor is applied.">
 </div>
 </div>
 </div>
