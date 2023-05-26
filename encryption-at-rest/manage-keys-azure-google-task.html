@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
   <head class="at-element-marker">
-  <title>Manage keys with a cloud-provider</title>
+  <title>Manage keys with a cloud provider</title>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
   <meta http-equiv="language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="Manage keys with a cloud-provider" />
+  <meta property="og:title" content="Manage keys with a cloud provider" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/us-en/ontap/encryption-at-rest/manage-keys-azure-google-task.html" />
-	<meta property="og:description" content="Use the Azure or Google Cloud to streamline the protection of your ONTAP encryption keys." />
+	<meta property="og:description" content="Use the Azure, Google Cloud, or AWS key manager to streamline the protection of your ONTAP encryption keys." />
   <meta property="og:image" content="https://docs.netapp.com/us-en/ontap/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Use the Azure or Google Cloud to streamline the protection of your ONTAP encryption keys.">
-  <meta name="keywords" content=" key management, Azure, AKV, key vault, NVE keys, third-party, GCP, google cloud, Cloud KMS"><!-- Icons -->
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Use the Azure, Google Cloud, or AWS key manager to streamline the protection of your ONTAP encryption keys.">
+  <meta name="keywords" content=" Azure, AKV, key vault, NVE keys, third-party, GCP, google cloud, Cloud KMS, AWS, amazon"><!-- Icons -->
   <link rel="icon" href="/us-en/ontap/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed --><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -177,7 +177,7 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/ontap/issues/new?template=new-from-page.yml&page-url=https://docs.netapp.com/us-en/ontap/encryption-at-rest/manage-keys-azure-google-task.html&page-title=Manage keys with a cloud-provider" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/discuss-sm.svg" alt="" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/ontap/blob/main/encryption-at-rest/manage-keys-azure-google-task.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/edit-sm.svg" alt="" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/ontap/images/article-sm.svg" alt="" class="github-icon" />Learn how to contribute</a></div>
+  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/ontap/issues/new?template=new-from-page.yml&page-url=https://docs.netapp.com/us-en/ontap/encryption-at-rest/manage-keys-azure-google-task.html&page-title=Manage keys with a cloud provider" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/discuss-sm.svg" alt="" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/ontap/blob/main/encryption-at-rest/manage-keys-azure-google-task.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/edit-sm.svg" alt="" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/ontap/images/article-sm.svg" alt="" class="github-icon" />Learn how to contribute</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">ON THIS PAGE</div>
@@ -37218,14 +37218,14 @@
 </div>
 
       <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Manage keys with a cloud-provider</h1>
+  <h1 class="n-doc__component-detail-heading">Manage keys with a cloud provider</h1>
 </div>
 
 
 <p class="page-details">
   
     
-    <time datetime="2023-05-04 15:41:02 +0000">05/04/2023</time>
+    <time datetime="2023-05-08 17:25:42 +0000">05/08/2023</time>
     
   
 
@@ -37235,63 +37235,115 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>Beginning in ONTAP 9.10.1, you can use <a href="https://docs.microsoft.com/en-us/azure/key-vault/general/basic-concepts" target="_blank" rel="noopener">Azure Key Vault (AKV)</a> and <a href="https://cloud.google.com/kms/docs" target="_blank" rel="noopener">Google Cloud Platform&#8217;s Key Management Service (Cloud KMS)</a> to protect your ONTAP encryption keys in a Azure- or Google Cloud Platform-deployed application.</p>
+<p>Beginning in ONTAP 9.10.1, you can use <a href="https://docs.microsoft.com/en-us/azure/key-vault/general/basic-concepts" target="_blank" rel="noopener">Azure Key Vault (AKV)</a> and <a href="https://cloud.google.com/kms/docs" target="_blank" rel="noopener">Google Cloud Platform&#8217;s Key Management Service (Cloud KMS)</a> to protect your ONTAP encryption keys in a cloud-hosted application. Beginning with ONTAP 9.12.0, you can also protect NVE keys with <a href="https://docs.aws.amazon.com/kms/latest/developerguide/overview.html" target="_blank" rel="noopener">AWS' KMS</a>.</p>
 </div>
 <div class="paragraph">
-<p>AKV and Cloud KMS can be used to protect <a href="configure-netapp-volume-encryption-concept.html">NetApp Volume Encryption (NVE) keys</a> only for data SVMs.</p>
+<p>AWS KMS, AKV and Cloud KMS can be used to protect <a href="configure-netapp-volume-encryption-concept.html">NetApp Volume Encryption (NVE) keys</a> only for data SVMs.</p>
 </div>
 <div class="paragraph">
-<p>Key management with AKV or Cloud KMS can be enabled with the CLI or the ONTAP REST API.</p>
+<div class="title">About this task</div>
+<p>Key management with a cloud provider can be enabled with the CLI or the ONTAP REST API.</p>
 </div>
 <div class="paragraph">
-<p>When using AKV or Cloud KMS, be aware that by default a data SVM LIF is used to communicate with the cloud key management endpoint. A node management network is used to communicate with the cloud provider&#8217;s authentication services (login.microsoftonline.com for Azure; oauth2.googleapis.com for Cloud KMS). If the cluster network is not configured correctly, the cluster will not properly utilize the key management service.</p>
+<p>When using a cloud provider to protect your keys, be aware that by default a data SVM LIF is used to communicate with the cloud key management endpoint. A node management network is used to communicate with the cloud provider&#8217;s authentication services (login.microsoftonline.com for Azure; oauth2.googleapis.com for Cloud KMS). If the cluster network is not configured correctly, the cluster will not properly utilize the key management service.</p>
+</div>
+<div class="paragraph">
+<p>When utilizing a cloud provider key management service, you should be aware of the following limitations:</p>
 </div>
 <div class="ulist">
-<div class="title">Prerequisites</div>
 <ul>
 <li>
-<p>The ONTAP cluster&#8217;s nodes must support NVE</p>
+<p>Cloud-provider key management is not available for NSE and NAE. <a href="enable-external-key-management-96-later-nve-task.html">External KMIPs</a> can be used instead.</p>
 </li>
 <li>
-<p>Volume Encryption (VE) license installed</p>
+<p>Cloud-provider key management is not available for MetroCluster configurations.</p>
 </li>
 <li>
-<p>Multi-tenant Encryption Key Management (MTEKM) license installed</p>
-</li>
-<li>
-<p>You must be a cluster or SVM administrator</p>
+<p>Cloud-provider key management can only be configured on a data SVM.</p>
 </li>
 </ul>
 </div>
 <div class="ulist">
-<div class="title">Limitations</div>
+<div class="title">Before you begin</div>
 <ul>
 <li>
-<p>AKV and Cloud KMS are not available for NSE and NAE. <a href="enable-external-key-management-96-later-nve-task.html">External KMIPs</a> can be used instead</p>
+<p>You must have configured the KMS on the appropriate cloud provider.</p>
 </li>
 <li>
-<p>AKV and Cloud KMS are not available for MetroCluster configurations.</p>
+<p>The ONTAP cluster&#8217;s nodes must support NVE.</p>
 </li>
 <li>
-<p>AKV and Cloud KMS can only be configured on a data SVM</p>
+<p>You must have installed the Volume Encryption (VE) and multi-tenant Encryption Key Management (MTEKM) licenses.</p>
+</li>
+<li>
+<p>You must be a cluster or SVM administrator.</p>
+</li>
+<li>
+<p>The data SVM must not include any encrypted volumes or employ a key manager. If the data SVM includes encrypted volumes, you must migrate them before configuring the KMS.</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="enable-external-key-management-with-the-cli">Enable external key management with the CLI</h2>
+<h2 id="enable-external-key-management">Enable external key management</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Enabling external key management depends on the specific key manager you use. If you are enabling AKV in a Cloud Volumes ONTAP, note that there is a separate procedure. Choose the tab of the key manager and environment that suits your needs:</p>
+<p>Enabling external key management depends on the specific key manager you use. Choose the tab of the appropriate key manager and environment.</p>
 </div>
 <div class="exampleblock tabbed-block">
 <div class="content">
 <div class="openblock">
+<div class="title">AWS</div>
+<div class="content">
+<div class="ulist">
+<div class="title">Before you begin</div>
+<ul>
+<li>
+<p>You must create a grant for the AWS KMS key that will be used by the IAM role managing encryption. The IAM role must include a policy that allows the following operations:</p>
+</li>
+<li>
+<p><code>DescribeKey</code></p>
+</li>
+<li>
+<p><code>Encrypt</code></p>
+</li>
+<li>
+<p><code>Decrypt</code><br>
+For more information, see AWS documentation for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant" target="_blank" rel="noopener">grants</a>.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Enable AWS KMV on an ONTAP SVM</div>
+<ol class="arabic">
+<li>
+<p>Before you begin, obtain both the access key ID and secret key from your AWS KMS.</p>
+</li>
+<li>
+<p>Set the privilege level to advanced:<br>
+<code>set -priv advanced</code></p>
+</li>
+<li>
+<p>Enable AWS KMS:<br>
+<code>security key-manager external aws enable -vserver <em>svm_name</em> -region <em>AWS_region</em> -key-id <em>key_ID</em> -encryption-context <em>encryption_context</em></code></p>
+</li>
+<li>
+<p>When prompted, enter the secret key.</p>
+</li>
+<li>
+<p>Confirm the AWS KMS was configured correctly:<br>
+<code>security key-manager external aws show -vserver <em>svm_name</em></code></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="openblock">
 <div class="title">Azure</div>
 <div class="content">
 <div class="olist arabic">
-<div class="title">Enable Azure Key Vault for ONTAP</div>
+<div class="title">Enable Azure Key Vault on an ONTAP SVM</div>
 <ol class="arabic">
 <li>
 <p>Before you begin, you need to obtain the appropriate authentication credentials from your Azure account, either a client secret or certificate.<br>
@@ -37308,8 +37360,8 @@ When prompted, enter either the client certificate or client secret from your Az
 </li>
 <li>
 <p>Verify AKV is enabled correctly:<br>
-<code>security key-manager external azure show vserver <em>SVM_name</em></code><br>
-If the service reachability is not OK, establish the connectivity to the AKV key management service via data SVM LIF.</p>
+<code>security key-manager external azure show vserver <em>svm_name</em></code><br>
+If the service reachability is not OK, establish the connectivity to the AKV key management service via the data SVM LIF.</p>
 </li>
 </ol>
 </div>
@@ -37319,24 +37371,24 @@ If the service reachability is not OK, establish the connectivity to the AKV key
 <div class="title">Google Cloud</div>
 <div class="content">
 <div class="olist arabic">
-<div class="title">Enable Cloud KMS with the CLI for ONTAP</div>
+<div class="title">Enable Cloud KMS on an ONTAP SVM</div>
 <ol class="arabic">
 <li>
-<p>Before you begin, you need to obtain the private key for the Google Cloud KMS account key file in a JSON format. This can be found in your GCP account.<br>
+<p>Before you begin, obtain the private key for the Google Cloud KMS account key file in a JSON format. This can be found in your GCP account.<br>
 You must also ensure all nodes in the cluster are healthy. You can check this with the command <code>cluster show</code>.</p>
 </li>
 <li>
-<p>Set privileged level to advanced<br>
+<p>Set privileged level to advanced:<br>
 <code>set -priv advanced</code></p>
 </li>
 <li>
 <p>Enable Cloud KMS on the SVM<br>
-<code>security key-manager external gcp enable -vserver <em>data_svm_name</em> -project-id <em>project_id</em>-key-ring-name <em>key_ring_name</em> -key-ring-location <em>key_ring_location</em> -key-name <em>key_name</em></code><br>
+<code>security key-manager external gcp enable -vserver <em>svm_name</em> -project-id <em>project_id</em>-key-ring-name <em>key_ring_name</em> -key-ring-location <em>key_ring_location</em> -key-name <em>key_name</em></code><br>
 When prompted, enter the contents of the JSON file with the Service Account Private Key</p>
 </li>
 <li>
 <p>Verify that Cloud KMS is configured with the correct parameters:<br>
-<code>security key-manager external gcp show vserver <em>SVM_name</em></code><br>
+<code>security key-manager external gcp show vserver <em>svm_name</em></code><br>
 The status of <code>kms_wrapped_key_status</code> will be <code>“UNKNOWN”</code> if no encrypted volumes have been created.<br>
 If the service reachability is not OK, establish the connectivity to the GCP key management service via data SVM LIF.</p>
 </li>
@@ -37350,6 +37402,14 @@ If the service reachability is not OK, establish the connectivity to the GCP key
 <p>If one or more encrypted volumes is already configured for a data SVM and the corresponding NVE keys are managed by the admin SVM onboard key manager, those keys should be migrated to the external key management service. To do this with the CLI, run the command:<br>
 <code>security key-manager key migrate -from-Vserver <em>admin_SVM</em> -to-Vserver <em>data_SVM</em></code><br>
 New encrypted volumes cannot be created for the tenant&#8217;s data SVM until all NVE keys of the data SVM are successfully migrated.</p>
+</div>
+<div class="ulist">
+<div class="title">Related information</div>
+<ul>
+<li>
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-encrypting-volumes.html" target="_blank" rel="noopener">Encrypting volumes with NetApp encryption solutions for Cloud Volumes ONTAP</a></p>
+</li>
+</ul>
 </div>
 </div>
 </div>
