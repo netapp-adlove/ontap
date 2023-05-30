@@ -37395,7 +37395,7 @@ No ransomware detection or prevention system can completely guarantee safety fro
 </div>
 </div>
 <div class="sect1">
-<h2 id="threat-assessment">Threat assessment</h2>
+<h2 id="threat-assessment-and-arp-snapshots">Threat assessment and ARP Snapshots</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>In active mode, ARP assesses threat probability based on incoming data measured against learned analytics. A measurement is assigned when ARP detects a threat:</p>
@@ -37418,10 +37418,10 @@ No ransomware detection or prevention system can completely guarantee safety fro
 </ul>
 </div>
 <div class="paragraph">
-<p>When the attack probability is low, ONTAP will create a Snapshot of your volume in the background. The APR Snapshot is identifiable by its name, for example <code>Anti_ransomware_backup.2022-12-20_1248</code>, and uses the tag <code>anti-ransomware-backup</code>. Threats that remain at the low level are logged, but ONTAP does not send an alert about low threats.</p>
+<p>When the attack probability is low, it means ONTAP has detected an abnormality and will create a Snapshot of your volume in the background to create the best possible recovery point. The ARP Snapshot is identifiable by its name, for example <code>Anti_ransomware_backup.2022-12-20_1248</code>, and uses the tag <code>anti-ransomware-backup</code>.</p>
 </div>
 <div class="paragraph">
-<p>When the attack probability is moderate, ONTAP generates an EMS notification prompting you to assess the threat. For more information, see <a href="respond-abnormal-task.html">Respond to abnormal activity</a>.</p>
+<p>The threat escalates to moderate after ONTAP runs an analytics report determining if the abnormality matches a ransomware profile. Threats that remain at the low level are logged, but ONTAP does not send an alert about low threats. When the attack probability is moderate, ONTAP generates an EMS notification prompting you to assess the threat. For more information, see <a href="respond-abnormal-task.html">Respond to abnormal activity</a>.</p>
 </div>
 <div class="paragraph">
 <p>You can view information about a threat, regardless of level, in System Manager&#8217;s <strong>Events</strong> section or with the <code>security anti-ransomware volume show -vserver <em>svm_name</em></code> command.</p>
