@@ -21935,11 +21935,11 @@
         Overview
       </a></li><li 
       data-pdf-exists="true" 
-      data-pdf-filename="Rehost CIFS volumes"
+      data-pdf-filename="Rehost SMB volumes"
       data-li-level="4#" 
       class=" "
     ><a class="na-navbar-padding" href="/us-en/ontap/volumes/rehost-smb-task.html">
-        Rehost CIFS volumes
+        Rehost SMB volumes
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Rehost NFS volumes"
@@ -37225,7 +37225,7 @@
 <p class="page-details">
   
     
-    <time datetime="2021-10-14 21:50:12 +0000">10/14/2021</time>
+    <time datetime="2023-06-05 14:16:02 +0000">06/05/2023</time>
     
   
 
@@ -37234,26 +37234,6 @@
 
 <div class="paragraph lead">
 <p>You can rehost volumes in a SnapMirror relationship.</p>
-</div>
-<div class="ulist">
-<div class="title">What you&#8217;ll need</div>
-<ul>
-<li>
-<p>The volume must be online.</p>
-</li>
-<li>
-<p>Volume management operations, such as volume moves or LUN moves, must not be running.</p>
-</li>
-<li>
-<p>Data access to the volume that is being rehosted must be stopped.</p>
-</li>
-<li>
-<p>The ns-switch and name services configuration of the target SVM must be configured to support data access of the rehosting volume.</p>
-</li>
-<li>
-<p>The user ID and group ID of the volume must be either available in the target SVM or changed on the hosting volume.</p>
-</li>
-</ul>
 </div>
 <div class="ulist">
 <div class="title">About this task</div>
@@ -37294,6 +37274,26 @@
 </li>
 </ul>
 </div>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">Before you begin</div>
+<ul>
+<li>
+<p>The volume must be online.</p>
+</li>
+<li>
+<p>Volume management operations, such as volume moves or LUN moves, must not be running.</p>
+</li>
+<li>
+<p>Data access to the volume that is being rehosted must be stopped.</p>
+</li>
+<li>
+<p>The ns-switch and name services configuration of the target SVM must be configured to support data access of the rehosting volume.</p>
+</li>
+<li>
+<p>The user ID and group ID of the volume must be either available in the target SVM or changed on the hosting volume.</p>
 </li>
 </ul>
 </div>

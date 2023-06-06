@@ -21935,11 +21935,11 @@
         Overview
       </a></li><li 
       data-pdf-exists="true" 
-      data-pdf-filename="Rehost CIFS volumes"
+      data-pdf-filename="Rehost SMB volumes"
       data-li-level="4#" 
       class=" "
     ><a class="na-navbar-padding" href="/us-en/ontap/volumes/rehost-smb-task.html">
-        Rehost CIFS volumes
+        Rehost SMB volumes
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Rehost NFS volumes"
@@ -37225,7 +37225,7 @@
 <p class="page-details">
   
     
-    <time datetime="2021-10-19 17:07:40 +0000">10/19/2021</time>
+    <time datetime="2023-06-05 14:13:54 +0000">06/05/2023</time>
     
   
 
@@ -37236,26 +37236,6 @@
 <p>You can rehost volumes that serve data over NFS protocol. After rehosting the NFS volumes, to continue accessing data over NFS protocol, you must associate the volume with the export policy of the hosting SVM and manually configure policies and associated rules.</p>
 </div>
 <div class="ulist">
-<div class="title">What you&#8217;ll need</div>
-<ul>
-<li>
-<p>The volume must be online.</p>
-</li>
-<li>
-<p>Volume management operations, such as volume moves or LUN moves, must not be running.</p>
-</li>
-<li>
-<p>Data access to the volume that is being rehosted must be stopped.</p>
-</li>
-<li>
-<p>The ns-switch and name services configuration of the target SVM must be configured to support data access of the rehosting volume.</p>
-</li>
-<li>
-<p>The user ID and group ID of the volume must be either available in the target SVM or changed on the hosting volume.</p>
-</li>
-</ul>
-</div>
-<div class="ulist">
 <div class="title">About this task</div>
 <ul>
 <li>
@@ -37264,6 +37244,16 @@
 <li>
 <p>If the rehosting operation fails, you might need to reconfigure the volume policies and the associated rules on the source volume.</p>
 </li>
+<li>
+<p>Beginning in ONTAP 9.8, rehosting a volume with NetApp Volume Encryption (NVE) is supported. If you are using an onboard key manager, the encrypted metadata will be modified during the rehost operation. User data is not changed.</p>
+<div class="paragraph">
+<p>If you are using ONTAP 9.8 or early, you must unencrypt the volume before performing the rehost operation.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<ul>
 <li>
 <p>After the rehost operation, the following volume policies, policy rules, and configurations are lost from the source volume, and must be manually reconfigured on the rehosted volume:</p>
 <div class="ulist">
@@ -37297,6 +37287,26 @@
 </li>
 </ul>
 </div>
+<div class="ulist">
+<div class="title">Before you begin</div>
+<ul>
+<li>
+<p>The volume must be online.</p>
+</li>
+<li>
+<p>Volume management operations, such as volume moves or LUN moves, must not be running.</p>
+</li>
+<li>
+<p>Data access to the volume that is being rehosted must be stopped.</p>
+</li>
+<li>
+<p>The ns-switch and name services configuration of the target SVM must be configured to support data access of the rehosting volume.</p>
+</li>
+<li>
+<p>The user ID and group ID of the volume must be either available in the target SVM or changed on the hosting volume.</p>
+</li>
+</ul>
+</div>
 <div class="olist arabic">
 <div class="title">Steps</div>
 <ol class="arabic">
@@ -37318,7 +37328,7 @@
 <li>
 <p>Rehost the volume on the destination SVM:</p>
 <div class="paragraph">
-<p><code>volume rehost -vserver source_svm -volume vol_name -destination-vserver destination_svm</code></p>
+<p><code>volume rehost -vserver <em>source_svm</em> -volume <em>volume_name</em> -destination-vserver <em>destination_svm</em></code></p>
 </div>
 <div class="paragraph">
 <p>The default export policy of the destination SVM is applied to the rehosted volume.</p>

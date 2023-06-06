@@ -21935,11 +21935,11 @@
         Overview
       </a></li><li 
       data-pdf-exists="true" 
-      data-pdf-filename="Rehost CIFS volumes"
+      data-pdf-filename="Rehost SMB volumes"
       data-li-level="4#" 
       class=" "
     ><a class="na-navbar-padding" href="/us-en/ontap/volumes/rehost-smb-task.html">
-        Rehost CIFS volumes
+        Rehost SMB volumes
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Rehost NFS volumes"
@@ -37225,7 +37225,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-04-28 15:55:12 +0000">04/28/2023</time>
+    <time datetime="2023-06-05 15:38:25 +0000">06/05/2023</time>
     
   
 
@@ -37250,9 +37250,12 @@
 <p>SnapLock volumes</p>
 </li>
 <li>
-<p>NetApp Volume Encryption (NVE) volumes</p>
+<p>NetApp Volume Encryption (NVE) volumes (in versions of ONTAP before 9.8)</p>
 <div class="paragraph">
-<p>Volume encryption keys depend on SVM keys. If a volume is moved to another SVM and if multitenant key configuration is enabled on either the source or destination SVM, the volume and the SVM keys will not match.</p>
+<p>In ONTAP releases prior to 9.8, you must unencrypt the volume before rehosting it. Volume encryption keys depend on SVM keys. If a volume is moved to another SVM and if multitenant key configuration is enabled on either the source or destination SVM, the volume and the SVM keys will not match.</p>
+</div>
+<div class="paragraph">
+<p>Beginning in ONTAP 9.8, you can rehost a volume with NVE.</p>
 </div>
 </li>
 <li>
