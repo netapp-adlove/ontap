@@ -37225,7 +37225,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-11 01:50:17 +0000">11/11/2022</time>
+    <time datetime="2023-06-07 23:00:11 +0000">06/07/2023</time>
     
   
 
@@ -37239,7 +37239,7 @@
 <p>Beginning with ONTAP 9.11.1, you can display audit log contents using System Manager.</p>
 </div>
 <div class="paragraph">
-<p>Beginning with 9.12.1, audit logs are tamper-proof; that is, any log file that records an admin action cannot be changed or deleted, even by cluster administrator accounts.</p>
+<p>Beginning with ONTAP 9.12.1, ONTAP provides tampering alerts for audit logs. ONTAP runs a daily background job to check for tampering of audit.log files and sends an EMS alert if it finds any log files that have been changed or tampered with.</p>
 </div>
 <div class="paragraph">
 <p>ONTAP logs management activities that are performed on the cluster, for example, what request was issued, the user who triggered the request, the user&#8217;s access method, and the time of the request.</p>

@@ -37225,7 +37225,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-05-05 15:07:49 +0000">05/05/2023</time>
+    <time datetime="2023-06-07 21:33:32 +0000">06/07/2023</time>
     
   
 
@@ -37548,7 +37548,7 @@ You should be aware that when using FabricPool in a SAN environment with a Windo
 <li>
 <p>Information lifecycle management (ILM) policies that are applied to object store buckets</p>
 <div class="paragraph">
-<p>ILM typically includes various movement and deletion policies. These policies can be disruptive to the data in the cloud tier of FabricPool. Using FabricPool with ILM policies that are configured on object stores can result in data loss.</p>
+<p>FabricPool supports StorageGRID’s Information Lifecycle Management policies only for data replication and erasure coding to protect cloud tier data from failure. However, FabricPool does <em>not</em> support advanced ILM rules such as filtering based on user metadata or tags. ILM typically includes various movement and deletion policies. These policies can be disruptive to the data in the cloud tier of FabricPool. Using FabricPool with ILM policies that are configured on object stores can result in data loss.</p>
 </div>
 </li>
 <li>
