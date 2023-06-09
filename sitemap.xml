@@ -1163,7 +1163,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/nfs-admin/case-sensitivity-file-directory-multiprotocol-concept.html</loc>
       
-      <lastmod>2022-02-04T20:44:16+00:00</lastmod>
+      <lastmod>2023-05-31T21:06:42+00:00</lastmod>
       
     </url>
   
@@ -3109,7 +3109,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-netapp-volume-encryption-concept.html</loc>
       
-      <lastmod>2022-11-29T15:11:08+00:00</lastmod>
+      <lastmod>2023-06-09T13:49:44+00:00</lastmod>
       
     </url>
   
@@ -8947,7 +8947,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/consistency-groups/</loc>
       
-      <lastmod>2023-05-03T21:13:55+00:00</lastmod>
+      <lastmod>2023-06-09T18:05:11+00:00</lastmod>
       
     </url>
   
@@ -8961,7 +8961,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/s3-snapmirror/</loc>
       
-      <lastmod>2022-07-01T12:32:21+00:00</lastmod>
+      <lastmod>2023-06-09T18:47:48+00:00</lastmod>
       
     </url>
   
@@ -9731,7 +9731,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/data-protection/limitations-mirror-relationships-concept.html</loc>
       
-      <lastmod>2023-05-30T22:07:52+00:00</lastmod>
+      <lastmod>2023-06-09T18:05:11+00:00</lastmod>
       
     </url>
   
@@ -13833,7 +13833,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/ontap//search.html</loc>
       
-      <lastmod>2023-06-08T19:48:06+00:00</lastmod>
+      <lastmod>2023-06-09T22:09:16+00:00</lastmod>
       
     </url>
   
@@ -14533,7 +14533,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/smbc/smbc_plan_prerequisites.html</loc>
       
-      <lastmod>2022-11-11T01:50:17+00:00</lastmod>
+      <lastmod>2023-06-09T18:05:54+00:00</lastmod>
       
     </url>
   
@@ -17298,7 +17298,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/mediator/verify-code-signature-task.html</loc>
       
-      <lastmod>2023-05-01T23:03:22+00:00</lastmod>
+      <lastmod>2023-06-02T12:40:24+00:00</lastmod>
       
     </url>
   

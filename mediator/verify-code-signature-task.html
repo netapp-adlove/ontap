@@ -37225,7 +37225,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-05-01 23:03:22 +0000">05/01/2023</time>
+    <time datetime="2023-06-02 12:40:24 +0000">06/02/2023</time>
     
   
 
@@ -37367,7 +37367,7 @@ The following files are included in the download package:
 <p>Connect to the OCSP Manager to send the OCSP request:</p>
 <div class="listingblock">
 <div class="content">
-<pre>openssl ocsp -issuer csc-prod-chain-ONTAP-Mediator.pem -CAfile csc-prod-chain-ONTAP-Mediator.pem -cert csc-prod-ONTAP-Mediator.pem  -url ${ocsp_uri} -resp_text -respout resp.der</pre>
+<pre>openssl ocsp -issuer csc-prod-chain-ONTAP-Mediator.pem -CAfile csc-prod-chain-ONTAP-Mediator.pem -cert csc-prod-ONTAP-Mediator.pem  -url ${ocsp_uri} -resp_text -respout resp.der -verify_other csc-prod-chain-ONTAP-Mediator.pem</pre>
 </div>
 </div>
 </li>
@@ -37466,7 +37466,7 @@ OpenSSL 1.1.1k  FIPS 25 Mar 2021
 + echo http://ocsp.entrust.net
 http://ocsp.entrust.net
 + openssl ocsp -issuer csc-prod-chain-ONTAP-Mediator.pem -CAfile csc-prod-chain-ONTAP-Mediator.pem -cert csc-prod-ONTAP-Mediator.pem -reqout req.der
-+ openssl ocsp -issuer csc-prod-chain-ONTAP-Mediator.pem -CAfile csc-prod-chain-ONTAP-Mediator.pem -cert csc-prod-ONTAP-Mediator.pem -url http://ocsp.entrust.net -resp_text -respout resp.der
++ openssl ocsp -issuer csc-prod-chain-ONTAP-Mediator.pem -CAfile csc-prod-chain-ONTAP-Mediator.pem -cert csc-prod-ONTAP-Mediator.pem -url http://ocsp.entrust.net -resp_text -respout resp.der -verify_other csc-prod-chain-ONTAP-Mediator.pem
 OCSP Response Data:
     OCSP Response Status: successful (0x0)
     Response Type: Basic OCSP Response

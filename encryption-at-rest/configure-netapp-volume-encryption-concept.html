@@ -37225,7 +37225,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-29 15:11:08 +0000">11/29/2022</time>
+    <time datetime="2023-06-09 13:49:44 +0000">06/09/2023</time>
     
   
 
@@ -37243,7 +37243,7 @@
 <h2 id="understanding-nve">Understanding NVE</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Both data, including Snapshot copies, and metadata are encrypted. Access to the data is given by a unique XTS-AES-256 key, one per volume. An external key management server or Onboard Key Manager serves keys to nodes:</p>
+<p>With NVE, both metadata and data (including Snapshot copies) are encrypted. Access to the data is given by a unique XTS-AES-256 key, one per volume. An external key management server or Onboard Key Manager (OKM) serves keys to nodes:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -37268,9 +37268,7 @@
 <img src="/us-en/ontap/images/note.svg" alt="Note">
 </td>
 <td class="content">
-<div class="paragraph">
-<p>If you are using SnapLock, you can enable encryption only on new, empty SnapLock volumes. You cannot enable encryption on an existing SnapLock volume.</p>
-</div>
+If you are using SnapLock, you can enable encryption only on new, empty SnapLock volumes. You cannot enable encryption on an existing SnapLock volume.
 </td>
 </tr>
 </table>
@@ -37285,9 +37283,7 @@
 <img src="/us-en/ontap/images/note.svg" alt="Note">
 </td>
 <td class="content">
-<div class="paragraph">
-<p>AFF A220, AFF A800, FAS2720, FAS2750, and later systems store core dumps on their boot device. When NVE is enabled on these systems, the core dump is also encrypted.</p>
-</div>
+AFF A220, AFF A800, FAS2720, FAS2750, and later systems store core dumps on their boot device. When NVE is enabled on these systems, the core dump is also encrypted.
 </td>
 </tr>
 </table>
@@ -37497,7 +37493,10 @@
 <p>Storage efficiency</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Deduplication, compression, compaction, FlexClone. Clones use the same key as the parent, even after splitting the clone from the parent. You are warned to rekey the split clone.</p>
+<p>Deduplication, compression, compaction, FlexClone.</p>
+</div>
+<div class="paragraph">
+<p>Clones use the same key as the parent, even after splitting the clone from the parent. You should perform a <code>volume move</code> on a split clone, after which the split clone will have a different key.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -37507,7 +37506,7 @@
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>For volume replication, the destination volume must have been enabled for encryption. Encryption can be configured for the source and unconfigured for the destination, and vice versa.</p>
+<p>For volume replication, the source and destination volumes can have different encryption settings. Encryption can be configured for the source and unconfigured for the destination, and vice versa.</p>
 </li>
 <li>
 <p>For SVM replication, the destination volume is automatically encrypted, unless the destination does not contain a node that supports volume encryption, in which case replication succeeds, but the destination volume is not encrypted.</p>

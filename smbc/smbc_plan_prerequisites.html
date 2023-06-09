@@ -37225,7 +37225,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-11 01:50:17 +0000">11/11/2022</time>
+    <time datetime="2023-06-09 18:05:54 +0000">06/09/2023</time>
     
   
 
@@ -37457,10 +37457,20 @@ If your ONTAP storage systems were purchased before June 2019, click <a href="ht
 <div class="sect1">
 <h2 id="large-luns-and-large-volumes">Large LUNs and large volumes</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>Support for large LUNs and large volumes (greater than 100 TB) depends on the version of ONTAP you are using and your platform.</p>
+</div>
+<div class="exampleblock tabbed-block">
+<div class="content">
+<div class="openblock">
+<div class="content">
+
+</div>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p>Large LUNs and large volumes greater than 100TB are supported only on All SAN Arrays</p>
+<p>For ONTAP 9.12.1 P2 and later, SMBC supports Large LUNs and large volumes greater than 100TB on ASA and AFF (including C-Series).</p>
 </li>
 </ul>
 </div>
@@ -37471,10 +37481,53 @@ If your ONTAP storage systems were purchased before June 2019, click <a href="ht
 <img src="/us-en/ontap/images/note.svg" alt="Note">
 </td>
 <td class="content">
-You must ensure that both the primary and secondary cluster are All SAN Arrays, and that they both have ONTAP 9.8 or later installed. If the secondary cluster is running a version earlier than ONTAP 9.8 or if it is not an All SAN Array, the synchronous relationship can go out of sync if the primary volume grows larger than 100 TB.
+For ONTAP Releases 9.12.1P2 and later, You must ensure that both the primary and secondary clusters are either All SAN Arrays or All Flash Array, and that they both have ONTAP 9.12.1 P2 or later installed. If the secondary cluster is running a version earlier than ONTAP 9.12.1P2 or if the array type is not the same as primary cluster, the synchronous relationship can go out of sync if the primary volume grows larger than 100 TB.
 </td>
 </tr>
 </table>
+</div>
+<div class="openblock">
+<div class="content">
+
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>For ONTAP releases between ONTAP 9.8 and 9.12.1 P1 (inclusive), Large LUNs and large volumes greater than 100TB are supported only on All SAN Arrays.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/ontap/images/note.svg" alt="Note">
+</td>
+<td class="content">
+For ONTAP releases between ONTAP 9.8 and 9.12.1 P2, You must ensure that both the primary and secondary clusters are All SAN Arrays, and that they both have ONTAP 9.8 or later installed. If the secondary cluster is running a version earlier than ONTAP 9.8 or if it is not an All SAN Array, the synchronous relationship can go out of sync if the primary volume grows larger than 100 TB.
+</td>
+</tr>
+</table>
+</div>
+<div class="openblock">
+<div class="content">
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="further-information">Further information</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://hwu.netapp.com/" target="_blank" rel="noopener">Hardware Universe</a></p>
+</li>
+</ul>
 </div>
 </div>
 </div>
