@@ -37528,10 +37528,10 @@ Learn more about WORM storage: <a href="https://www.netapp.com/pdf.html?item=/me
 <p>LUNs</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>No</p>
+<p>No. Learn more about <a href="#lun-support">LUN support</a> with SnapLock.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>No</p>
+<p>No. Learn more about <a href="#lun-support">LUN support</a> with SnapLock.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -37701,6 +37701,14 @@ Learn more about WORM storage: <a href="https://www.netapp.com/pdf.html?item=/me
 <p>SnapLock configuration properties are set only on the FlexGroup as a whole. Individual constituents cannot have different configuration properties, such as default retention time and autocommit period.</p>
 </li>
 </ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="lun-support">LUN support</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>LUNs are supported in SnapLock volumes only in scenarios where Snapshot copies created on a non-SnapLock volume are transferred to a SnapLock volume for protection as part of SnapLock vault relationship. LUNs are not supported in read/write SnapLock volumes. Tamperproof Snapshot copies however are supported on both SnapMirror source volumes and destination volumes that contain LUNs.</p>
 </div>
 </div>
 </div>
