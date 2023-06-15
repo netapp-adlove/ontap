@@ -37225,7 +37225,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-28 23:27:11 +0000">11/28/2022</time>
+    <time datetime="2023-06-14 18:30:27 +0000">06/14/2023</time>
     
   
 
@@ -37430,6 +37430,9 @@ If you prefer to have your nodes updated one HA pair at a time instead of a batc
 </div>
 <div class="paragraph">
 <p>When the validation is complete and the update is in progress, the update might be paused because of errors. You can click the error message to view the details, and then perform the remedial actions before resuming the update.</p>
+</div>
+<div class="paragraph">
+<p>For any MetroCluster configuration, except a 2-node MetroCluster system, the ONTAP upgrade process starts simultaneously on the HA pairs at both sites (the local site and the disaster recovery site) after the user initiates and provides confirmation on the command line. For a 2-node MetroCluster system, the update is started first on the disaster recovery site, that is, the site where the upgrade is not initiated. After the update is fully completed on the disaster recovery site, the upgrade begins on the local site.</p>
 </div>
 <div class="paragraph">
 <p>After the update is completed successfully, the node reboots, and you are redirected to the System Manager login page. If the node takes a long time to reboot, you must refresh your browser.</p>

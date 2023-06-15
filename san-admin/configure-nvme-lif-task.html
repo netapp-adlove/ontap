@@ -37225,7 +37225,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-02-17 20:19:19 +0000">02/17/2022</time>
+    <time datetime="2023-06-14 19:31:22 +0000">06/14/2023</time>
     
   
 
@@ -37287,17 +37287,30 @@
 <ol class="arabic">
 <li>
 <p>Create the LIF:</p>
-<div class="paragraph">
-<p><code>network interface create -vserver <em>SVM_name</em> -lif <em>LIF_name</em> -role <em>LIF_role</em> -data-protocol fc-nvme -home-node <em>home_node</em> -home-port</code></p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cli" data-lang="cli">network interface create -vserver &lt;SVM_name&gt; -lif &lt;LIF_name&gt; -role &lt;LIF_role&gt; -data-protocol {fc-nvme|nvme-tcp} -home-node &lt;home_node&gt; -home-port &lt;home_port&gt;</code></pre>
 </div>
-<div class="paragraph">
-<p><code><em>home_port</em></code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/ontap/images/note.svg" alt="Note">
+</td>
+<td class="content">
+NVME/TCP is available beginning with ONTAP 9.10.1 and later.
+</td>
+</tr>
+</table>
 </div>
 </li>
 <li>
 <p>Verify that the LIF was created:</p>
-<div class="paragraph">
-<p><code>network interface show -vserver <em>SVM_name</em></code></p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cli" data-lang="cli">network interface show -vserver &lt;SVM_name&gt;</code></pre>
+</div>
 </div>
 </li>
 </ol>
