@@ -1369,6 +1369,8 @@
 
 
 
+
+
         </li>
       </ul>
     
@@ -17396,6 +17398,13 @@
       class=" "
     ><a class="na-navbar-padding" href="/us-en/ontap/update/index.html">
         Overview
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="How automatic updates are scheduled for installation"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/ontap/update/how-auto-updates-scheduled.html">
+        How automatic updates are scheduled for installation
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Enable automatic updates"
@@ -37225,7 +37234,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-02-10 15:21:20 +0000">02/10/2023</time>
+    <time datetime="2023-06-16 19:38:02 +0000">06/16/2023</time>
     
   
 
@@ -37304,80 +37313,78 @@ Modifying the setting of the <code>storage failover modify-auto-giveback</code> 
 <ol class="arabic">
 <li>
 <p>Delete the previous ONTAP software package:</p>
-<div class="paragraph">
-<p><code>cluster image package delete -version previous_ONTAP_Version</code></p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cli" data-lang="cli">cluster image package delete -version previous_ONTAP_Version</code></pre>
+</div>
 </div>
 </li>
 <li>
 <p>Download the target ONTAP software package:</p>
-<div class="paragraph">
-<p><code>cluster image package get -url location</code></p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cli" data-lang="cli">cluster image package get -url location</code></pre>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/ontap/images/note.svg" alt="Note">
-</td>
-<td class="content">
-If you are upgrading from ONTAP 9.3 to 9.7, download the software package for ONTAP 9.5, and then use the same command to download the software package for 9.7.  If you are upgrading from ONTAP 9.5 to 9.9.1, download the software package for ONTAP 9.7, and then use the same command to download the software package for 9.9.1.
-</td>
-</tr>
-</table>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>cluster1::&gt; cluster image package get -url http://www.example.com/software/9.7/image.tgz
+<pre>cluster1::&gt; cluster image package get -url http://www.example.com/software/9.13.1/image.tgz
 
 Package download completed.
 Package processing completed.</pre>
 </div>
 </div>
+<div class="paragraph">
+<p>If you are performing a <a href="https://docs.netapp.com/us-en/ontap/upgrade/concept_upgrade_paths.html#types-of-upgrade-paths">direct multi-hop upgrade</a>, download the software package for the intermediate version of ONTAP needed for your upgrade, and then use the same command to download the software package for your target ONTAP version.  For example, if you are upgrading from 9.8 to 9.13.1, you should download the software package for ONTAP 9.12.1, and then use the same command to download the software package for 9.13.1.</p>
+</div>
 </li>
 <li>
 <p>Verify that the software package is available in the cluster package repository:</p>
-<div class="paragraph">
-<p><code>cluster image package show-repository</code></p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cli" data-lang="cli">cluster image package show-repository</code></pre>
+</div>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre>cluster1::&gt; cluster image package show-repository
 Package Version  Package Build Time
 ---------------- ------------------
-9.7              MM/DD/YYYY 10:32:15</pre>
+9.13.1              MM/DD/YYYY 10:32:15</pre>
 </div>
 </div>
 </li>
 <li>
 <p>Verify that the cluster is ready to be upgraded nondisruptively:</p>
-<div class="paragraph">
-<p><code>cluster image validate -version package_version_number</code></p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cli" data-lang="cli">cluster image validate -version package_version_number</code></pre>
+</div>
 </div>
 <div class="ulist">
 <ul>
 <li>
+<p>If you are performing a <a href="https://docs.netapp.com/us-en/ontap/upgrade/concept_upgrade_paths.html#types-of-upgrade-paths">direct multi-hop upgrade</a>,use the target ONATP package for verification.  You do not need to validate the intermediate upgrade image separately.  For example, if you are upgrading from 9.8 to 9.13.1, you should use the 9.13.1 package for verification. You do not need to validate the 9.12.1 package separately.</p>
+</li>
+<li>
 <p>If you are upgrading a two-node or four-node MetroCluster configuration, you must run this command on both clusters before proceeding.</p>
-</li>
-<li>
-<p>If you are upgrading from ONTAP 9.3 to 9.7, use the 9.7 package for verification. You do not need to validate the 9.5 package separately.</p>
-</li>
-<li>
-<p>If you are upgrading from ONTAP 9.5 to 9.9.1, use the 9.9.1 package for verification. You do not need to validate the 9.7 package separately.</p>
-</li>
-</ul>
-</div>
 <div class="listingblock">
 <div class="content">
-<pre>cluster1::&gt; cluster image validate -version 9.7
+<pre>cluster1::&gt; cluster image validate -version 9.13.1
 
 WARNING: There are additional manual upgrade validation checks that must be performed after these automated validation checks have completed...</pre>
 </div>
 </div>
 </li>
+</ul>
+</div>
+</li>
 <li>
 <p>Monitor the progress of the validation:</p>
-<div class="paragraph">
-<p><code>cluster image show-update-progress</code></p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cli" data-lang="cli">cluster image show-update-progress</code></pre>
+</div>
 </div>
 </li>
 <li>
@@ -37385,8 +37392,10 @@ WARNING: There are additional manual upgrade validation checks that must be perf
 </li>
 <li>
 <p>Generate a software upgrade estimate:</p>
-<div class="paragraph">
-<p><code>cluster image update -version package_version_number -estimate-only</code></p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cli" data-lang="cli">cluster image update -version package_version_number -estimate-only</code></pre>
+</div>
 </div>
 <div class="paragraph">
 <p>The software upgrade estimate displays details about each component to be updated, and the estimated duration of the upgrade.</p>
@@ -37394,28 +37403,27 @@ WARNING: There are additional manual upgrade validation checks that must be perf
 </li>
 <li>
 <p>Perform the software upgrade:</p>
-<div class="paragraph">
-<p><code>cluster image update -version package_version_number</code></p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cli" data-lang="cli">cluster image update -version package_version_number</code></pre>
+</div>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>If you are upgrading from ONTAP 9.3 to 9.7, use the 9.7 package_version_number in the above command.</p>
-</li>
-<li>
-<p>If you are upgrading from ONTAP 9.5 to 9.9.1, use the 9.9.1 package_version_number in the above command.</p>
-</li>
-<li>
-<p>For any MetroCluster configuration, except a 2-node MetroCluster system, the ONTAP upgrade process starts simultaneously on the HA pairs at both sites (the local site and the disaster recovery site) after the user initiates and provides confirmation on the command line. For a 2-node MetroCluster system, the update is started first on the disaster recovery site, that is, the site where the upgrade is not initiated. After the update is fully completed on the disaster recovery site, the upgrade begins on the local site.</p>
+<p>If you are performing a <a href="https://docs.netapp.com/us-en/ontap/upgrade/concept_upgrade_paths.html#types-of-upgrade-paths">direct multi-hop upgrade</a> use the target ONTAP version for the package_version_number. For example, if you are upgrading from ONTAP 9.8 to 9.13.1, use 9.13.1 as the package_version_number.</p>
 </li>
 <li>
 <p>If the cluster consists of 2 to 6 nodes, a rolling upgrade is performed. If the cluster consists of 8 or more nodes, a batch upgrade is performed by default. If desired, you can use the <code>-force-rolling</code> parameter to specify a rolling upgrade instead.</p>
 </li>
 <li>
 <p>After completing each takeover and giveback, the upgrade waits for 8 minutes to enable client applications to recover from the pause in I/O that occurs during the takeover and giveback. If your environment requires more or less time for client stabilization, you can use the <code>-stabilize-minutes</code> parameter to specify a different amount of stabilization time.</p>
+</li>
+<li>
+<p>For any MetroCluster configuration, except a 2-node MetroCluster system, the ONTAP upgrade process starts simultaneously on the HA pairs at both sites (the local site and the disaster recovery site) after the user initiates and provides confirmation on the command line. For a 2-node MetroCluster system, the update is started first on the disaster recovery site, that is, the site where the upgrade is not initiated. After the update is fully completed on the disaster recovery site, the upgrade begins on the local site.</p>
 <div class="listingblock">
 <div class="content">
-<pre>cluster1::&gt; cluster image update -version 9.7
+<pre>cluster1::&gt; cluster image update -version 9.13.1
 
 Starting validation for this update. Please wait..
 
@@ -37440,24 +37448,22 @@ cluster-1::&gt;</pre>
 </li>
 <li>
 <p>Display the cluster update progress:</p>
-<div class="paragraph">
-<p><code>cluster image show-update-progress</code></p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cli" data-lang="cli">cluster image show-update-progress</code></pre>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/ontap/images/note.svg" alt="Note">
-</td>
-<td class="content">
-If you are upgrading a 4-node or 8-node MetroCluster configuration, the <code>cluster image show-update-progress</code> command only displays the progress for the node on which you run the command. You must run the command on each node to see individual node progress.
-</td>
-</tr>
-</table>
+</div>
+<div class="paragraph">
+<p>If you are upgrading a 4-node or 8-node MetroCluster configuration, the <code>cluster image show-update-progress</code> command only displays the progress for the node on which you run the command. You must run the command on each node to see individual node progress.</p>
 </div>
 </li>
 <li>
 <p>Verify that the upgrade was completed successfully on each node.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cli" data-lang="cli">cluster image show-update-progress</code></pre>
+</div>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre>cluster1::&gt; cluster image show-update-progress
@@ -37470,16 +37476,16 @@ Data ONTAP updates   completed                01:31:00        01:39:00
 Post-update checks   completed                00:10:00        00:02:00
 3 entries were displayed.
 
-Updated nodes: node0, node1.
-
-cluster1::&gt;</pre>
+Updated nodes: node0, node1.</pre>
 </div>
 </div>
 </li>
 <li>
 <p>Trigger an AutoSupport notification:</p>
-<div class="paragraph">
-<p><code>autosupport invoke -node * -type all -message "Finishing_NDU"</code></p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cli" data-lang="cli">autosupport invoke -node * -type all -message "Finishing_NDU"</code></pre>
+</div>
 </div>
 <div class="paragraph">
 <p>If your cluster is not configured to send AutoSupport messages, a copy of the notification is saved locally.</p>
@@ -37494,7 +37500,7 @@ cluster1::&gt;</pre>
 <img src="/us-en/ontap/images/note.svg" alt="Note">
 </td>
 <td class="content">
-This procedure is performed only for MetroCluster FC configurations.  If you are using a MetroCluster IP configuration, skip this procedure.
+This step is performed only for MetroCluster FC configurations.  If you are using a MetroCluster IP configuration, you do not need to perform this step.
 </td>
 </tr>
 </table>
@@ -37503,8 +37509,10 @@ This procedure is performed only for MetroCluster FC configurations.  If you are
 <ol class="loweralpha" type="a">
 <li>
 <p>Check whether automatic unplanned switchover is enabled:</p>
-<div class="paragraph">
-<p><code>metrocluster show</code></p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cli" data-lang="cli">metrocluster show</code></pre>
+</div>
 </div>
 <div class="paragraph">
 <p>If automatic unplanned switchover is enabled, the following statement appears in the command output:</p>
@@ -37517,12 +37525,19 @@ This procedure is performed only for MetroCluster FC configurations.  If you are
 </li>
 <li>
 <p>If the statement does not appear in the output, enable automatic unplanned switchover:</p>
-<div class="paragraph">
-<p><code>metrocluster modify -auto-switchover-failure-domain auso-on-cluster-disaster</code></p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cli" data-lang="cli">metrocluster modify -auto-switchover-failure-domain auso-on-cluster-disaster</code></pre>
+</div>
 </div>
 </li>
 <li>
-<p>Verify that automatic unplanned switchover has been enabled by repeating Step 1.</p>
+<p>Verify that automatic unplanned switchover has been enabled:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cli" data-lang="cli">metrocluster show</code></pre>
+</div>
+</div>
 </li>
 </ol>
 </div>
@@ -37546,8 +37561,10 @@ This procedure is performed only for MetroCluster FC configurations.  If you are
 <ol class="arabic">
 <li>
 <p>View the upgrade error:</p>
-<div class="paragraph">
-<p><code>cluster image show-update-progress</code></p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cli" data-lang="cli">cluster image show-update-progress</code></pre>
+</div>
 </div>
 </li>
 <li>
@@ -37555,18 +37572,24 @@ This procedure is performed only for MetroCluster FC configurations.  If you are
 </li>
 <li>
 <p>Resume the update:</p>
-<div class="paragraph">
-<p><code>cluster image resume-update</code></p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cli" data-lang="cli">cluster image resume-update</code></pre>
+</div>
 </div>
 </li>
 </ol>
 </div>
-<div class="paragraph">
+<div class="ulist">
 <div class="title">Related information</div>
+<ul>
+<li>
 <p><a href="https://aiq.netapp.com/">Launch Active IQ</a></p>
-</div>
-<div class="paragraph">
+</li>
+<li>
 <p><a href="https://docs.netapp.com/us-en/active-iq/">Active IQ documentation</a></p>
+</li>
+</ul>
 </div>
 </div>
 </div>
