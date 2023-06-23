@@ -1611,6 +1611,8 @@
 
 
 
+
+
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
@@ -17736,6 +17738,13 @@
         Enable new features
       </a></li><li 
       data-pdf-exists="true" 
+      data-pdf-filename="Download a cluster configuration"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/ontap/task_admin_download_cluster_config.html">
+        Download a cluster configuration
+      </a></li><li 
+      data-pdf-exists="true" 
       data-pdf-filename="View and submit support cases"
       data-li-level="3#" 
       class=" "
@@ -21710,11 +21719,11 @@
         Change volume efficiency mode
       </a></li><li 
       data-pdf-exists="true" 
-      data-pdf-filename="View temperature sensitive storage efficiency physical footprint savings"
+      data-pdf-filename="View volume footprint savings with or without temperature-sensitive storage efficiency"
       data-li-level="4#" 
       class=" "
     ><a class="na-navbar-padding" href="/us-en/ontap/volumes/view-footprint-savings-task.html">
-        View temperature sensitive storage efficiency physical footprint savings
+        View volume footprint savings with or without temperature-sensitive storage efficiency
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Enable data compression on a volume"
@@ -37234,7 +37243,7 @@
 <p class="page-details">
   
     
-    <time datetime="2021-12-09 22:31:46 +0000">12/09/2021</time>
+    <time datetime="2023-06-16 18:48:24 +0000">06/16/2023</time>
     
   
 
@@ -37259,7 +37268,7 @@
 <p>Beginning with ONTAP 9.5, the scope of the <code>system node autosupport modify</code> command is cluster-wide. The AutoSupport configuration is modified on all nodes in the cluster, even when the <code>-node</code> option is specified. The option is ignored, but it has been retained for CLI backward compatibility.</p>
 </div>
 <div class="paragraph">
-<p>In ONTAP 9.4 and earlier releases, the scope of the "system node autosupport modify" command is specific to the node. The AutoSupport configuration should be modified on each node in your cluster.</p>
+<p>In ONTAP 9.4 and earlier releases, the scope of the <code>system node autosupport modify</code> command is specific to the node. The AutoSupport configuration should be modified on each node in your cluster.</p>
 </div>
 </td>
 </tr>
@@ -37267,6 +37276,9 @@
 </div>
 <div class="paragraph">
 <p>By default, AutoSupport is enabled on each node to send messages to technical support by using the HTTPS transport protocol.</p>
+</div>
+<div class="paragraph">
+<p>You must use HTTPS with TLSv1.2 or secure SMTP for delivery of AutoSupport messages to provide the best security and to support all of the latest AutoSupport features.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Steps</div>
@@ -37317,22 +37329,6 @@
 <li>
 <p>If you use a proxy, set <code>-proxy-url</code> to the URL of your proxy.
 This configuration supports communication with AutoSupport OnDemand and uploads of large files.</p>
-</li>
-</ol>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Use HTTP that is preferred over SMTP</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Set <code>-transport</code> to <code>http</code>.</p>
-</li>
-<li>
-<p>If you use a proxy, set <code>-proxy-url</code> to the URL of your proxy.
-This configuration supports uploads of large files, but not AutoSupport OnDemand.</p>
 </li>
 </ol>
 </div></div></td>
@@ -37423,7 +37419,7 @@ This configuration supports uploads of large files, but not AutoSupport OnDemand
 <p>Configure DNS.</p>
 </li>
 <li>
-<p>(Optional) Add command options if you want to change specific settings:</p>
+<p>Optionally, add command options if you want to change specific settings:</p>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
@@ -37439,7 +37435,7 @@ This configuration supports uploads of large files, but not AutoSupport OnDemand
 <p>Hide private data by removing, masking, or encoding sensitive data in the messages</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Set <code>-remove-private-data</code> to <code>true</code>.    If you change from <code>false</code> to <code>true</code>, all AutoSupport history and all associated files are deleted.</p>
+<p>Set <code>-remove-private-data</code> to <code>true</code>. If you change from <code>false</code> to <code>true</code>, all AutoSupport history and all associated files are deleted.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -37484,7 +37480,7 @@ This configuration supports uploads of large files, but not AutoSupport OnDemand
 </div>
 </li>
 <li>
-<p>(Optional) Confirm that the AutoSupport message is being sent to your internal support organization or to your support partner by checking the email of any address that you configured for the <code>-to</code>, <code>-noteto</code>, or <code>-partner-address</code>  parameters of the <code>system node autosupport modify</code> command.</p>
+<p>Optionally, onfirm that the AutoSupport message is being sent to your internal support organization or to your support partner by checking the email of any address that you configured for the <code>-to</code>, <code>-noteto</code>, or <code>-partner-address</code>  parameters of the <code>system node autosupport modify</code> command.</p>
 </li>
 </ol>
 </div>
