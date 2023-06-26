@@ -1155,8 +1155,6 @@
 
 
 
-
-
         </li>
       </ul>
     
@@ -12101,6 +12099,8 @@
 
 
 
+
+
         </li>
       </ul>
     
@@ -17116,13 +17116,6 @@
     ><a class="na-navbar-padding" href="/us-en/ontap/upgrade/task_preparing_snapmirror_relationships_for_a_nondisruptive_upgrade_or_downgrade.html">
         Prepare SnapMirror relationships
       </a></li></ul></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="SnapLock"
-      data-li-level="5#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/us-en/ontap/upgrade/concept_upgrade_considerations_for_snaplock.html">
-        SnapLock
-      </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Load-sharing mirrors in ONTAP 8.3"
       data-li-level="5#" 
@@ -31784,6 +31777,13 @@
       class=" "
     ><a class="na-navbar-padding" href="/us-en/ontap/antivirus/architecture-concept.html">
         Antivirus architecture
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Vscan partner solutions"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/ontap/antivirus/vscan-partner-solutions.html">
+        Vscan partner solutions
       </a></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Vscan server installation and configuration"
@@ -32949,11 +32949,11 @@
         Enable external key management in ONTAP 9.5 and earlier
       </a></li><li 
       data-pdf-exists="true" 
-      data-pdf-filename="Manage keys with Azure or Google key managements services"
+      data-pdf-filename="Manage keys with a cloud provider"
       data-li-level="6#" 
       class=" "
     ><a class="na-navbar-padding" href="/us-en/ontap/encryption-at-rest/manage-keys-azure-google-task.html">
-        Manage keys with Azure or Google key managements services
+        Manage keys with a cloud provider
       </a></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Enable onboard key management in ONTAP 9.6 and later (NVE)"
@@ -37243,7 +37243,7 @@
 <p class="page-details">
   
     
-    <time datetime="2021-10-14 21:50:12 +0000">10/14/2021</time>
+    <time datetime="2023-06-23 17:56:46 +0000">06/23/2023</time>
     
   
 
@@ -37251,10 +37251,13 @@
 </p>
 
 <div class="paragraph lead">
-<p>FPolicy is a file access notification framework that is used to monitor and manage file access events on storage virtual machines (SVMs).</p>
+<p>FPolicy is a file access notification framework that is used to monitor and manage file access events on storage virtual machines (SVMs) through partner solutions. Partner solutions help you address various use cases such as data governance and compliance, ransomware protection, and data mobility.</p>
 </div>
 <div class="paragraph">
-<p>There are two parts to an FPolicy solution. The ONTAP FPolicy framework manages activities on the cluster and sends notifications to external FPolicy servers. External FPolicy servers process notifications sent by ONTAP FPolicy.</p>
+<p>Partner solutions include both Netapp supported 3rd party Solutions and NetApp products Workload Security and Cloud Data Sense.</p>
+</div>
+<div class="paragraph">
+<p>There are two parts to an FPolicy solution. The ONTAP FPolicy framework manages activities on the cluster and sends notifications to Partner Application (aka External FPolicy Servers). External FPolicy servers process notifications sent by ONTAP FPolicy to fulfill customer use cases.</p>
 </div>
 <div class="paragraph">
 <p>The ONTAP framework creates and maintains the FPolicy configuration, monitors file events, and sends notifications to external FPolicy servers. ONTAP FPolicy provides the infrastructure that allows communication between external FPolicy servers and storage virtual machine (SVM) nodes.</p>

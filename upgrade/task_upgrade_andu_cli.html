@@ -1155,8 +1155,6 @@
 
 
 
-
-
         </li>
       </ul>
     
@@ -12103,6 +12101,8 @@
 
 
 
+
+
         </li>
       </ul>
     
@@ -17116,13 +17116,6 @@
     ><a class="na-navbar-padding" href="/us-en/ontap/upgrade/task_preparing_snapmirror_relationships_for_a_nondisruptive_upgrade_or_downgrade.html">
         Prepare SnapMirror relationships
       </a></li></ul></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="SnapLock"
-      data-li-level="5#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/us-en/ontap/upgrade/concept_upgrade_considerations_for_snaplock.html">
-        SnapLock
-      </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Load-sharing mirrors in ONTAP 8.3"
       data-li-level="5#" 
@@ -31784,6 +31777,13 @@
       class=" "
     ><a class="na-navbar-padding" href="/us-en/ontap/antivirus/architecture-concept.html">
         Antivirus architecture
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Vscan partner solutions"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/ontap/antivirus/vscan-partner-solutions.html">
+        Vscan partner solutions
       </a></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Vscan server installation and configuration"
@@ -32949,11 +32949,11 @@
         Enable external key management in ONTAP 9.5 and earlier
       </a></li><li 
       data-pdf-exists="true" 
-      data-pdf-filename="Manage keys with Azure or Google key managements services"
+      data-pdf-filename="Manage keys with a cloud provider"
       data-li-level="6#" 
       class=" "
     ><a class="na-navbar-padding" href="/us-en/ontap/encryption-at-rest/manage-keys-azure-google-task.html">
-        Manage keys with Azure or Google key managements services
+        Manage keys with a cloud provider
       </a></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Enable onboard key management in ONTAP 9.6 and later (NVE)"
@@ -37243,7 +37243,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-06-16 19:38:02 +0000">06/16/2023</time>
+    <time datetime="2023-06-20 19:04:13 +0000">06/20/2023</time>
     
   
 
@@ -37420,7 +37420,7 @@ WARNING: There are additional manual upgrade validation checks that must be perf
 <div class="ulist">
 <ul>
 <li>
-<p>If you are performing a <a href="https://docs.netapp.com/us-en/ontap/upgrade/concept_upgrade_paths.html#types-of-upgrade-paths">direct multi-hop upgrade</a> use the target ONTAP version for the package_version_number. For example, if you are upgrading from ONTAP 9.8 to 9.13.1, use 9.13.1 as the package_version_number.</p>
+<p>If you are performing a <a href="https://docs.netapp.com/us-en/ontap/upgrade/concept_upgrade_paths.html#types-of-upgrade-paths">direct multi-hop upgrade</a>, use the target ONTAP version for the package_version_number. For example, if you are upgrading from ONTAP 9.8 to 9.13.1, use 9.13.1 as the package_version_number.</p>
 </li>
 <li>
 <p>If the cluster consists of 2 to 6 nodes, a rolling upgrade is performed. If the cluster consists of 8 or more nodes, a batch upgrade is performed by default. If desired, you can use the <code>-force-rolling</code> parameter to specify a rolling upgrade instead.</p>

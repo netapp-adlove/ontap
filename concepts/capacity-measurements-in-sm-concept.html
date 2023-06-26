@@ -1157,8 +1157,6 @@
 
 
 
-
-
         </li>
       </ul>
     
@@ -12105,6 +12103,8 @@
 
 
 
+
+
         </li>
       </ul>
     
@@ -17118,13 +17118,6 @@
     ><a class="na-navbar-padding" href="/us-en/ontap/upgrade/task_preparing_snapmirror_relationships_for_a_nondisruptive_upgrade_or_downgrade.html">
         Prepare SnapMirror relationships
       </a></li></ul></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="SnapLock"
-      data-li-level="5#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/us-en/ontap/upgrade/concept_upgrade_considerations_for_snaplock.html">
-        SnapLock
-      </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Load-sharing mirrors in ONTAP 8.3"
       data-li-level="5#" 
@@ -31786,6 +31779,13 @@
       class=" "
     ><a class="na-navbar-padding" href="/us-en/ontap/antivirus/architecture-concept.html">
         Antivirus architecture
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Vscan partner solutions"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/ontap/antivirus/vscan-partner-solutions.html">
+        Vscan partner solutions
       </a></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Vscan server installation and configuration"
@@ -32951,11 +32951,11 @@
         Enable external key management in ONTAP 9.5 and earlier
       </a></li><li 
       data-pdf-exists="true" 
-      data-pdf-filename="Manage keys with Azure or Google key managements services"
+      data-pdf-filename="Manage keys with a cloud provider"
       data-li-level="6#" 
       class=" "
     ><a class="na-navbar-padding" href="/us-en/ontap/encryption-at-rest/manage-keys-azure-google-task.html">
-        Manage keys with Azure or Google key managements services
+        Manage keys with a cloud provider
       </a></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Enable onboard key management in ONTAP 9.6 and later (NVE)"
@@ -37245,7 +37245,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-04-28 19:12:33 +0000">04/28/2023</time>
+    <time datetime="2023-06-22 14:09:45 +0000">06/22/2023</time>
     
   
 
@@ -37304,14 +37304,14 @@ In System Manager, capacity representations do not account for root storage tier
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>9.5 and 9.6<br>
-(Classic view)</p>
+<p>9.9.1 and later</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Used</p>
+<p>Logical Used</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Physical space used</p>
+<p>Logical space used<br>
+if storage efficiency settings have been enabled)</p>
 </div></div></td>
 </tr>
 <tr>
@@ -37328,14 +37328,14 @@ In System Manager, capacity representations do not account for root storage tier
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>9.9.1 and later</p>
+<p>9.5 and 9.6<br>
+(Classic view)</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Logical Used</p>
+<p>Used</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Logical space used<br>
-(if storage efficiency settings have been enabled)</p>
+<p>Physical space used</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -37361,6 +37361,16 @@ In System Manager, capacity representations do not account for root storage tier
 </li>
 <li>
 <p><strong>Client data</strong>:  The amount of space used by client data (either physical or logical).</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Beginning with ONTAP 9.13.1, the capacity used by client data is referred to as <strong>Logical Used</strong>, and the capacity used by Snapshot copies is displayed separately.</p>
+</li>
+<li>
+<p>In ONTAP 9.12.1 and earlier, the capacity used by client data added to the capacity used by Snapshot copies is referred to as <strong>Logical Used</strong>.</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p><strong>Committed</strong>: The amount of committed capacity for a local tier.</p>
@@ -37370,16 +37380,46 @@ In System Manager, capacity representations do not account for root storage tier
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Overall</strong>: The ratio of all logical used space compared to physical used space.</p>
+<p>Beginning with ONTAP 9.13.1, data reduction ratios are displayed as follows:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The data reduction value displayed on the <strong>Capacity</strong> panel is the ratio of logical used space compared to physical used space without considering the significant reductions achieved when using storage efficiency features, such as Snapshot copies.</p>
 </li>
 <li>
-<p><strong>Without Snapshot copies and clones</strong>: The ratio of logical space used only by client data compared to physical space used only by client data.</p>
+<p>When you display the details panel, you see both the ratio that was displayed on the overview panel and the overall ratio of all logical used space compared to physical used space.  Referred to as <strong>With Snapshot copies</strong>, this value includes the benefits derived from using Snapshot copies and other storage efficiency features.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Logical used</strong>: The amount of used space without considering the space saved by storage efficiency features.</p>
+<p>In ONTAP 9.12.1 and earlier, data reduction ratios are displayed as follows:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The data reduction value displayed on the <strong>Capacity</strong> panel is the overall ratio of all logical used space compared to physical used space, and it includes the benefits derived from using Snapshot copies and other storage efficiency features.</p>
+</li>
+<li>
+<p>When you display the details panel, you see both the <strong>Overall</strong> ratio that was displayed on the overview panel and ratio of logical used space used only by client data compared to physical used space used only by client data, referred to as <strong>Without Snapshot copies and clones</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Logical used</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Beginning with ONTAP 9.13.1, the capacity used by client data is referred to as <strong>Logical Used</strong>, and the capacity used by Snapshot copies is displayed separately.</p>
+</li>
+<li>
+<p>In ONTAP 9.12.1 and earlier, the capacity used by client data added to capacity used by Snapshot copies is referred to as <strong>Logical Used</strong>.</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p><strong>Logical used %</strong>: The percentage of the current logical used capacity compared to the provisioned size, excluding Snapshot reserves.  This value can be greater than 100%, because it includes efficiency savings in the volume.</p>
@@ -37446,7 +37486,17 @@ In System Manager, capacity representations do not account for root storage tier
 <h2 id="cap-measurement-units">Capacity measurement units</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>System Manager calculates storage capacity based on binary units of 1024 (2<sup>10</sup>) bytes. In ONTAP 9.10.0 and earlier, these units were displayed in System Manager as KB, MB, GB, TB, and PB. Beginning with ONTAP 9.10.1, they are displayed in System Manager as KiB, MiB, GiB, TiB, and PiB.</p>
+<p>System Manager calculates storage capacity based on binary units of 1024 (2<sup>10</sup>) bytes.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Beginning with ONTAP 9.10.1, storage capacity units are displayed in System Manager as KiB, MiB, GiB, TiB, and PiB.</p>
+</li>
+<li>
+<p>In ONTAP 9.10.0 and earlier, these units are displayed in System Manager as KB, MB, GB, TB, and PB.</p>
+</li>
+</ul>
 </div>
 <div class="admonitionblock note">
 <table>
