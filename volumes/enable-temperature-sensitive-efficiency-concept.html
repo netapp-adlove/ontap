@@ -4441,6 +4441,10 @@
 
 
 
+
+
+
+
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
@@ -21691,11 +21695,25 @@
         Temperature-sensitive storage efficiency overview
       </a></li><li 
       data-pdf-exists="true" 
+      data-pdf-filename="Storage efficiency behavior with volume move and SnapMirror"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/ontap/volumes/storage-efficiency-behavior-snapmirror-reference.html">
+        Storage efficiency behavior with volume move and SnapMirror
+      </a></li><li 
+      data-pdf-exists="true" 
       data-pdf-filename="Set storage efficiency modes"
       data-li-level="4#" 
       class=" "
     ><a class="na-navbar-padding" href="/us-en/ontap/volumes/set-efficiency-mode-task.html">
         Set storage efficiency modes
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Change volume inactive data compression threshold"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/ontap/volumes/change-inactive-data-threshold-task.html">
+        Change volume inactive data compression threshold
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Check volume efficiency mode"
@@ -37243,7 +37261,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-06-07 15:04:01 +0000">06/07/2023</time>
+    <time datetime="2023-06-26 21:00:11 +0000">06/26/2023</time>
     
   
 
@@ -37256,15 +37274,49 @@
 <p>ONTAP provides temperature-sensitive storage efficiency benefits by assessing how often your volume’s data is accessed and mapping that frequency to the degree of compression applied to that data. For cold data that is accessed infrequently, larger data blocks are compressed, and for hot data, which is accessed frequently and is overwritten more often, smaller data blocks are compressed, making the process more efficient.</p>
 </div>
 <div class="paragraph">
-<p>Temperature-sensitive storage efficiency is introduced in ONTAP 9.8 and enabled automatically on newly created thinly provisioned AFF volumes. You can enable temperature-sensitive storage efficiency on existing AFF volumes and on thinly provisioned non-AFF DP volumes.</p>
+<p>Temperature-sensitive storage efficiency (TSSE) is introduced in ONTAP 9.8 and is enabled automatically on newly created thinly provisioned AFF volumes. You can enable temperature-sensitive storage efficiency on existing AFF volumes and on thinly provisioned non-AFF DP volumes.</p>
 </div>
 <div class="paragraph">
-<p>Beginning with ONTAP 9.10.1, two volume-level storage efficiency modes are introduced for AFF systems only, <em>default</em> and <em>efficient</em>. The two modes provide a choice between file compression (default), which is the default mode when new AFF volumes are created, or temperature-sensitive storage efficiency (efficient), which enables temperature-sensitive storage efficiency. With ONTAP 9.10.1, temperature-sensitive storage efficiency must be explicitly set to enable auto adaptive compression. However, other storage efficiency features like data-compaction, auto dedupe schedule, inline deduplication, cross volume inline deduplication, and cross volume background deduplication are enabled by default on AFF platforms for both default and efficient modes.</p>
+<div class="title">Introduction of "default" and "efficient" modes</div>
+<p>Beginning with ONTAP 9.10.1, two volume-level storage efficiency modes are introduced for AFF systems only, <em>default</em> and <em>efficient</em>. The two modes provide a choice between file compression (default), which is the default mode when creating new AFF volumes, or temperature-sensitive storage efficiency (efficient), which enables temperature-sensitive storage efficiency. With ONTAP 9.10.1, <a href="https://docs.netapp.com/us-en/ontap/volumes/set-efficiency-mode-task.html">temperature-sensitive storage efficiency must be explicitly set</a> to enable auto adaptive compression. However, other storage efficiency features like data-compaction, auto dedupe schedule, inline deduplication, cross volume inline deduplication, and cross volume background deduplication are enabled by default on AFF platforms for both default and efficient modes.</p>
 </div>
 <div class="paragraph">
 <p>Both storage efficiency modes (default and efficient) are supported on FabricPool-enabled aggregates and with all tiering policy types.</p>
 </div>
 <div class="paragraph">
+<div class="title">Temperature-sensitive storage efficiency enabled on C-Series platforms</div>
+<p>Temperature-sensitive storage efficiency is enabled by default on AFF C-Series platforms and when migrating volumes from a non-TSSE platform to a TSSE-enabled C-Series platform using volume move or SnapMirror with the following releases installed on the destination:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>ONTAP 9.12.1P4 and later</p>
+</li>
+<li>
+<p>ONTAP 9.13.1 and later</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For more information, see <a href="https://docs.netapp.com/us-en/volumes/storage-efficiency-behavior-snapmirror-reference.html">Storage efficiency behavior with volume move and SnapMirror operations</a>.</p>
+</div>
+<div class="paragraph">
+<p>For existing volumes, temperature-sensitive storage efficiency is not enabled automatically, however, you can <a href="https://docs.netapp.com/us-en/ontap/volumes/change-efficiency-mode-task.html">modify the storage efficiency mode</a> manually to change to efficient mode.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/ontap/images/note.svg" alt="Note">
+</td>
+<td class="content">
+Once you change the storage efficiency mode to efficient you cannot change it back.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<div class="title">Improved storage efficiency with sequential packing of contiguous physical blocks</div>
 <p>Beginning with ONTAP 9.13.1, temperature-sensitive storage efficiency adds sequential packing of contiguous physical blocks to further improve storage efficiency. Volumes that have temperature-sensitive storage efficiency enabled automatically have sequential packing enabled when you upgrade systems to ONTAP 9.13.1. After sequential packing is enabled, you must <a href="https://docs.netapp.com/us-en/ontap/volumes/run-efficiency-operations-manual-task.html">manually repack existing data</a>.</p>
 </div>
 </div>

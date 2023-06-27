@@ -4420,6 +4420,10 @@
 
 
 
+
+
+
+
     <ul class="subfolders" id="pdf-remove" style="display:none;"><li class="active"></li></ul>
   
 
@@ -21691,11 +21695,25 @@
         Temperature-sensitive storage efficiency overview
       </a></li><li 
       data-pdf-exists="true" 
+      data-pdf-filename="Storage efficiency behavior with volume move and SnapMirror"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/ontap/volumes/storage-efficiency-behavior-snapmirror-reference.html">
+        Storage efficiency behavior with volume move and SnapMirror
+      </a></li><li 
+      data-pdf-exists="true" 
       data-pdf-filename="Set storage efficiency modes"
       data-li-level="4#" 
       class=" "
     ><a class="na-navbar-padding" href="/us-en/ontap/volumes/set-efficiency-mode-task.html">
         Set storage efficiency modes
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Change volume inactive data compression threshold"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/ontap/volumes/change-inactive-data-threshold-task.html">
+        Change volume inactive data compression threshold
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Check volume efficiency mode"
@@ -37243,7 +37261,7 @@
 <p class="page-details">
   
     
-    <time datetime="2021-11-02 19:26:15 +0000">11/02/2021</time>
+    <time datetime="2023-06-21 02:31:10 +0000">06/21/2023</time>
     
   
 
@@ -37251,7 +37269,7 @@
 </p>
 
 <div class="paragraph lead">
-<p>You can use the <code>volume efficiency modify</code> command to change the storage efficiency mode that’s set on an AFF volume. You can change the mode from <code>default</code> to <code>efficient</code> or you can set an efficiency mode when volume efficiency is not already set.</p>
+<p>Beginning with ONTAP 9.10.1, two volume-level storage efficiency modes are introduced for AFF systems only, <em>default</em> and <em>efficient</em>. The two modes provide a choice between file compression (default), which is the default mode when creating new AFF volumes, or temperature-sensitive storage efficiency (efficient), which enables temperature-sensitive storage efficiency. You can use the <code>volume efficiency modify</code> command to change the storage efficiency mode that’s set on an AFF volume. You can change the mode from <code>default</code> to <code>efficient</code> or you can set an efficiency mode when volume efficiency is not already set.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Steps</div>
@@ -37259,7 +37277,7 @@
 <li>
 <p>Change the volume efficiency mode:</p>
 <div class="paragraph">
-<p><code><strong>volume efficiency modify -vserver &lt;vserver name&gt; -volume &lt;volume name&gt; -storage-efficiency-mode &lt;default|efficient&gt;</strong></code></p>
+<p><code>volume efficiency modify -vserver &lt;vserver name&gt; -volume &lt;volume name&gt; -storage-efficiency-mode &lt;default|efficient&gt;</code></p>
 </div>
 </li>
 </ol>

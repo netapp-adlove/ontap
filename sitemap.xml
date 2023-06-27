@@ -1205,7 +1205,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/volumes/change-efficiency-mode-task.html</loc>
       
-      <lastmod>2021-11-02T19:26:15+00:00</lastmod>
+      <lastmod>2023-06-21T02:31:10+00:00</lastmod>
       
     </url>
   
@@ -1227,6 +1227,13 @@
       <loc>https://docs.netapp.com/us-en/ontap/san-config/change-fc-adapter-speed-task.html</loc>
       
       <lastmod>2021-10-14T21:50:12+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/volumes/change-inactive-data-threshold-task.html</loc>
+      
+      <lastmod>2023-06-21T02:31:10+00:00</lastmod>
       
     </url>
   
@@ -7435,7 +7442,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/volumes/enable-temperature-sensitive-efficiency-concept.html</loc>
       
-      <lastmod>2023-06-07T15:04:01+00:00</lastmod>
+      <lastmod>2023-06-26T21:00:11+00:00</lastmod>
       
     </url>
   
@@ -13833,7 +13840,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/ontap//search.html</loc>
       
-      <lastmod>2023-06-26T10:32:07+00:00</lastmod>
+      <lastmod>2023-06-27T18:06:39+00:00</lastmod>
       
     </url>
   
@@ -15094,6 +15101,13 @@
       <loc>https://docs.netapp.com/us-en/ontap/volumes/stop-volume-efficiency-operations-task.html</loc>
       
       <lastmod>2021-10-14T21:50:12+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/volumes/storage-efficiency-behavior-snapmirror-reference.html</loc>
+      
+      <lastmod>2023-06-26T21:00:11+00:00</lastmod>
       
     </url>
   
