@@ -83,7 +83,7 @@
       head.appendChild(onetrustScript);
     }addConsent("72570c5c-fe30-465f-b0e0-b77f7fb4ae34");
     addAdobeLaunch("launch-e9ff3acac59f");
-    addGoogleAnalytics("UA-81697994-3");function OptanonWrapper() { }
+    addGoogleAnalytics("G-KYN6T440WN");function OptanonWrapper() { }
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
@@ -37261,7 +37261,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-06-16 20:16:31 +0000">06/16/2023</time>
+    <time datetime="2023-06-27 18:51:31 +0000">06/27/2023</time>
     
   
 
@@ -37311,7 +37311,13 @@
 <p>You might also need to enter a mixed version state for a technical refresh or an interrupted upgrade. In such cases you can override ONTAP default behavior and add nodes of a different version using the <code>cluster add-node -allow-mixed-version-join</code> advanced privilege command.</p>
 </div>
 <div class="paragraph">
-<p>When you have to enter a mixed version state, you should complete the upgrade as quickly as possible. An HA pair must not run an ONTAP version from a release that is different from other HA pairs in the cluster for more than 90 days. For correct cluster operation, the period the cluster is in a mixed version state should be as short as possible.</p>
+<p>When you have to enter a mixed version state, you should complete the upgrade as quickly as possible.</p>
+</div>
+<div class="paragraph">
+<p>Beginning with ONTAP 9.8 and later, an HA pair must not run an ONTAP version from a release that is different from other HA pairs in the cluster for more than 90 days. In ONTAP 9.7 and earlier, an HA pair must not run an ONTAP version from a release that is different from other HA pairs in the cluster for more than 7 days.</p>
+</div>
+<div class="paragraph">
+<p>For correct cluster operation, the period the cluster is in a mixed version state should be as short as possible.</p>
 </div>
 <div class="paragraph">
 <p>When the cluster is in a mixed version state, you should not enter any commands that alter the cluster operation or configuration except as necessary to satisfy the upgrade requirements.</p>

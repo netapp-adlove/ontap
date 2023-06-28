@@ -83,7 +83,7 @@
       head.appendChild(onetrustScript);
     }addConsent("72570c5c-fe30-465f-b0e0-b77f7fb4ae34");
     addAdobeLaunch("launch-e9ff3acac59f");
-    addGoogleAnalytics("UA-81697994-3");function OptanonWrapper() { }
+    addGoogleAnalytics("G-KYN6T440WN");function OptanonWrapper() { }
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
@@ -37291,54 +37291,29 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="supported-configurations">Supported configurations</h2>
+<h2 id="svm-migration-platform-support">SVM migration platform support</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>The table indicates the configurations supported and the ONTAP releases in which support is available.</p>
-</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 42.8571%;">
-<col style="width: 14.2857%;">
-<col style="width: 14.2857%;">
-<col style="width: 14.2857%;">
-<col style="width: 14.2858%;">
+<col style="width: 50%;">
+<col style="width: 50%;">
 </colgroup>
 <tbody>
 <tr>
-<th class="tableblock halign-left valign-top"><p class="tableblock">Configuration supported in&#8230;&#8203;</p></th>
-<th class="tableblock halign-left valign-top"><p class="tableblock">ONTAP 9.10.1</p></th>
-<th class="tableblock halign-left valign-top"><p class="tableblock">ONTAP 9.11.1</p></th>
-<th class="tableblock halign-left valign-top"><p class="tableblock">ONTAP 9.12.1</p></th>
-<th class="tableblock halign-left valign-top"><p class="tableblock">ONTAP 9.13.1</p></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Controller family</p></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock">ONTAP versions supported</p></th>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">AFF arrays</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AFF-A series</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ONTAP 9.10.1 and later</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">FAS platforms and mixed platforms (AFF-FAS,FAS-AFF, AFF-FAS with hybrid aggregates)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AFF-C series</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ONTAP 9.12.1 patch 4 and later</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Total arrays/Node pairs</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">6</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Migrate within a data center and a max network latency of:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2ms</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2ms</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">10ms</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">10ms</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FAS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ONTAP 9.12.1 and later</p></td>
 </tr>
 </tbody>
 </table>
@@ -37357,52 +37332,129 @@
 </div>
 </div>
 <div class="sect1">
+<h2 id="scalability-support-by-ontap-version">Scalability support by ONTAP version</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">ONTAP version</p></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock">HA pairs in source and destination</p></th>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ONTAP 9.10.1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ONTAP 9.11.1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ONTAP 9.13.1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="network-infrastructure-performance-requirements-for-tcp-round-trip-time-rtt">Network infrastructure performance requirements for TCP round trip time (RTT)</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">ONTAP version</p></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Maximum RTT</p></th>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ONTAP 9.11.1 and earlier</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2ms</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ONTAP 9.12.1 and later</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10ms</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="maximum-supported-volumes-per-svm">Maximum supported volumes per SVM</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">ONTAP version</p></th>
+<th class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Maximum supported volumes per SVM</p></th>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>AFF</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>FAS</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ONTAP 9.12.1 and earlier</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">100</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">80</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ONTAP 9.13.1 and later</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">200</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">80</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
 <h2 id="prerequisites">Prerequisites</h2>
 <div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>You must be a cluster administrator</p>
-</li>
-<li>
-<p>The source and destination clusters must peered to each other</p>
 <div class="paragraph">
-<p><a href="https://review.docs.netapp.com/us-en/ontap_main/peering/create-cluster-relationship-93-later-task.html">Create a cluster peer relationship</a></p>
+<p>Before initiating an SMV migration, you must meet the following prerequisites:</p>
 </div>
-</li>
-<li>
-<p>The source and destination clusters must have the Data Protection Bundle license installed</p>
-</li>
-<li>
-<p>All nodes in the source cluster must be running ONTAP 9.10.1 or later</p>
-</li>
-<li>
-<p>All nodes in the source cluster must be running the same ONTAP version</p>
-</li>
-<li>
-<p>All nodes in the destination cluster must be running the same ONTAP version</p>
-</li>
-<li>
-<p>The destination cluster must be at the same or newer effective cluster version (ECV) as the source cluster</p>
-</li>
-<li>
-<p>The source and destination clusters must support the same IP subnet for data LIF access</p>
-</li>
-<li>
-<p>The network connecting the source and destination clusters must have a maximum round trip time (RTT) of less than 10ms</p>
-</li>
-<li>
-<p>The source SVM must contain fewer than the maximum number of supported data volumes for the release. The maximum number of data volumes supported is as follows:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>AFF arrays: 200 data volumes with clusters running ONTAP 9.13.1 and later releases, and 100 data volumes with clusters running ONTAP 9.12.1 and earlier releases.</p>
+<p>You must be a cluster administrator.</p>
 </li>
 <li>
-<p>FAS platforms: 80 data volumes</p>
+<p><a href="https://docs.netapp.com/us-en/ontap/peering/create-cluster-relationship-93-later-task.html" target="_blank" rel="noopener">The source and destination clusters must be peered to each other</a>.</p>
 </li>
-</ul>
-</div>
+<li>
+<p>The source and destination clusters must have the Data Protection Bundle license installed.</p>
+</li>
+<li>
+<p>All nodes in the source cluster must be running ONTAP 9.10.1 or later. For specific ONTAP array controller support, see</p>
+</li>
+<li>
+<p>All nodes in the source cluster must be running the same ONTAP version.</p>
+</li>
+<li>
+<p>All nodes in the destination cluster must be running the same ONTAP version.</p>
+</li>
+<li>
+<p>The destination cluster must be at the same or no more than two major newer effective cluster versions (ECV) as the source cluster.</p>
+</li>
+<li>
+<p>The source and destination clusters must support the same IP subnet for data LIF access.</p>
+</li>
+<li>
+<p>The network connecting the source and destination clusters must have a maximum round trip time (RTT) of no more than 10ms</p>
+</li>
+<li>
+<p>The source SVM must contain fewer than the <a href="#maximum-supported-volumes-per-svm">maximum number of supported data volumes for the release</a>.</p>
 </li>
 <li>
 <p>Sufficient space for volume placement must be available on the destination</p>
@@ -37415,7 +37467,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="conflicting-operations">Conflicting operations</h2>
+<h2 id="svm-operations">SVM operations</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>You should check for operations that can conflict with an SVM migration:</p>
@@ -37439,51 +37491,36 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="supported-features">Supported features</h2>
+<h2 id="supported-and-unsupported-features">Supported and unsupported features</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The table indicates the ONTAP features supported by SVM data mobility and the ONTAP releases in which support is available.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 27.2727%;">
-<col style="width: 9.0909%;">
-<col style="width: 9.0909%;">
-<col style="width: 9.0909%;">
-<col style="width: 9.0909%;">
-<col style="width: 36.3637%;">
+<col style="width: 37.5%;">
+<col style="width: 12.5%;">
+<col style="width: 50%;">
 </colgroup>
 <tbody>
 <tr>
-<th class="tableblock halign-left valign-top"><p class="tableblock">Feature supported in&#8230;&#8203;</p></th>
-<th class="tableblock halign-left valign-top"><p class="tableblock">ONTAP 9.10.1</p></th>
-<th class="tableblock halign-left valign-top"><p class="tableblock">ONTAP 9.11.1</p></th>
-<th class="tableblock halign-left valign-top"><p class="tableblock">ONTAP 9.12.1</p></th>
-<th class="tableblock halign-left valign-top"><p class="tableblock">ONTAP 9.13.1</p></th>
-<th class="tableblock halign-left valign-top"><p class="tableblock">Additional information</p></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Feature</p></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Release first supported</p></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Comments</p></th>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Asynchronous SnapMirror copy-to-cloud relationships</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ONTAP 9.12.1</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Beginning with ONTAP 9.12.1, when you migrate an SVM with SnapMirror Copy to Cloud relationships, the migrate destination cluster must have the copy to cloud license installed and must have enough capacity available to support moving the capacity in the volumes that are being mirrored to the cloud.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Asynchronous SnapMirror destination</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ONTAP 9.12.1</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Asynchronous SnapMirror source</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ONTAP 9.12.1</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
@@ -37514,68 +37551,94 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Autonomous Ransomware Protection</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ONTAP 9.12.1</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cloud Volumes ONTAP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not supported</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">External key manager</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ONTAP 9.11.1</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">FabricPool</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ONTAP 9.11.1</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Learn more about <a href="#fabricpool-support">FabricPool support</a>.</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Fanout relationships (the migrating source has a SnapMirror source volume with more than one destination)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ONTAP 9.11.1</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FC SAN</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not supported</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Flash Pool</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ONTAP 9.12.1</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FlexCache volumes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not supported</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FlexGroup</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not supported</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IPsec policies</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not supported</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IPv6 LIFs</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not supported</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iSCI SAN</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not supported</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Job schedule replication</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ONTAP 9.11.1</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">In ONTAP 9.10.1, job schedules are not replicated during migration and must be manually created on the destination. Beginning with ONTAP 9.11.1, job schedules used by the source are replicated automatically during migration.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">NetApp Volume Encryption</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Load-sharing mirrors</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not supported</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">NFS and SMB audit logging</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MetroCluster SVMs</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not supported</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NDMP configurations</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not supported</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NetApp Volume Encryption</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ONTAP 9.10.1</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NFS and SMB audit logs</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ONTAP 9.13.1</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Before SVM migration:</p>
 </div>
@@ -37592,44 +37655,94 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">NFS v3, NFS v4.1, and NFS v4.2</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ONTAP 9.10.1</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">NFS v4.0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ONTAP 9.12.1</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">NFS v4.0 protocol</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NVMe over Fabric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not supported</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Onboard key manager (OKM) with Common Criteria mode enabled on source cluster</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not supported</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Qtrees</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ONTAP 9.10.1</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">S3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not supported</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SMB protocol</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ONTAP 9.12.1</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Beginning with ONTAP 9.12.1, SVM migrate includes disruptive migration with SMB.</p>
+<p>SMB migrations are disruptive and require a client refresh post migration.</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SVM peering for SnapMirror applications</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SMTape settings</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not supported</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SnapLock</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not supported</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SnapMirror Business Continuity</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not supported</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SnapMirror SVM peer relationships</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ONTAP 9.12.1</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SnapMirror SVM disaster recovery</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not supported</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SnapMirror Synchronous</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not supported</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Snapshot copy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ONTAP 9.10.1</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Virtual IP LIFs/BGP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not supported</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Virtual Storage Console 7.0 and later</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not supported</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VSC is part of the <a href="https://docs.netapp.com/us-en/ontap-tools-vmware-vsphere/index.html" target="_blank" rel="noopener">ONTAP Tools for VMware vSphere virtual appliance</a> beginning with VSC 7.0.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Volume clones</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not supported</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">vStorage</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not supported</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
@@ -37653,72 +37766,179 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="unsupported-features">Unsupported features</h2>
+<h2 id="supported-operations-during-migration">Supported operations during migration</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The following features are not supported with SVM migration:</p>
+<p>The following table indicates volume operation support based on migration state:</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>Cloud Volumes ONTAP</p>
-</li>
-<li>
-<p>FlexCache volumes</p>
-</li>
-<li>
-<p>FlexGroup volumes</p>
-</li>
-<li>
-<p>IPsec policy</p>
-</li>
-<li>
-<p>IPv6 LIFs</p>
-</li>
-<li>
-<p>iSCSI workloads</p>
-</li>
-<li>
-<p>Load-sharing mirrors</p>
-</li>
-<li>
-<p>MetroCluster</p>
-</li>
-<li>
-<p>NDMP</p>
-</li>
-<li>
-<p>SAN, NVMe over fiber, VSCAN, vStorage, S3 replication</p>
-</li>
-<li>
-<p>SMTape</p>
-</li>
-<li>
-<p>SnapLock</p>
-</li>
-<li>
-<p>SVM-DR</p>
-</li>
-<li>
-<p>SVM migration when the source cluster&#8217;s Onboard Key Manager (OKM) has Common Criteria (CC) mode enabled</p>
-</li>
-<li>
-<p>Synchronous SnapMirror, SnapMirror Business Continuity</p>
-</li>
-<li>
-<p>Qtree, Quota</p>
-</li>
-<li>
-<p>VIP/BGP LIF</p>
-</li>
-<li>
-<p>Virtual Storage Console for VMware vSphere (VSC is part of the <a href="https://docs.netapp.com/us-en/ontap-tools-vmware-vsphere/index.html" target="_blank" rel="noopener">ONTAP Tools for VMware vSphere virtual appliance</a> beginning with VSC 7.0.)</p>
-</li>
-<li>
-<p>Volume clones</p>
-</li>
-</ul>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Volume operation</p></th>
+<th class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">SVM migration state</p></th>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>In progress</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Paused</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Cutover</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allowed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allowed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not supported</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not allowed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allowed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not supported</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Filesystem analytics</p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">See Filesystem analytics</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not supported</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Modify</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allowed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allowed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not supported</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Offline/Online</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not allowed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allowed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not supported</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Move/rehost</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not allowed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allowed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not supported</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Qtreecreate/modify</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not allowed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not allowed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not supported</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Quota create/modify</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not allowed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not allowed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not supported</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rename</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not allowed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allowed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not supported</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Resize</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allowed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allowed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not supported</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Restrict</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not allowed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allowed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not supported</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Snapshot copy attributes modify</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allowed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allowed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not supported</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Snapshot copy autodelete modify</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allowed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allowed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not supported</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Snapshot copy create</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allowed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allowed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not supported</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Snapshot copy delete</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allowed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allowed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not supported</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Restore file from Snapshot copy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allowed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allowed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not supported</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The following table indicates file operation support based on migration state:</p>
 </div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">File operation</p></th>
+<th class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">SVM migration state</p></th>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>In progress</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Paused</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Cutover</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Asynchronous delete</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not allowed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not allowed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not supported</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Clone create/delete/split</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allowed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allowed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not supported</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Copy modify/destroy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not allowed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not allowed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not supported</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Move</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not allowed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not allowed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not supported</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reserve</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allowed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allowed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not supported</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 
