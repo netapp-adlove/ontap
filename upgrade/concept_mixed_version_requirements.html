@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
   <head class="at-element-marker">
-  <title>Mixed version requirements</title>
+  <title>Mixed version ONTAP clusters</title>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
   <meta http-equiv="language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="Mixed version requirements" />
+  <meta property="og:title" content="Mixed version ONTAP clusters" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/us-en/ontap/upgrade/concept_mixed_version_requirements.html" />
-	<meta property="og:description" content="Beginning with ONTAP 9.3, by default, you cannot add new nodes to the cluster that are running a version of ONTAP that is different from the version running ..." />
+	<meta property="og:description" content="A mixed version ONTAP cluster consists of nodes running two different major ONTAP releases, such as ONTAP 9.8 and 9.12.1. Mixed version ONTAP clusters are on..." />
   <meta property="og:image" content="https://docs.netapp.com/us-en/ontap/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Beginning with ONTAP 9.3, by default, you cannot add new nodes to the cluster that are running a version of ONTAP that is different from the version running ...">
-  <meta name="keywords" content=" ontap, upgrade, mixed, version, requirements"><!-- Icons -->
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="A mixed version ONTAP cluster consists of nodes running two different major ONTAP releases, such as ONTAP 9.8 and 9.12.1. Mixed version ONTAP clusters are on...">
+  <meta name="keywords" content=" ontap, upgrade, mixed, version, clusters, mixed-version nodes, requirements"><!-- Icons -->
   <link rel="icon" href="/us-en/ontap/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed --><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -177,7 +177,7 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/ontap/issues/new?template=new-from-page.yml&page-url=https://docs.netapp.com/us-en/ontap/upgrade/concept_mixed_version_requirements.html&page-title=Mixed version requirements" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/discuss-sm.svg" alt="" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/ontap/blob/main/upgrade/concept_mixed_version_requirements.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/edit-sm.svg" alt="" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/ontap/images/article-sm.svg" alt="" class="github-icon" />Learn how to contribute</a></div>
+  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/ontap/issues/new?template=new-from-page.yml&page-url=https://docs.netapp.com/us-en/ontap/upgrade/concept_mixed_version_requirements.html&page-title=Mixed version ONTAP clusters" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/discuss-sm.svg" alt="" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/ontap/blob/main/upgrade/concept_mixed_version_requirements.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/edit-sm.svg" alt="" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/ontap/images/article-sm.svg" alt="" class="github-icon" />Learn how to contribute</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">ON THIS PAGE</div>
@@ -11316,6 +11316,8 @@
             S3 support in ONTAP 9
           </a>
           
+
+
 
 
 
@@ -30849,6 +30851,13 @@
       class=" "
     ><a class="na-navbar-padding" href="/us-en/ontap/s3-config/ontap-s3-interoperability-concept.html">
         ONTAP S3 interoperability
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ONTAP S3 validated third-party solutions"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/ontap/s3-config/ontap-s3-validated-third-party-solutions-reference.html">
+        ONTAP S3 validated third-party solutions
       </a></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="About the S3 configuration process"
@@ -37253,15 +37262,47 @@
   </div>
 </div>
 
-      <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Mixed version requirements</h1>
+      <div class="ie-info-disclaimer">
+  <span>
+    <div class="ie-info-disclaimer-container">
+      <div class="ie-info-disclaimer-icon">
+        <svg class="luci-icon" aria-hidden="true">
+          <use xlink:href="/us-en/ontap/images/sprite.svg#circle-info">
+        </svg>
+      </div>
+      <div class="ie-info-disclaimer-content">
+        <span>A newer release of this product is available.</span><br>
+      </div>
+      <div style="clear:both;"></div>
+    </div>
+  </span>
+</div>
+
+<div class="ie-info-disclaimer">
+  <span>
+    <div class="ie-info-disclaimer-container">
+      <div class="ie-info-disclaimer-icon">
+        <svg class="luci-icon" aria-hidden="true">
+          <use xlink:href="/us-en/ontap/images/sprite.svg#circle-info">
+        </svg>
+      </div>
+      <div class="ie-info-disclaimer-content">
+        <span> English is provided using machine translation for your convenience. English precedes English for any inconsistencies. </span>
+      </div>
+      <div style="clear:both;"></div>
+    </div>
+  </span>
+</div>
+
+<div class="n-doc__component-detail-heading-wrap">
+  <h1 class="n-doc__component-detail-heading">Mixed version ONTAP clusters</h1>
 </div>
 
 
 <p class="page-details">
   
     
-    <time datetime="2023-06-27 18:51:31 +0000">06/27/2023</time>
+    <time datetime="2023-07-01 12:27:24 +0000">07/01/2023</time>
     
   
 
@@ -37279,15 +37320,45 @@
 
 </p>
 
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph lead">
-<p>Beginning with ONTAP 9.3, by default, you cannot add new nodes to the cluster that are running a version of ONTAP that is different from the version running on the existing nodes.</p>
+<p>A mixed version ONTAP cluster consists of nodes running two different major ONTAP releases, such as ONTAP 9.8 and 9.12.1, or ONTAP 9.9.1 and 9.13.1. Mixed version ONTAP clusters are only supported by NetApp in specific scenarios.</p>
 </div>
 <div class="paragraph">
-<p>If you plan to add new nodes to your cluster that are running a version of ONTAP that is later than the nodes in your existing cluster, you should upgrade the nodes in your cluster to the later version first, then add the new nodes.</p>
+<p>The two most common scenarios are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>ONTAP software upgrades in large clusters</p>
+</li>
+<li>
+<p>ONTAP software upgrades required when you plan to add new controllers to a cluster</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>Mixed version clusters are not recommended, but in certain cases you might need to temporarily enter a mixed version state. For example, you need to enter a mixed version state if you are upgrading to a later version of ONTAP that is not supported on certain nodes in your existing cluster. In this case, you should upgrade the nodes that do support the later version of ONTAP, then remove the nodes that do not support the version of ONTAP you are upgrading to using the following command:</p>
+<p>This content applies to ONTAP versions that support NetApp platforms systems, such as AFF, ASA, FAS, and C-series systems.  The information here does not apply to ONTAP cloud releases (9.x.0) such as 9.12.0.</p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="requirements-for-mixed-version-ontap-clusters">Requirements for mixed version ONTAP clusters</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In any scenario where your cluster needs to enter a mixed ONTAP version state, you need to be aware of important requirements and restrictions.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>There cannot be more than two different major ONTAP versions in a cluster at any given time. Clusters that have nodes running with different P or D patch levels of the same ONTAP release, such as ONTAP 9.9.1P1 and 9.9.1P5, are not considered mixed version ONTAP clusters.</p>
+</li>
+<li>
+<p>While the cluster is in a mixed version state, you should not enter any commands that alter the cluster operation or configuration except as necessary to satisfy the upgrade requirements. To facilitate controller upgrade activities, volume move operations while in a mixed version ONTAP cluster are supported.</p>
+</li>
+<li>
+<p>For optimal cluster operation, the length of time that the cluster is in a mixed version state should be as short as possible.  The maximum length of time a cluster can remain in a mixed version state depends on the lowest ONTAP version in the cluster.</p>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
@@ -37295,43 +37366,86 @@
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">ONTAP version</th>
-<th class="tableblock halign-left valign-top">Command</th>
+<th class="tableblock halign-left valign-top">If the lowest version of ONTAP running in the mixed version cluster is:</th>
+<th class="tableblock halign-left valign-top">Then you can remain in a mixed version state for a maximum of</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>ONTAP 9.3</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>cluster unjoin -skip-last-low-version-node-check</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ONTAP 9.8 or higher</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">90 days</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>ONATP 9.4 and later</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>cluster remove-node -skip-last-low-version-node-check</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ONTAP 9.7 or lower</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">7 days</p></td>
 </tr>
 </tbody>
 </table>
+</li>
+<li>
+<p>Beginning with ONTAP 9.8, a mixed version ONTAP cluster can span a maximum of 4 major releases. For example, a mixed version ONTAP cluster could have nodes running ONTAP 9.8 and 9.12.1, or it could have nodes running ONTAP 9.9.1 and 9.13.1. But a mixed version ONTAP cluster with nodes running ONTAP 9.8 and 9.13.1 would not be supported, because that mixed version cluster spans 5 major releases.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="updating-the-ontap-version-of-a-large-cluster">Updating the ONTAP version of a large cluster</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>You might also need to enter a mixed version state for a technical refresh or an interrupted upgrade. In such cases you can override ONTAP default behavior and add nodes of a different version using the <code>cluster add-node -allow-mixed-version-join</code> advanced privilege command.</p>
+<p>Each version of ONTAP offers a more robust feature set. When you need to upgrade the ONTAP version of a larger cluster to get to a newer version of ONTAP, you will need to enter a mixed version cluster state for a period of time as you upgrade each node in your cluster.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="adding-new-nodes-to-your-cluster">Adding new nodes to your cluster</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You might add new nodes to your cluster to expand its capacity, or because you’re completely replacing your controllers. In either case, you need to enable the migration of your data from the old controllers to your new system.</p>
 </div>
 <div class="paragraph">
-<p>When you have to enter a mixed version state, you should complete the upgrade as quickly as possible.</p>
+<p>If you plan to add new nodes to your cluster, and those nodes require a version of ONTAP that’s later than the existing nodes in your cluster, you need to upgrade all the existing nodes in your cluster to the later ONTAP version first, and then add the new nodes. However, if this is not possible because some of your existing nodes don’t support the later version of ONTAP, you’ll need to enter a mixed version state for a limited amount of time as part of your upgrade process.
+If you have nodes that do not support the lowest ONTAP version required by your new controllers, you should do the following:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><a href="https://docs.netapp.com/us-en/ontap/upgrade/concept_upgrade_methods.html">Upgrade</a> the nodes in your cluster that do support the ONTAP version of your new controllers.</p>
+</li>
+<li>
+<p>Add the new nodes to your cluster.</p>
+<div class="paragraph">
+<p>Use the ONTAP command cluster add-node -allow-mixed-version-join at the advanced privilege level to join the new nodes.</p>
+</div>
+</li>
+<li>
+<p>Migrate your data from any nodes that cannot be upgraded to a node running the higher ONTAP version.</p>
+</li>
+<li>
+<p><a href="https://docs.netapp.com/us-en/ontap/system-admin/remov-nodes-cluster-concept.html" target="_blank" rel="noopener">Remove the unsupported nodes from the cluster</a>.</p>
+<div class="paragraph">
+<p>Use the ONTAP command cluster remove-node -skip-last-low-version-node-check to remove these nodes. (In ONTAP 9.3 and earlier, use the cluster unjoin -skip-last-low-version-node-check command.)</p>
+</div>
+</li>
+</ol>
 </div>
 <div class="paragraph">
-<p>Beginning with ONTAP 9.8 and later, an HA pair must not run an ONTAP version from a release that is different from other HA pairs in the cluster for more than 90 days. In ONTAP 9.7 and earlier, an HA pair must not run an ONTAP version from a release that is different from other HA pairs in the cluster for more than 7 days.</p>
+<p>For details on data migration see:</p>
 </div>
-<div class="paragraph">
-<p>For correct cluster operation, the period the cluster is in a mixed version state should be as short as possible.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade/upgrade-create-aggregate-move-volumes.html" target="_blank" rel="noopener">Create an aggregate and move volumes to the new nodes</a></p>
+</li>
+<li>
+<p><a href="https://docs.netapp.com/us-en/ontap-metrocluster/transition/task_move_linux_iscsi_hosts_from_mcc_fc_to_mcc_ip_nodes.html#setting-up-new-iscsi-connections" target="_blank" rel="noopener">Setting up new iSCSI connections for SAN volume moves</a></p>
+</li>
+<li>
+<p><a href="https://docs.netapp.com/us-en/ontap/encryption-at-rest/encrypt-existing-volume-task.html" target="_blank" rel="noopener">Moving volumes with encryption</a></p>
+</li>
+</ul>
 </div>
-<div class="paragraph">
-<p>When the cluster is in a mixed version state, you should not enter any commands that alter the cluster operation or configuration except as necessary to satisfy the upgrade requirements.</p>
+</div>
 </div>
 
     </article>

@@ -11324,6 +11324,8 @@
 
 
 
+
+
         </li>
       </ul>
     
@@ -30849,6 +30851,13 @@
       class=" "
     ><a class="na-navbar-padding" href="/us-en/ontap/s3-config/ontap-s3-interoperability-concept.html">
         ONTAP S3 interoperability
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ONTAP S3 validated third-party solutions"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/ontap/s3-config/ontap-s3-validated-third-party-solutions-reference.html">
+        ONTAP S3 validated third-party solutions
       </a></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="About the S3 configuration process"
@@ -37253,7 +37262,39 @@
   </div>
 </div>
 
-      <div class="n-doc__component-detail-heading-wrap">
+      <div class="ie-info-disclaimer">
+  <span>
+    <div class="ie-info-disclaimer-container">
+      <div class="ie-info-disclaimer-icon">
+        <svg class="luci-icon" aria-hidden="true">
+          <use xlink:href="/us-en/ontap/images/sprite.svg#circle-info">
+        </svg>
+      </div>
+      <div class="ie-info-disclaimer-content">
+        <span>A newer release of this product is available.</span><br>
+      </div>
+      <div style="clear:both;"></div>
+    </div>
+  </span>
+</div>
+
+<div class="ie-info-disclaimer">
+  <span>
+    <div class="ie-info-disclaimer-container">
+      <div class="ie-info-disclaimer-icon">
+        <svg class="luci-icon" aria-hidden="true">
+          <use xlink:href="/us-en/ontap/images/sprite.svg#circle-info">
+        </svg>
+      </div>
+      <div class="ie-info-disclaimer-content">
+        <span> English is provided using machine translation for your convenience. English precedes English for any inconsistencies. </span>
+      </div>
+      <div style="clear:both;"></div>
+    </div>
+  </span>
+</div>
+
+<div class="n-doc__component-detail-heading-wrap">
   <h1 class="n-doc__component-detail-heading">SVM data mobility overview</h1>
 </div>
 
@@ -37380,8 +37421,11 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="network-infrastructure-performance-requirements-for-tcp-round-trip-time-rtt">Network infrastructure performance requirements for TCP round trip time (RTT)</h2>
+<h2 id="network-infrastructure-performance-requirements-for-tcp-round-trip-time-rtt-between-the-source-and-the-destination-cluster">Network infrastructure performance requirements for TCP round trip time (RTT) between the source and the destination cluster</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>Depending on the ONTAP version installed on the cluster, the network connecting the source and destination clusters must have a maximum round trip time as indicated:</p>
+</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
@@ -37441,7 +37485,7 @@
 <h2 id="prerequisites">Prerequisites</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Before initiating an SMV migration, you must meet the following prerequisites:</p>
+<p>Before initiating an SVM migration, you must meet the following prerequisites:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -37455,7 +37499,7 @@
 <p>The source and destination clusters must have the Data Protection Bundle license installed.</p>
 </li>
 <li>
-<p>All nodes in the source cluster must be running ONTAP 9.10.1 or later. For specific ONTAP array controller support, see</p>
+<p>All nodes in the source cluster must be running ONTAP 9.10.1 or later. For specific ONTAP array controller support, see <a href="https://hwu.netapp.com/" target="_blank" rel="noopener">Hardware Universe</a>.</p>
 </li>
 <li>
 <p>All nodes in the source cluster must be running the same ONTAP version.</p>
@@ -37468,9 +37512,6 @@
 </li>
 <li>
 <p>The source and destination clusters must support the same IP subnet for data LIF access.</p>
-</li>
-<li>
-<p>The network connecting the source and destination clusters must have a maximum round trip time (RTT) of no more than 10ms</p>
 </li>
 <li>
 <p>The source SVM must contain fewer than the <a href="#maximum-supported-volumes-per-svm">maximum number of supported data volumes for the release</a>.</p>
@@ -37539,7 +37580,7 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Asynchronous SnapMirror source</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ONTAP 9.12.1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ONTAP 9.11.1</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
@@ -37643,7 +37684,7 @@
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">MetroCluster SVMs</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Not supported</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Although SVM migrate does not support MetroCluster SVM migration, you might be able to use SnapMirror Asynchronous replication to <a href="https://www.netapp.com/media/83785-tr-4966.pdf">migrate an SVM in a MetroCluster configuration</a>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">NDMP configurations</p></td>
@@ -37694,7 +37735,12 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Qtrees</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ONTAP 9.10.1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not supported</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Quotas</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not supported</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -37788,7 +37834,7 @@
 <h2 id="supported-operations-during-migration">Supported operations during migration</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The following table indicates volume operation support based on migration state:</p>
+<p>The following table indicates volume operations supported within the migrating SVM based on migration state:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -37810,7 +37856,7 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Create</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Allowed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not allowed</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Allowed</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Not supported</p></td>
 </tr>
@@ -37821,8 +37867,15 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock">Not supported</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Filesystem analytics</p></td>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">See Filesystem analytics</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Filesystem analytics disable</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allowed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allowed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not supported</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Filesystem analytics enable</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not allowed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allowed</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Not supported</p></td>
 </tr>
 <tr>
@@ -37844,7 +37897,7 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock">Not supported</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Qtreecreate/modify</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Qtree create/modify</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Not allowed</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Not allowed</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Not supported</p></td>
@@ -37906,7 +37959,7 @@
 </tbody>
 </table>
 <div class="paragraph">
-<p>The following table indicates file operation support based on migration state:</p>
+<p>The following table indicates file operations supported within the migrating SVM based on migration state:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>

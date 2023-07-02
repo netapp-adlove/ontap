@@ -11322,6 +11322,8 @@
 
 
 
+
+
         </li>
       </ul>
     
@@ -30849,6 +30851,13 @@
       class=" "
     ><a class="na-navbar-padding" href="/us-en/ontap/s3-config/ontap-s3-interoperability-concept.html">
         ONTAP S3 interoperability
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ONTAP S3 validated third-party solutions"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/ontap/s3-config/ontap-s3-validated-third-party-solutions-reference.html">
+        ONTAP S3 validated third-party solutions
       </a></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="About the S3 configuration process"
@@ -37253,7 +37262,39 @@
   </div>
 </div>
 
-      <div class="n-doc__component-detail-heading-wrap">
+      <div class="ie-info-disclaimer">
+  <span>
+    <div class="ie-info-disclaimer-container">
+      <div class="ie-info-disclaimer-icon">
+        <svg class="luci-icon" aria-hidden="true">
+          <use xlink:href="/us-en/ontap/images/sprite.svg#circle-info">
+        </svg>
+      </div>
+      <div class="ie-info-disclaimer-content">
+        <span>A newer release of this product is available.</span><br>
+      </div>
+      <div style="clear:both;"></div>
+    </div>
+  </span>
+</div>
+
+<div class="ie-info-disclaimer">
+  <span>
+    <div class="ie-info-disclaimer-container">
+      <div class="ie-info-disclaimer-icon">
+        <svg class="luci-icon" aria-hidden="true">
+          <use xlink:href="/us-en/ontap/images/sprite.svg#circle-info">
+        </svg>
+      </div>
+      <div class="ie-info-disclaimer-content">
+        <span> English is provided using machine translation for your convenience. English precedes English for any inconsistencies. </span>
+      </div>
+      <div style="clear:both;"></div>
+    </div>
+  </span>
+</div>
+
+<div class="n-doc__component-detail-heading-wrap">
   <h1 class="n-doc__component-detail-heading">Protect a consistency group</h1>
 </div>
 
@@ -37261,7 +37302,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-05-03 04:02:02 +0000">05/03/2023</time>
+    <time datetime="2023-06-29 19:46:47 +0000">06/29/2023</time>
     
   
 
@@ -37279,6 +37320,14 @@
           alt="netapp-thomi"
           width="20" height="20"
           src="https://avatars.githubusercontent.com/u/54111336?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-lenida">
+    <img  class="avatar avatar-small"
+          alt="netapp-lenida"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/54081920?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -37538,6 +37587,20 @@ The <code>action_timeout</code> parameter can be set equal to an integer between
 <p>System Manager auto-fills source-side information. Select the appropriate cluster and storage VM for the destination. Select a protection policy. Ensure that <strong>Initialize relationship</strong> is checked.</p>
 <div class="paragraph">
 <p>When selecting an asynchronous policy, you have the option to <strong>Override Transfer Schedule</strong>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/ontap/images/note.svg" alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The minimum supported schedule (recovery point objective, or RPO) for consistency groups with asynchronous SnapMirror is 30 minutes.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </li>
 <li>

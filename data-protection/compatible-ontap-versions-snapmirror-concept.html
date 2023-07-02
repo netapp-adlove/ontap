@@ -11322,6 +11322,8 @@
 
 
 
+
+
         </li>
       </ul>
     
@@ -30849,6 +30851,13 @@
       class=" "
     ><a class="na-navbar-padding" href="/us-en/ontap/s3-config/ontap-s3-interoperability-concept.html">
         ONTAP S3 interoperability
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ONTAP S3 validated third-party solutions"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/ontap/s3-config/ontap-s3-validated-third-party-solutions-reference.html">
+        ONTAP S3 validated third-party solutions
       </a></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="About the S3 configuration process"
@@ -37253,7 +37262,39 @@
   </div>
 </div>
 
-      <div class="n-doc__component-detail-heading-wrap">
+      <div class="ie-info-disclaimer">
+  <span>
+    <div class="ie-info-disclaimer-container">
+      <div class="ie-info-disclaimer-icon">
+        <svg class="luci-icon" aria-hidden="true">
+          <use xlink:href="/us-en/ontap/images/sprite.svg#circle-info">
+        </svg>
+      </div>
+      <div class="ie-info-disclaimer-content">
+        <span>A newer release of this product is available.</span><br>
+      </div>
+      <div style="clear:both;"></div>
+    </div>
+  </span>
+</div>
+
+<div class="ie-info-disclaimer">
+  <span>
+    <div class="ie-info-disclaimer-container">
+      <div class="ie-info-disclaimer-icon">
+        <svg class="luci-icon" aria-hidden="true">
+          <use xlink:href="/us-en/ontap/images/sprite.svg#circle-info">
+        </svg>
+      </div>
+      <div class="ie-info-disclaimer-content">
+        <span> English is provided using machine translation for your convenience. English precedes English for any inconsistencies. </span>
+      </div>
+      <div style="clear:both;"></div>
+    </div>
+  </span>
+</div>
+
+<div class="n-doc__component-detail-heading-wrap">
   <h1 class="n-doc__component-detail-heading">Compatible ONTAP versions for SnapMirror relationships</h1>
 </div>
 
@@ -37261,7 +37302,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-05-30 22:07:52 +0000">05/30/2023</time>
+    <time datetime="2023-06-29 00:10:42 +0000">06/29/2023</time>
     
   
 
@@ -37346,7 +37387,7 @@
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Locate the higher, more recent ONTAP version in the left column, and in the top row locate the lower ONTAP version to determine interoperability. Interoperability is bidirectional.</p>
+<p>Interoperability is bidirectional.</p>
 </div>
 </td>
 </tr>
@@ -37867,21 +37908,21 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="snapmirror-svm-dr-relationships">SnapMirror SVM DR relationships</h2>
+<h2 id="snapmirror-svm-disaster-recovery-relationships">SnapMirror SVM disaster recovery relationships</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>For SVM DR data and SVM protection:</p>
+<p>For SVM disaster recovery data and SVM protection:</p>
 </div>
 <div class="paragraph">
-<p>SVM DR is only supported between clusters running the same version of ONTAP.</p>
+<p>SVM disaster recovery is only supported between clusters running the same version of ONTAP.</p>
 </div>
 <div class="paragraph">
-<p>For SVM DR for SVM migration:</p>
+<p>For SVM disaster recovery for SVM migration:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Replication is supported in a single direction from an earlier version of ONTAP to a later version of ONTAP; for example, from ONTAP 9.11.1 to ONTAP 9.12.1</p>
+<p>Replication is supported in a single direction from an earlier version of ONTAP on the source to the same or later version of ONTAP on the destination; for example, from ONTAP 9.11.1 to ONTAP 9.12.1.</p>
 </li>
 <li>
 <p>The ONTAP version on the target cluster must be no more than 2 versions newer, as shown in the table below.</p>
@@ -38247,7 +38288,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="snapmirror-dr-relationships">SnapMirror DR relationships</h2>
+<h2 id="snapmirror-disaster-recovery-relationships">SnapMirror disaster recovery relationships</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>For SnapMirror relationships of type &#8220;DP&#8221; and policy type &#8220;async-mirror&#8221;:</p>
