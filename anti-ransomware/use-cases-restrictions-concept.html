@@ -37270,7 +37270,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-05-19 17:54:36 +0000">05/19/2023</time>
+    <time datetime="2023-07-03 15:34:27 +0000">07/03/2023</time>
     
   
 
@@ -37405,13 +37405,16 @@ ARP depends on distinguishing incoming data as encrypted or unencrypted. If the 
 <p>FlexCache volumes (ARP is supported on origin FlexVol volumes but not on cache volumes)</p>
 </li>
 <li>
+<p>Root volumes of storage VMs</p>
+</li>
+<li>
+<p>SnapMirror Synchronous</p>
+</li>
+<li>
 <p>SAN-only volumes</p>
 </li>
 <li>
 <p>Volumes of stopped storage VMs</p>
-</li>
-<li>
-<p>Root volumes of storage VMs</p>
 </li>
 </ul>
 </div>
@@ -37421,7 +37424,10 @@ ARP depends on distinguishing incoming data as encrypted or unencrypted. If the 
 <h2 id="snapmirror-and-arp-interoperability">SnapMirror and ARP interoperability</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Beginning with ONTAP 9.12.1, ARP is supported on SnapMirror destination volumes. If a SnapMirror source volume is ARP-enabled, the SnapMirror destination volume automatically acquires the ARP configuration state (learning, enabled, etc), ARP training data, and ARP-created Snapshot of the source volume. No explicit enablement is required.</p>
+<p>Beginning with ONTAP 9.12.1, ARP is supported on Asynchronous SnapMirror destination volumes. ARP is <strong>not</strong> supported with SnapMirror Synchronous.</p>
+</div>
+<div class="paragraph">
+<p>If a SnapMirror source volume is ARP-enabled, the SnapMirror destination volume automatically acquires the ARP configuration state (learning, enabled, etc), ARP training data, and ARP-created Snapshot of the source volume. No explicit enablement is required.</p>
 </div>
 <div class="paragraph">
 <p>While the destination volume consists of read-only (RO) Snapshot copies, no ARP processing is done on its data. However, when the SnapMirror destination volume is converted to read-write (RW), ARP is automatically enabled on the RW-converted destination volume. The destination volume does not require any additional learning procedure besides what is already recorded on the source volume.</p>
@@ -37435,7 +37441,7 @@ ARP depends on distinguishing incoming data as encrypted or unencrypted. If the 
 <h2 id="arp-performance-and-frequency-considerations">ARP performance and frequency considerations</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The ARP feature can have a minimal impact on system performance as measured in throughput and peak IOPS. The impact of the ARP feature is highly dependent on volume workloads. For most typical or common workloads, the following configuration limits are recommended:</p>
+<p>ARP can have a minimal impact on system performance as measured in throughput and peak IOPS. The impact of the ARP feature depends on the specific volume workloads. For common workloads, the following configuration limits are recommended:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -37467,7 +37473,7 @@ ARP depends on distinguishing incoming data as encrypted or unencrypted. If the 
 <p>* System performance is not degraded beyond these percentages regardless of the number of volumes added in excess of the recommended limits.</p>
 </div>
 <div class="paragraph">
-<p>Because ARP analytics are run in a prioritized sequence, as the number of protected volumes increases, analytics are run on each volume less frequently.</p>
+<p>Because ARP analytics run in a prioritized sequence, as the number of protected volumes increases, analytics run on each volume less frequently.</p>
 </div>
 </div>
 </div>
