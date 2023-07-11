@@ -3337,8 +3337,6 @@
 
 
 
-
-
         </li>
       </ul>
     
@@ -5102,8 +5100,6 @@
             Manage a FlexCache relationship
           </a>
           
-
-
 
 
 
@@ -20158,13 +20154,6 @@
         Set up AWS S3 as the cloud tier
       </a></li><li 
       data-pdf-exists="true" 
-      data-pdf-filename="Specify the AWS S3 configuration information"
-      data-li-level="6#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/us-en/ontap/fabricpool/setup-aws-s3-cloud-tier-task.html">
-        Specify the AWS S3 configuration information
-      </a></li><li 
-      data-pdf-exists="true" 
       data-pdf-filename="Set up Google Cloud Storage as the cloud tier"
       data-li-level="6#" 
       class=" "
@@ -22667,13 +22656,6 @@
       </a>
       <ul style="display: none;">
         <li 
-      data-pdf-exists="true" 
-      data-pdf-filename="View the connection status of a FlexCache relationship"
-      data-li-level="4#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/us-en/ontap/flexcache/view-connection-status-origin-task.html">
-        View the connection status of a FlexCache relationship
-      </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Synchronize properties of a FlexCache volume from an origin volume"
       data-li-level="4#" 
@@ -37270,7 +37252,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-06-27 14:53:41 +0000">06/27/2023</time>
+    <time datetime="2023-07-07 19:07:39 +0000">07/07/2023</time>
     
   
 
@@ -37323,6 +37305,30 @@ In ONTAP 9.7 and earlier, NVMe can be the only protocol on the SVM.</p>
 <div class="sectionbody">
 <div class="paragraph">
 <p>NVMe/FC and NVMe/TCP protocols are supported as follows.  NVME/FC is supported on the platforms listed below only with 32GB FC HBAs.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/ontap/images/note.svg" alt="Note">
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Beginning with ONTAP 9.12.1, 4-node MetroCluster IP configurations are supported on NVMe/FC.</p>
+</li>
+<li>
+<p>MetroCluster configurations are not supported on NVMe/TCP.</p>
+</li>
+<li>
+<p>MetroCluster configurations are not supported for NVMe prior to 9.12.1.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -37388,14 +37394,6 @@ In ONTAP 9.7 and earlier, NVMe can be the only protocol on the SVM.</p>
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="metrocluster-configurations">MetroCluster configurations</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Beginning with ONTAP 9.12.1, 4-node MetroCluster IP configurations are supported on NVMe/FC.  MetroCluster configurations are not supported for NVMe prior to 9.12.1.</p>
-</div>
 </div>
 </div>
 <div class="sect1">

@@ -3339,8 +3339,6 @@
 
 
 
-
-
         </li>
       </ul>
     
@@ -5104,8 +5102,6 @@
             Manage a FlexCache relationship
           </a>
           
-
-
 
 
 
@@ -20158,13 +20154,6 @@
         Set up AWS S3 as the cloud tier
       </a></li><li 
       data-pdf-exists="true" 
-      data-pdf-filename="Specify the AWS S3 configuration information"
-      data-li-level="6#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/us-en/ontap/fabricpool/setup-aws-s3-cloud-tier-task.html">
-        Specify the AWS S3 configuration information
-      </a></li><li 
-      data-pdf-exists="true" 
       data-pdf-filename="Set up Google Cloud Storage as the cloud tier"
       data-li-level="6#" 
       class=" "
@@ -22667,13 +22656,6 @@
       </a>
       <ul style="display: none;">
         <li 
-      data-pdf-exists="true" 
-      data-pdf-filename="View the connection status of a FlexCache relationship"
-      data-li-level="4#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/us-en/ontap/flexcache/view-connection-status-origin-task.html">
-        View the connection status of a FlexCache relationship
-      </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Synchronize properties of a FlexCache volume from an origin volume"
       data-li-level="4#" 
@@ -37270,7 +37252,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-07-01 12:27:24 +0000">07/01/2023</time>
+    <time datetime="2023-07-07 19:12:11 +0000">07/07/2023</time>
     
   
 
@@ -37291,10 +37273,10 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>A mixed version ONTAP cluster consists of nodes running two different major ONTAP releases, such as ONTAP 9.8 and 9.12.1, or ONTAP 9.9.1 and 9.13.1. Mixed version ONTAP clusters are only supported by NetApp in specific scenarios.</p>
+<p>A mixed version ONTAP cluster consists of nodes running two different major ONTAP releases.  For example, if a cluster consists of nodes running ONTAP 9.8 and 9.12.1, the cluster is a mixed version cluster.  Similarly, a cluster in which nodes are running ONTAP 9.9.1 and 9.13.1 would be a mixed version cluster.  NetApp supports mixed version ONTAP clusters for limited periods of time and in specific scenarios.</p>
 </div>
 <div class="paragraph">
-<p>The two most common scenarios are:</p>
+<p>The following are the  most common scenarios in which an ONTAP cluster will be in a mixed version state:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -37302,7 +37284,7 @@
 <p>ONTAP software upgrades in large clusters</p>
 </li>
 <li>
-<p>ONTAP software upgrades required when you plan to add new controllers to a cluster</p>
+<p>ONTAP software upgrades required when you plan to add new nodes to a cluster</p>
 </li>
 </ul>
 </div>
@@ -37323,7 +37305,7 @@
 <p>There cannot be more than two different major ONTAP versions in a cluster at any given time. Clusters that have nodes running with different P or D patch levels of the same ONTAP release, such as ONTAP 9.9.1P1 and 9.9.1P5, are not considered mixed version ONTAP clusters.</p>
 </li>
 <li>
-<p>While the cluster is in a mixed version state, you should not enter any commands that alter the cluster operation or configuration except as necessary to satisfy the upgrade requirements. To facilitate controller upgrade activities, volume move operations while in a mixed version ONTAP cluster are supported.</p>
+<p>While the cluster is in a mixed version state, you should not enter any commands that alter the cluster operation or configuration except those that are required for the upgrade or data migration process.  For example, activities such as (but not limited to) LIF migration,  planned storage failover operations, or large-scale object creation or destruction should not be performed until upgrade and data migration are complete.</p>
 </li>
 <li>
 <p>For optimal cluster operation, the length of time that the cluster is in a mixed version state should be as short as possible.  The maximum length of time a cluster can remain in a mixed version state depends on the lowest ONTAP version in the cluster.</p>

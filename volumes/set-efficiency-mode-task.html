@@ -3337,8 +3337,6 @@
 
 
 
-
-
         </li>
       </ul>
     
@@ -5104,8 +5102,6 @@
             Manage a FlexCache relationship
           </a>
           
-
-
 
 
 
@@ -20158,13 +20154,6 @@
         Set up AWS S3 as the cloud tier
       </a></li><li 
       data-pdf-exists="true" 
-      data-pdf-filename="Specify the AWS S3 configuration information"
-      data-li-level="6#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/us-en/ontap/fabricpool/setup-aws-s3-cloud-tier-task.html">
-        Specify the AWS S3 configuration information
-      </a></li><li 
-      data-pdf-exists="true" 
       data-pdf-filename="Set up Google Cloud Storage as the cloud tier"
       data-li-level="6#" 
       class=" "
@@ -22667,13 +22656,6 @@
       </a>
       <ul style="display: none;">
         <li 
-      data-pdf-exists="true" 
-      data-pdf-filename="View the connection status of a FlexCache relationship"
-      data-li-level="4#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/us-en/ontap/flexcache/view-connection-status-origin-task.html">
-        View the connection status of a FlexCache relationship
-      </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Synchronize properties of a FlexCache volume from an origin volume"
       data-li-level="4#" 
@@ -37270,7 +37252,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-06-07 15:04:01 +0000">06/07/2023</time>
+    <time datetime="2023-07-08 02:25:15 +0000">07/08/2023</time>
     
   
 
@@ -37280,62 +37262,18 @@
 
 </p>
 
-<div id="preamble">
-<div class="sectionbody">
 <div class="paragraph lead">
 <p>Beginning with ONTAP 9.10.1,  you can set the storage efficiency mode when creating a new AFF volume. Using the parameter <code>-storage-efficiency-mode</code>, you can specify whether the volume uses either the efficient mode or the default performance mode. The two modes provide a choice between file compression (default), which is the default mode when new AFF volumes are created, or temperature-sensitive storage efficiency (efficient), which enables temperature-sensitive storage efficiency. The <code>-storage-efficiency-mode</code> parameter is not supported on non-AFF volumes or on data protection volumes.</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="create-a-new-volume-using-efficient-mode">Create a new volume using efficient mode</h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p>To set the efficiency mode when enabling storage efficiency, you can use the <code>-storage-efficiency-mode</code> parameter with the value <code>efficient</code>.</p>
+<div class="title">Steps</div>
+<p>You can perform this task using ONTAP System Manager or the ONTAP CLI.</p>
 </div>
-<div class="olist arabic">
-<div class="title">Step</div>
-<ol class="arabic">
-<li>
-<p>Create a new volume with efficiency mode enabled:</p>
-<div class="paragraph">
-<p><code>volume create -vserver &lt;vserver name&gt; -volume &lt;volume name&gt; -aggregate &lt;aggregate name&gt; -size &lt;volume size&gt; -storage-efficiency-mode efficient</code></p>
-</div>
-<div class="listingblock">
+<div class="exampleblock tabbed-block">
 <div class="content">
-<pre>volume create -vserver vs1 -volume aff_vol1 -aggregate aff_aggr1 -storage-efficiency-mode efficient -size 10g</pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="create-a-new-volume-using-performance-modes">Create a new volume using performance modes</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Performance mode is set by default when you create new AFF volumes with temperature-sensitive storage efficiency. Optionally, you can use the <code>default</code> value with the <code>-storage-efficiency-mode</code> parameter.</p>
-</div>
-<div class="olist arabic">
-<div class="title">Step</div>
-<ol class="arabic">
-<li>
-<p>Create a new volume with efficiency mode enabled:</p>
-<div class="paragraph">
-<p><code>volume create -vserver &lt;vserver name&gt; -volume &lt;volume name&gt; -aggregate &lt;aggregate name&gt; -size &lt;volume size&gt; -storage-efficiency-mode default</code></p>
-</div>
-<div class="paragraph">
-<p><code>volume create -vserver vs1 -volume aff_vol1 -aggregate aff_aggr1 -storage-efficiency-mode default -size 10g</code></p>
-</div>
-</li>
-</ol>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="system-manager-procedure">System Manager procedure</h2>
-<div class="sectionbody">
+<div class="openblock">
+<div class="title">System Manager</div>
+<div class="content">
 <div class="paragraph">
 <p>Beginning with ONTAP 9.10.1, you can use System Manager to enable higher storage efficiency using the temperature-sensitive storage efficiency feature. Performance-based storage efficiency is enabled by default.</p>
 </div>
@@ -37354,6 +37292,49 @@
 <p>Select <strong>Enable Higher Storage Efficiency</strong>.</p>
 </li>
 </ol>
+</div>
+</div>
+</div>
+<div class="openblock">
+<div class="title">CLI</div>
+<div class="content">
+<div class="paragraph">
+<div class="title">Create a new volume using efficient mode</div>
+<p>To set temperature-sensitive storage efficiency mode when creating a new volume, you can use the <code>-storage-efficiency-mode</code> parameter with the value <code>efficient</code>.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Create a new volume with efficiency mode enabled:</p>
+<div class="paragraph">
+<p><code>volume create -vserver &lt;vserver name&gt; -volume &lt;volume name&gt; -aggregate &lt;aggregate name&gt; -size &lt;volume size&gt; -storage-efficiency-mode efficient</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>volume create -vserver vs1 -volume aff_vol1 -aggregate aff_aggr1 -storage-efficiency-mode efficient -size 10g</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<div class="title">Create a new volume using performance mode</div>
+<p>Performance mode is set by default when you create new AFF volumes with storage efficiency. Although not required, you can optionally use the <code>default</code> value with the <code>-storage-efficiency-mode</code> parameter when you create a new AFF volume.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Create a new volume using the performance storage efficiency mode, 'default':</p>
+<div class="paragraph">
+<p><code>volume create -vserver &lt;vserver name&gt; -volume &lt;volume name&gt; -aggregate &lt;aggregate name&gt; -size &lt;volume size&gt; -storage-efficiency-mode default</code></p>
+</div>
+<div class="paragraph">
+<p><code>volume create -vserver vs1 -volume aff_vol1 -aggregate aff_aggr1 -storage-efficiency-mode default -size 10g</code></p>
+</div>
+</li>
+</ol>
+</div>
+</div>
 </div>
 </div>
 </div>

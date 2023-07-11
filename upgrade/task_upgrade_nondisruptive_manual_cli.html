@@ -3339,8 +3339,6 @@
 
 
 
-
-
         </li>
       </ul>
     
@@ -5104,8 +5102,6 @@
             Manage a FlexCache relationship
           </a>
           
-
-
 
 
 
@@ -20158,13 +20154,6 @@
         Set up AWS S3 as the cloud tier
       </a></li><li 
       data-pdf-exists="true" 
-      data-pdf-filename="Specify the AWS S3 configuration information"
-      data-li-level="6#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/us-en/ontap/fabricpool/setup-aws-s3-cloud-tier-task.html">
-        Specify the AWS S3 configuration information
-      </a></li><li 
-      data-pdf-exists="true" 
       data-pdf-filename="Set up Google Cloud Storage as the cloud tier"
       data-li-level="6#" 
       class=" "
@@ -22667,13 +22656,6 @@
       </a>
       <ul style="display: none;">
         <li 
-      data-pdf-exists="true" 
-      data-pdf-filename="View the connection status of a FlexCache relationship"
-      data-li-level="4#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/us-en/ontap/flexcache/view-connection-status-origin-task.html">
-        View the connection status of a FlexCache relationship
-      </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Synchronize properties of a FlexCache volume from an origin volume"
       data-li-level="4#" 
@@ -37270,7 +37252,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-06-27 20:16:28 +0000">06/27/2022</time>
+    <time datetime="2023-07-07 17:23:36 +0000">07/07/2023</time>
     
   
 
@@ -37931,7 +37913,13 @@ vs0
 </div>
 </li>
 <li>
-<p>If this was the last node in the cluster to be updated, trigger an AutoSupport notification: <code>autosupport invoke -node * -type all -message "Finishing_NDU"</code></p>
+<p>If this was the last node in the cluster to be updated, trigger an AutoSupport notification:</p>
+<div class="paragraph">
+<p><code>set -privilege advanced</code></p>
+</div>
+<div class="paragraph">
+<p><code>autosupport invoke -node * -type all -message "Finishing_NDU"</code></p>
+</div>
 <div class="paragraph">
 <p>This AutoSupport notification includes a record of the system status just prior to update. It saves useful troubleshooting information in case there is a problem with the update process.</p>
 </div>

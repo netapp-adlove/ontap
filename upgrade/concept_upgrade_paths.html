@@ -3339,8 +3339,6 @@
 
 
 
-
-
         </li>
       </ul>
     
@@ -5104,8 +5102,6 @@
             Manage a FlexCache relationship
           </a>
           
-
-
 
 
 
@@ -20158,13 +20154,6 @@
         Set up AWS S3 as the cloud tier
       </a></li><li 
       data-pdf-exists="true" 
-      data-pdf-filename="Specify the AWS S3 configuration information"
-      data-li-level="6#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/us-en/ontap/fabricpool/setup-aws-s3-cloud-tier-task.html">
-        Specify the AWS S3 configuration information
-      </a></li><li 
-      data-pdf-exists="true" 
       data-pdf-filename="Set up Google Cloud Storage as the cloud tier"
       data-li-level="6#" 
       class=" "
@@ -22667,13 +22656,6 @@
       </a>
       <ul style="display: none;">
         <li 
-      data-pdf-exists="true" 
-      data-pdf-filename="View the connection status of a FlexCache relationship"
-      data-li-level="4#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/us-en/ontap/flexcache/view-connection-status-origin-task.html">
-        View the connection status of a FlexCache relationship
-      </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Synchronize properties of a FlexCache volume from an origin volume"
       data-li-level="4#" 
@@ -37270,7 +37252,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-05-22 18:04:11 +0000">05/22/2023</time>
+    <time datetime="2023-07-10 17:24:36 +0000">07/10/2023</time>
     
   
 
@@ -37528,7 +37510,9 @@ If you are upgrading a MetroCluster IP configuration from 9.8 to 9.10.1 on any o
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">9.12.1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">direct multi-hop (requires images for 9.8 &amp; 9.12.1)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">multi-stage<br>
+-9.7 &#8594; 9.9.1<br>
+-9.9.1 &#8594; 9.12.1</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">9.11.1</p></td>
@@ -38062,7 +38046,17 @@ If you are upgrading a MetroCluster IP configuration from 9.8 to 9.10.1 on any o
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">9.10.1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">direct</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">direct<br>
+<br>
+<strong>Attention Metrocluster configurations</strong>:<br>
+If you are upgrading a MetroCluster IP configuration from 9.8 to 9.10.1 on any of the following platforms, you must upgrade to 9.9.1 before you upgrade to 9.10.1.<br>
+<br>
+* FAS2750<br>
+* FAS500f<br>
+* AFF A220<br>
+* AFF A250<br>
+<br>
+MetroCluster IP configurations on these platforms, cannot upgrade from 9.8 directly to 9.10.1.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">9.9.1</p></td>
@@ -38073,8 +38067,7 @@ If you are upgrading a MetroCluster IP configuration from 9.8 to 9.10.1 on any o
 <td class="tableblock halign-left valign-top"><p class="tableblock">9.13.1</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">multi-stage<br>
 - 9.7 &#8594; 9.9.1<br>
-- 9.9.1 &#8594; 9.12.1<br>
-- 9.12.1 &#8594; 9.13.1</p></td>
+- 9.9.1 &#8594; 9.13.1</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">9.12.1</p></td>
