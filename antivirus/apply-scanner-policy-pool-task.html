@@ -9,14 +9,14 @@
   <meta property="og:title" content="Apply a scanner policy on a single cluster" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/us-en/ontap/antivirus/apply-scanner-policy-pool-task.html" />
-	<meta property="og:description" content="A scanner policy determines whether a scanner pool is active. You must make a scanner pool active before the Vscan servers that are defined in the scanner po..." />
+	<meta property="og:description" content="A scanner policy determines whether a scanner pool is active. You must activate a scanner pool before the Vscan servers that it defines can connect to an SVM." />
   <meta property="og:image" content="https://docs.netapp.com/us-en/ontap/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="A scanner policy determines whether a scanner pool is active. You must make a scanner pool active before the Vscan servers that are defined in the scanner po...">
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="A scanner policy determines whether a scanner pool is active. You must activate a scanner pool before the Vscan servers that it defines can connect to an SVM.">
   <meta name="keywords" content=" apply, scanner policy, single, cluster"><!-- Icons -->
   <link rel="icon" href="/us-en/ontap/images/favicon.ico" type="image/x-icon">
 
@@ -37252,18 +37252,26 @@
 <p class="page-details">
   
     
-    <time datetime="2021-10-14 21:50:12 +0000">10/14/2021</time>
+    <time datetime="2023-05-09 23:25:28 +0000">05/09/2023</time>
     
   
 
 <span>Contributors
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-powr">
+    <img  class="avatar avatar-small"
+          alt="netapp-powr"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/115187960?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
 </span>
 
 
 </p>
 
 <div class="paragraph lead">
-<p>A scanner policy determines whether a scanner pool is active. You must make a scanner pool active before the Vscan servers that are defined in the scanner pool can connect to an SVM.</p>
+<p>A scanner policy determines whether a scanner pool is active. You must activate a scanner pool before the Vscan servers that it defines can connect to an SVM.</p>
 </div>
 <div class="ulist">
 <div class="title">About this task</div>
@@ -37272,13 +37280,7 @@
 <p>You can apply only one scanner policy to a scanner pool.</p>
 </li>
 <li>
-<p>If you created a scanner pool for all of the SVMs in a cluster, you must apply a scanner policy on each SVM individually.</p>
-</li>
-<li>
-<p>For disaster recovery and MetroCluster configurations, you must apply a scanner policy to the scanner pools for the local cluster and partner cluster.</p>
-<div class="paragraph">
-<p>In the policy that you create for the local cluster, you must specify the local cluster in the <code>cluster</code> parameter. In the policy that you create for the partner cluster, you must specify the partner cluster in the <code>cluster</code> parameter. The partner cluster can then take over virus scanning operations in case of a disaster.</p>
-</div>
+<p>If you created a scanner pool for all the SVMs in a cluster, you must apply a scanner policy on each SVM individually.</p>
 </li>
 </ul>
 </div>

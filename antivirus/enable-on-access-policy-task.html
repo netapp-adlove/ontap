@@ -9,14 +9,14 @@
   <meta property="og:title" content="Enable an on-access policy" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/us-en/ontap/antivirus/enable-on-access-policy-task.html" />
-	<meta property="og:description" content="You must enable an on-access policy on an SVM before its files can be scanned. If you created an on-access policy for all the SVMs in a cluster, you must ena..." />
+	<meta property="og:description" content="An on-access policy defines the scope of an on-access scan. You must enable an on-access policy on an SVM before its files can be scanned." />
   <meta property="og:image" content="https://docs.netapp.com/us-en/ontap/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="You must enable an on-access policy on an SVM before its files can be scanned. If you created an on-access policy for all the SVMs in a cluster, you must ena...">
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="An on-access policy defines the scope of an on-access scan. You must enable an on-access policy on an SVM before its files can be scanned.">
   <meta name="keywords" content=" enable, on-access, policy"><!-- Icons -->
   <link rel="icon" href="/us-en/ontap/images/favicon.ico" type="image/x-icon">
 
@@ -37252,11 +37252,19 @@
 <p class="page-details">
   
     
-    <time datetime="2022-02-04 20:44:16 +0000">02/04/2022</time>
+    <time datetime="2023-05-10 02:03:23 +0000">05/10/2023</time>
     
   
 
 <span>Contributors
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-powr">
+    <img  class="avatar avatar-small"
+          alt="netapp-powr"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/115187960?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
   <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-ahibbard">
     <img  class="avatar avatar-small"
           alt="netapp-ahibbard"
@@ -37271,7 +37279,10 @@
 </p>
 
 <div class="paragraph lead">
-<p>You must enable an on-access policy on an SVM before its files can be scanned. If you created an on-access policy for all the SVMs in a cluster, you must enable the policy on each SVM individually. You can enable only one on-access policy on an SVM at a time.</p>
+<p>An on-access policy defines the scope of an on-access scan. You must enable an on-access policy on an SVM before its files can be scanned.</p>
+</div>
+<div class="paragraph">
+<p>If you created an on-access policy for all the SVMs in a cluster, you must enable the policy on each SVM individually. You can enable only one on-access policy on an SVM at a time.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Steps</div>
@@ -37282,7 +37293,7 @@
 <p><code>vserver vscan on-access-policy enable -vserver data_SVM -policy-name policy_name</code></p>
 </div>
 <div class="paragraph">
-<p>The following command enables an on-access policy named <code>Policy1</code> on the <code>vs1</code>SVM:</p>
+<p>The following command enables an on-access policy named <code>Policy1</code> on the <code>vs1</code> SVM:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -37291,7 +37302,10 @@
 </div>
 </li>
 <li>
-<p>Verify that the on-access policy is enabled: <code>vserver vscan on-access-policy show -instance <em>data_SVM</em> -policy-name <em>policy_name</em></code></p>
+<p>Verify that the on-access policy is enabled:</p>
+<div class="paragraph">
+<p><code>vserver vscan on-access-policy show -instance <em>data_SVM</em> -policy-name <em>policy_name</em></code></p>
+</div>
 <div class="paragraph">
 <p>For a complete list of options, see the man page for the command.</p>
 </div>

@@ -37252,11 +37252,19 @@
 <p class="page-details">
   
     
-    <time datetime="2021-11-11 19:48:01 +0000">11/11/2021</time>
+    <time datetime="2023-07-12 14:32:20 +0000">07/12/2023</time>
     
   
 
 <span>Contributors
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-aoife">
+    <img  class="avatar avatar-small"
+          alt="netapp-aoife"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/92876203?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
   <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-thomi">
     <img  class="avatar avatar-small"
           alt="netapp-thomi"
@@ -37277,7 +37285,7 @@
 <div class="title">What you&#8217;ll need</div>
 <ul>
 <li>
-<p>If you are using NSE with an external key management (KMIP) server, you must have deleted the external key manager database.</p>
+<p>If you are using NSE or NVE with an external key management (KMIP) server, you must have deleted the external key manager database.</p>
 <div class="paragraph">
 <p><a href="delete-key-management-database-task.html">Transitioning to onboard key management from external key management</a></p>
 </div>
@@ -37417,14 +37425,20 @@ Key ID                                                           Used By
 </div>
 </div>
 </li>
+<li>
+<p>Optionally, convert plain text volumes to encrypted volumes.</p>
+<div class="paragraph">
+<p><code>volume encryption conversion start</code></p>
+</div>
+<div class="paragraph">
+<p>The Onboard Key Manager must be fully configured before you convert the volumes. In a MetroCluster environment, the Onboard Key Manager must be configured on both sites.</p>
+</div>
+</li>
 </ol>
 </div>
 <div class="paragraph">
 <div class="title">After you finish</div>
 <p>Copy the passphrase to a secure location outside the storage system for future use.</p>
-</div>
-<div class="paragraph">
-<p>All key management information is automatically backed up to the replicated database (RDB) for the cluster.</p>
 </div>
 <div class="paragraph">
 <p>Whenever you configure the Onboard Key Manager passphrase, you should also back up the information manually to a secure location outside the storage system for use in case of a disaster. See <a href="backup-key-management-information-manual-task.html">Back up onboard key management information manually</a>.</p>

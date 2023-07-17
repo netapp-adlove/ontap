@@ -9,14 +9,14 @@
   <meta property="og:title" content="Enable virus scanning on an SVM" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/us-en/ontap/antivirus/enable-virus-scan-svm-task.html" />
-	<meta property="og:description" content="You must enable virus scanning on an SVM before an on-access or on-demand scan can run. The Vscan configuration must exist." />
+	<meta property="og:description" content="You must enable virus scanning on an SVM before an on-access or on-demand scan can run." />
   <meta property="og:image" content="https://docs.netapp.com/us-en/ontap/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="You must enable virus scanning on an SVM before an on-access or on-demand scan can run. The Vscan configuration must exist.">
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="You must enable virus scanning on an SVM before an on-access or on-demand scan can run.">
   <meta name="keywords" content=" enable, virus scan, svm"><!-- Icons -->
   <link rel="icon" href="/us-en/ontap/images/favicon.ico" type="image/x-icon">
 
@@ -37252,18 +37252,26 @@
 <p class="page-details">
   
     
-    <time datetime="2021-10-14 21:50:12 +0000">10/14/2021</time>
+    <time datetime="2023-05-10 03:02:32 +0000">05/10/2023</time>
     
   
 
 <span>Contributors
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-powr">
+    <img  class="avatar avatar-small"
+          alt="netapp-powr"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/115187960?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
 </span>
 
 
 </p>
 
 <div class="paragraph lead">
-<p>You must enable virus scanning on an SVM before an on-access or on-demand scan can run. The Vscan configuration must exist.</p>
+<p>You must enable virus scanning on an SVM before an on-access or on-demand scan can run.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Steps</div>
@@ -37281,14 +37289,14 @@
 </td>
 <td class="content">
 <div class="paragraph">
-<p>You can use the <code>vserver vscan disable</code> command to disable virus scanning if necessary.</p>
+<p>You can use the <code>vserver vscan disable</code> command to disable virus scanning, if necessary.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>The following command enables virus scanning on the <code>vs1</code>SVM:</p>
+<p>The following command enables virus scanning on the <code>vs1</code> SVM:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -37305,7 +37313,7 @@
 <p>For a complete list of options, see the man page for the command.</p>
 </div>
 <div class="paragraph">
-<p>The following command displays the Vscan status of the <code>vs1</code>SVM:</p>
+<p>The following command displays the Vscan status of the <code>vs1</code> SVM:</p>
 </div>
 <div class="listingblock">
 <div class="content">

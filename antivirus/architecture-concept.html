@@ -9,14 +9,14 @@
   <meta property="og:title" content="Antivirus architecture" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/us-en/ontap/antivirus/architecture-concept.html" />
-	<meta property="og:description" content="The NetApp antivirus architecture consists of a Vscan server and a set of ONTAP configurables." />
+	<meta property="og:description" content="The NetApp antivirus architecture consists of Vscan server software and associated settings." />
   <meta property="og:image" content="https://docs.netapp.com/us-en/ontap/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="The NetApp antivirus architecture consists of a Vscan server and a set of ONTAP configurables.">
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="The NetApp antivirus architecture consists of Vscan server software and associated settings.">
   <meta name="keywords" content=" antivirus, architecture"><!-- Icons -->
   <link rel="icon" href="/us-en/ontap/images/favicon.ico" type="image/x-icon">
 
@@ -37252,11 +37252,19 @@
 <p class="page-details">
   
     
-    <time datetime="2021-10-14 21:50:12 +0000">10/14/2021</time>
+    <time datetime="2023-05-09 20:17:02 +0000">05/09/2023</time>
     
   
 
 <span>Contributors
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-powr">
+    <img  class="avatar avatar-small"
+          alt="netapp-powr"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/115187960?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
 </span>
 
 
@@ -37265,28 +37273,28 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>The NetApp antivirus architecture consists of a Vscan server and a set of ONTAP configurables.</p>
+<p>The NetApp antivirus architecture consists of Vscan server software and associated settings.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="vscan-server-components">Vscan server components</h2>
+<h2 id="vscan-server-software">Vscan server software</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You must install the following components on the Vscan server.</p>
+<p>You must install this software on the Vscan server.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
 <p><strong>ONTAP Antivirus Connector</strong></p>
 <div class="paragraph">
-<p>The ONTAP Antivirus Connector provided by NetApp handles communication between ONTAP and the Vscan server.</p>
+<p>This is NetApp-provided software that handles scan request and response communication between the SVMs and antivirus software. It can run on a virtual machine, but for best performance use a physical machine. You can download this software from the NetApp Support Site (requires login).</p>
 </div>
 </li>
 <li>
 <p><strong>Antivirus software</strong></p>
 <div class="paragraph">
-<p>ONTAP-compliant third-party antivirus software scans files for viruses or other malicious code. You specify the remedial actions to be taken on infected files when you configure the software.</p>
+<p>This is partner-provided software that scans files for viruses or other malicious code. You specify the remedial actions to be taken on infected files when you configure the software.</p>
 </div>
 </li>
 </ul>
@@ -37294,17 +37302,17 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="ontap-configurables">ONTAP configurables</h2>
+<h2 id="vscan-software-settings">Vscan software settings</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You must configure the following items on the NetApp storage system.</p>
+<p>You must configure these software settings on the Vscan server.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
 <p><strong>Scanner pool</strong></p>
 <div class="paragraph">
-<p>A scanner pool defines the Vscan servers and privileged users that can connect to SVMs. It also defines a scan request timeout period, after which the scan request is sent to an alternative Vscan server if one is available.</p>
+<p>This setting defines the Vscan servers and privileged users that can connect to SVMs. It also defines a scan request timeout period, after which the scan request is sent to an alternative Vscan server if one is available.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -37314,7 +37322,7 @@
 </td>
 <td class="content">
 <div class="paragraph">
-<p>It is a best practice to set the timeout period in the antivirus software on the Vscan server to five seconds less than the scanner-pool request timeout period, to avoid situations in which file access is delayed or denied altogether because the timeout period on the software is greater than the timeout period for the scan request.</p>
+<p>You should set the timeout period in the antivirus software on the Vscan server to five seconds less than the scanner-pool scan-request timeout period. This will avoid situations in which file access is delayed or denied altogether because the timeout period on the software is greater than the timeout period for the scan request.</p>
 </div>
 </td>
 </tr>
@@ -37324,13 +37332,13 @@
 <li>
 <p><strong>Privileged user</strong></p>
 <div class="paragraph">
-<p>A privileged user is a domain user account that a Vscan server uses to connect to the SVM. The account must be included in the list of privileged users defined in the scanner pool.</p>
+<p>This setting is a domain user account that a Vscan server uses to connect to the SVM. The account must exist in the list of privileged users in the scanner pool.</p>
 </div>
 </li>
 <li>
 <p><strong>Scanner policy</strong></p>
 <div class="paragraph">
-<p>A scanner policy determines whether a scanner pool is active. A scanner policy can have one of the following values:</p>
+<p>This setting determines whether a scanner pool is active. Scanner policies are system-defined, so you cannot create custom scanner policies. Only these three policies are available:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -37338,11 +37346,10 @@
 <p><code>Primary</code> specifies that the scanner pool is active.</p>
 </li>
 <li>
-<p><code>Secondary</code> specifies that the scanner pool is active only if none of the Vscan servers in the primary scanner pool is connected.</p>
+<p><code>Secondary</code> specifies that the scanner pool is active, only when none of the Vscan servers in the primary scanner pool are connected.</p>
 </li>
 <li>
-<p><code>Idle</code> specifies that the scanner pool is inactive.
-Scanner policies are system-defined. You cannot create a custom scanner policy.</p>
+<p><code>Idle</code> specifies that the scanner pool is inactive.</p>
 </li>
 </ul>
 </div>
@@ -37350,7 +37357,7 @@ Scanner policies are system-defined. You cannot create a custom scanner policy.<
 <li>
 <p><strong>On-access policy</strong></p>
 <div class="paragraph">
-<p>An on-access policy defines the scope of an on-access scan. You can specify the maximum size of the files to be scanned, the extensions of the files to be included in the scan, and the extensions and paths of the files to be excluded from the scan.</p>
+<p>This setting defines the scope of an on-access scan. You can specify the maximum file size to scan, file extensions and paths to include in the scan, and file extensions and paths to exclude from the scan.</p>
 </div>
 <div class="paragraph">
 <p>By default, only read-write volumes are scanned. You can specify filters that enable scanning of read-only volumes or that restrict scanning to files opened with execute access:</p>
@@ -37370,7 +37377,7 @@ Scanner policies are system-defined. You cannot create a custom scanner policy.<
 </td>
 <td class="content">
 <div class="paragraph">
-<p>&#8220;Execute access&#8221; is not identical with &#8220;execute permission.&#8221; A given client will have &#8220;execute access&#8221; on an executable file only if the file was opened with &#8220;execute intent.&#8221;</p>
+<p>&#8220;Execute access&#8221; is different from &#8220;execute permission.&#8221; A given client will have &#8220;execute access&#8221; on an executable file only if the file was opened with &#8220;execute intent.&#8221;</p>
 </div>
 </td>
 </tr>
@@ -37380,13 +37387,23 @@ Scanner policies are system-defined. You cannot create a custom scanner policy.<
 </ul>
 </div>
 <div class="paragraph">
-<p>You can set the <code>scan-mandatory</code> option to off to specify that file access is allowed when no Vscan servers are available for virus scanning.</p>
+<p>You can set the <code>scan-mandatory</code> option to off to specify that file access is allowed when no Vscan servers are available for virus scanning. Within on-access mode you can choose from these two mutually-exclusive options:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Mandatory: With this option, Vscan tries to deliver the scan request to the server until the timeout period expires. If the scan request is not accepted by the server, then the client access request is denied.</p>
+</li>
+<li>
+<p>Non-Mandatory: With this option, Vscan always allows client access, whether or not a Vscan server was available for virus scanning.</p>
+</li>
+</ul>
 </div>
 </li>
 <li>
 <p><strong>On-demand task</strong></p>
 <div class="paragraph">
-<p>An on-demand task defines the scope of an on-demand scan. You can specify the maximum size of the files to be scanned, the extensions and paths of the files to be included in the scan, and the extensions and paths of the files to be excluded from the scan. Files in subdirectories are scanned by default.</p>
+<p>This setting defines the scope of an on-demand scan. You can specify the maximum file size to scan, file extensions and paths to include in the scan, and file extensions and paths to exclude from the scan. Files in subdirectories are scanned by default.</p>
 </div>
 <div class="paragraph">
 <p>You use a cron schedule to specify when the task runs. You can use the <code>vserver vscan on-demand-task run</code> command to run the task immediately.</p>
@@ -37395,10 +37412,7 @@ Scanner policies are system-defined. You cannot create a custom scanner policy.<
 <li>
 <p><strong>Vscan file-operations profile (on-access scanning only)</strong></p>
 <div class="paragraph">
-<p>The <code>-vscan-fileop-profile</code> parameter for the <code>vserver cifs share create</code> command defines which operations on a SMB share can trigger virus scanning. By default, the parameter is set to <code>standard</code>, which is the NetApp best practice.</p>
-</div>
-<div class="paragraph">
-<p>You can adjust this parameter as necessary when you create or modify a SMB share:</p>
+<p>The <code>vscan-fileop-profile</code> parameter for the <code>vserver cifs share create</code> command defines which SMB file operations trigger virus scanning. By default, the parameter is set to <code>standard</code>, which is NetApp best practice. You can adjust this parameter as necessary when you create or modify an SMB share:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -37406,19 +37420,31 @@ Scanner policies are system-defined. You cannot create a custom scanner policy.<
 <p><code>no-scan</code> specifies that virus scans are never triggered for the share.</p>
 </li>
 <li>
-<p><code>standard</code> specifies that virus scans can be triggered by open, close, and rename operations.</p>
+<p><code>standard</code> specifies that virus scans are triggered by open, close, and rename operations.</p>
 </li>
 <li>
-<p><code>strict</code> specifies that virus scans can be triggered by open, read, close, and rename operations.</p>
+<p><code>strict</code> specifies that virus scans are triggered by open, read, close, and rename operations.</p>
 <div class="paragraph">
 <p>The <code>strict</code> profile provides enhanced security for situations in which multiple clients access a file simultaneously. If one client closes a file after writing a virus to it, and the same file remains open on a second client, <code>strict</code> ensures that a read operation on the second client triggers a scan before the file is closed.</p>
 </div>
 <div class="paragraph">
-<p>You should be careful to restrict the <code>strict</code> profile to shares containing files that you anticipate will be accessed simultaneously. Because the profile generates more scan requests than the others, it may affect performance adversely.</p>
+<p>You should be careful to restrict the <code>strict`</code> profile to shares containing files that you anticipate will be accessed simultaneously. Since this profile generates more scan requests, it may impact performance.</p>
 </div>
 </li>
 <li>
-<p><code>writes-only</code> specifies that virus scans can be triggered only when a file that has been modified is closed.</p>
+<p><code>writes-only</code> specifies that virus scans are triggered only when modified files are closed.</p>
+<div class="paragraph">
+<p>Since <code>writes-only</code> generates fewer scan requests, it typically improves performance.</p>
+</div>
+<div class="paragraph">
+<p>If you use this profile, the scanner must be configured to delete or quarantine unrepairable infected files, so they cannot be accessed. If, for example, a client closes a file after writing a virus to it, and the file is not repaired, deleted, or quarantined, any client that accesses the file <code>without</code> writing to it will be infected.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -37432,18 +37458,6 @@ Scanner policies are system-defined. You cannot create a custom scanner policy.<
 </td>
 </tr>
 </table>
-</div>
-<div class="paragraph">
-<p>Because <code>writes-only</code> generates fewer scan requests than the other profiles (except <code>no-scan</code>), it typically improves performance.</p>
-</div>
-<div class="paragraph">
-<p>Keep in mind, though, that if you use this profile for a share, the scanner must be configured to delete or quarantine an unrepairable infected file, so that it cannot be accessed by clients later. If, for example, a client closes a file after writing a virus to it, and the file is not repaired, deleted, or quarantined, any client that accesses the file <em>without</em> writing to it will be infected.</p>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
 </div>
 </div>
 </div>

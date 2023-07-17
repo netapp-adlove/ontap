@@ -9,14 +9,14 @@
   <meta property="og:title" content="Configure on-demand scanning overview" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/us-en/ontap/antivirus/configure-on-demand-scanning-concept.html" />
-	<meta property="og:description" content="You can use on-demand scanning to check files for viruses immediately or on a schedule. You might want to run scans only in off-peak hours, for example, or y..." />
+	<meta property="og:description" content="You can use on-demand scanning to check files for viruses immediately or on a schedule." />
   <meta property="og:image" content="https://docs.netapp.com/us-en/ontap/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="You can use on-demand scanning to check files for viruses immediately or on a schedule. You might want to run scans only in off-peak hours, for example, or y...">
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="You can use on-demand scanning to check files for viruses immediately or on a schedule.">
   <meta name="keywords" content=" configure, on-demand, scan"><!-- Icons -->
   <link rel="icon" href="/us-en/ontap/images/favicon.ico" type="image/x-icon">
 
@@ -37252,51 +37252,43 @@
 <p class="page-details">
   
     
-    <time datetime="2021-10-14 21:50:12 +0000">10/14/2021</time>
+    <time datetime="2023-05-10 02:33:49 +0000">05/10/2023</time>
     
   
 
 <span>Contributors
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-powr">
+    <img  class="avatar avatar-small"
+          alt="netapp-powr"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/115187960?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
 </span>
 
 
 </p>
 
 <div class="paragraph lead">
-<p>You can use on-demand scanning to check files for viruses immediately or on a schedule. You might want to run scans only in off-peak hours, for example, or you might want to scan very large files that were excluded from an on-access scan.</p>
+<p>You can use on-demand scanning to check files for viruses immediately or on a schedule.</p>
 </div>
 <div class="paragraph">
-<p>You can use a cron schedule to specify when the task runs:</p>
+<p>You might want to run scans only in off-peak hours, for example, or you might want to scan very large files that were excluded from an on-access scan. You can use a cron schedule to specify when the task runs.</p>
 </div>
 <div class="ulist">
+<div class="title">About this topic</div>
 <ul>
 <li>
 <p>You can assign a schedule when you create a task.</p>
 </li>
 <li>
-<p>You can create a task without assigning a schedule, and use the <code>vserver vscan on-demand-task schedule</code> command to assign a schedule.</p>
+<p>Only one task can be scheduled at a time on an SVM.</p>
 </li>
 <li>
-<p>You can use the <code>vserver vscan on-demand-task run</code> command to run a task immediately, whether or not you have assigned a schedule.</p>
+<p>On-demand scanning does not support scanning of symbolic links or stream files.</p>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p>Only one task can be scheduled at a time on an SVM.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/ontap/images/note.svg" alt="Note">
-</td>
-<td class="content">
-<div class="paragraph">
-<p>On-demand scanning does not support scanning of symbolic links or stream files.</p>
-</div>
-</td>
-</tr>
-</table>
 </div>
 
     </article>

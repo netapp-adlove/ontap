@@ -37252,11 +37252,19 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-23 21:29:19 +0000">05/23/2022</time>
+    <time datetime="2023-07-12 14:32:20 +0000">07/12/2023</time>
     
   
 
 <span>Contributors
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-aoife">
+    <img  class="avatar avatar-small"
+          alt="netapp-aoife"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/92876203?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
   <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-thomi">
     <img  class="avatar avatar-small"
           alt="netapp-thomi"
@@ -37279,7 +37287,7 @@
 </p>
 
 <div class="paragraph lead">
-<p>You can use the Onboard Key Manager to secure the keys that the cluster uses to access encrypted data. You must enable Onboard Key Manager on each cluster that accesses an encrypted volume or a self-encrypting disk.</p>
+<p>You can use the Onboard Key Manager to secure the keys that the cluster uses to access encrypted data. You must enable the Onboard Key Manager on each cluster that accesses an encrypted volume or a self-encrypting disk.</p>
 </div>
 <div class="ulist">
 <div class="title">What you&#8217;ll need</div>
@@ -37288,7 +37296,7 @@
 <p>You must be a cluster administrator to perform this task.</p>
 </li>
 <li>
-<p>You must configure the MetroCluster environment before you configure an external key manager.</p>
+<p>You must configure the MetroCluster environment before you configure the Onboard Key Manager.</p>
 </li>
 </ul>
 </div>
@@ -37297,7 +37305,7 @@
 <p>You must run the <code>security key-manager onboard sync</code> command each time you add a node to the cluster.</p>
 </div>
 <div class="paragraph">
-<p>If you have a MetroCluster configuration you must run <code>security key-manager onboard enable</code> on the local cluster first, then run <code>security key-manager onboard sync</code> on the remote cluster, using the same passphrase on each.</p>
+<p>If you have a MetroCluster configuration, you must run <code>security key-manager onboard enable</code> on the local cluster first, then run <code>security key-manager onboard sync</code> on the remote cluster, using the same passphrase on each.</p>
 </div>
 <div class="paragraph">
 <p>By default, you are not required to enter the key manager passphrase when a node is rebooted. You can use the <code>cc-mode-enabled=yes</code> option to require that users enter the passphrase after a reboot.</p>
@@ -37431,52 +37439,35 @@ Reenter the cluster-wide passphrase:    &lt;32..256 ASCII characters long text&g
 <div class="listingblock">
 <div class="content">
 <pre>cluster1::&gt; security key-manager key query -key-type NSE-AK
-       Vserver: cluster1
-   Key Manager: onboard
-          Node: node1
+               Node: node1
+            Vserver: cluster1
+        Key Manager: onboard
+   Key Manager Type: OKM
+ Key Manager Policy: -
 
-Key Tag                               Key Type  Restored
-------------------------------------  --------  --------
-node1                                 NSE-AK    yes
-    Key ID: 000000000000000002000000000001000c11b3863f78c2273343d7ec5a67762e0000000000000000
-node1                                 NSE-AK    yes
-    Key ID: 000000000000000002000000000001006f4e2513353a674305872a4c9f3bf7970000000000000000
+ Key Tag                               Key Type Encryption   Restored
 
-       Vserver: svm1
-   Key Manager: onboard
-          Node: node1
-    Key Server: keyserver.svm1.com:5965
+------------------------------------  -------- ------------ --------
 
-Key Tag                               Key Type  Restored
-------------------------------------  --------  --------
-eb9f8311-e8d8-487e-9663-7642d7788a75  VEK       yes
-    Key ID: 0000000000000000020000000000004001cb18336f7c8223743d3e75c6a7726e0000000000000000
-9d09cbbf-0da9-4696-87a1-8e083d8261bb  VEK       yes
-    Key ID: 0000000000000000020000000000004064f2e1533356a470385274a9c3ffb9770000000000000000
+node1                                 NSE-AK   AES-256      true
 
-       Vserver: cluster1
-   Key Manager: onboard
-          Node: node2
+    Key ID: 00000000000000000200000000000100056178fc6ace6d91472df8a9286daacc0000000000000000
 
-Key Tag                               Key Type  Restored
-------------------------------------  --------  --------
-node1                                 NSE-AK    yes
-    Key ID: 000000000000000002000000000001000c11b3863f78c2273343d7ec5a67762e0000000000000000
-node1                                 NSE-AK    yes
-    Key ID: 000000000000000002000000000001006f4e2513353a674305872a4c9f3bf7970000000000000000
+node1                                 NSE-AK   AES-256      true
 
-       Vserver: svm1
-   Key Manager: onboard
-          Node: node2
-    Key Server: keyserver.svm1.com:5965
+    Key ID: 00000000000000000200000000000100df1689a148fdfbf9c2b198ef974d0baa0000000000000000
 
-Key Tag                               Key Type  Restored
-------------------------------------  --------  --------
-eb9f8311-e8d8-487e-9663-7642d7788a75  VEK       yes
-    Key ID: 0000000000000000020000000000004001cb18336f7c8223743d3e75c6a7726e0000000000000000
-9d09cbbf-0da9-4696-87a1-8e083d8261bb  VEK       yes
-    Key ID: 0000000000000000020000000000004064f2e1533356a470385274a9c3ffb9770000000000000000</pre>
+2 entries were displayed.</pre>
 </div>
+</div>
+</li>
+<li>
+<p>Optionally, convert plain text volumes to encrypted volumes.</p>
+<div class="paragraph">
+<p><code>volume encryption conversion start</code></p>
+</div>
+<div class="paragraph">
+<p>The Onboard Key Manager must be fully configured before you convert the volumes. In a MetroCluster environment, the Onboard Key Manager must be configured on both sites.</p>
 </div>
 </li>
 </ol>
@@ -37486,7 +37477,7 @@ eb9f8311-e8d8-487e-9663-7642d7788a75  VEK       yes
 <p>Copy the passphrase to a secure location outside the storage system for future use.</p>
 </div>
 <div class="paragraph">
-<p>All key management information is automatically backed up to the replicated database (RDB) for the cluster. You should also back up the information manually for use in case of a disaster.</p>
+<p>Whenever you configure the Onboard Key Manager passphrase, you should also back up the information manually to a secure location outside the storage system for use in case of a disaster. See <a href="backup-key-management-information-manual-task.html">Back up onboard key management information manually</a>.</p>
 </div>
 
     </article>

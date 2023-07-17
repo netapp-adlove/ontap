@@ -9,14 +9,14 @@
   <meta property="og:title" content="Create a scanner pool on a single cluster" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/us-en/ontap/antivirus/create-scanner-pool-single-cluster-task.html" />
-	<meta property="og:description" content="A scanner pool defines the Vscan servers and privileged users that can connect to SVMs. You can create a scanner pool for an individual SVM or for all of the..." />
+	<meta property="og:description" content="A scanner pool defines the Vscan servers and privileged users that can connect to SVMs. You can create a scanner pool for an individual SVM or for all the SV..." />
   <meta property="og:image" content="https://docs.netapp.com/us-en/ontap/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="A scanner pool defines the Vscan servers and privileged users that can connect to SVMs. You can create a scanner pool for an individual SVM or for all of the...">
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="A scanner pool defines the Vscan servers and privileged users that can connect to SVMs. You can create a scanner pool for an individual SVM or for all the SV...">
   <meta name="keywords" content=" create, scanner pool, single cluster"><!-- Icons -->
   <link rel="icon" href="/us-en/ontap/images/favicon.ico" type="image/x-icon">
 
@@ -37252,11 +37252,19 @@
 <p class="page-details">
   
     
-    <time datetime="2022-02-04 20:44:16 +0000">02/04/2022</time>
+    <time datetime="2023-05-10 02:03:23 +0000">05/10/2023</time>
     
   
 
 <span>Contributors
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-powr">
+    <img  class="avatar avatar-small"
+          alt="netapp-powr"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/115187960?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
   <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-ahibbard">
     <img  class="avatar avatar-small"
           alt="netapp-ahibbard"
@@ -37271,7 +37279,7 @@
 </p>
 
 <div class="paragraph lead">
-<p>A scanner pool defines the Vscan servers and privileged users that can connect to SVMs. You can create a scanner pool for an individual SVM or for all of the SVMs in a cluster.</p>
+<p>A scanner pool defines the Vscan servers and privileged users that can connect to SVMs. You can create a scanner pool for an individual SVM or for all the SVMs in a cluster.</p>
 </div>
 <div class="ulist">
 <div class="title">What you&#8217;ll need</div>
@@ -37280,16 +37288,18 @@
 <p>SVMs and Vscan servers must be in the same domain or in trusted domains.</p>
 </li>
 <li>
-<p>For scanner pools defined for an individual SVM, you must have configured the ONTAP Antivirus Connector with the SVM management LIF or the SVM data LIF.</p>
+<p>For scanner pools defined for an individual SVM, you must have configured ONTAP Antivirus Connector with the SVM management LIF or SVM data LIF.</p>
 </li>
 <li>
-<p>For scanner pools defined for all of the SVMs in a cluster, you must have configured the ONTAP Antivirus Connector with the cluster management LIF.</p>
+<p>For scanner pools defined for all the SVMs in a cluster, you must have configured ONTAP Antivirus Connector with the cluster management LIF.</p>
+</li>
+<li>
+<p>The list of privileged users must include the domain user account the Vscan server uses to connect to the SVM.</p>
+</li>
+<li>
+<p>Once the scanner pool is configured, check the connection status to the servers.</p>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<div class="title">About this task</div>
-<p>The list of privileged users must include the domain user account the Vscan server uses to connect to the SVM.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Steps</div>
@@ -37314,7 +37324,7 @@ For a complete list of options, see the man page for the command.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>The following command creates a scanner pool named <code>SP</code> on the <code>vs1</code>SVM:</p>
+<p>The following command creates a scanner pool named <code>SP</code> on the <code>vs1</code> SVM:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -37323,7 +37333,10 @@ For a complete list of options, see the man page for the command.</p>
 </div>
 </li>
 <li>
-<p>Verify that the scanner pool was created: <code>vserver vscan scanner-pool show -vserver <em>data_SVM|cluster_admin_SVM</em> -scanner-pool <em>scanner_pool</em></code></p>
+<p>Verify that the scanner pool was created:</p>
+<div class="paragraph">
+<p><code>vserver vscan scanner-pool show -vserver <em>data_SVM|cluster_admin_SVM</em> -scanner-pool <em>scanner_pool</em></code></p>
+</div>
 <div class="paragraph">
 <p>For a complete list of options, see the man page for the command.</p>
 </div>

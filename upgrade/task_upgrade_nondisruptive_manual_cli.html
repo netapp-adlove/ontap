@@ -37252,7 +37252,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-07-07 17:23:36 +0000">07/07/2023</time>
+    <time datetime="2023-07-12 18:37:54 +0000">07/12/2023</time>
     
   
 
@@ -37931,9 +37931,6 @@ vs0
 <li>
 <p>If this was the last node in the cluster to be updated, trigger an AutoSupport notification:</p>
 <div class="paragraph">
-<p><code>set -privilege advanced</code></p>
-</div>
-<div class="paragraph">
 <p><code>autosupport invoke -node * -type all -message "Finishing_NDU"</code></p>
 </div>
 <div class="paragraph">
@@ -37944,7 +37941,13 @@ vs0
 </div>
 </li>
 <li>
-<p>Confirm that the new ONTAP software is running on both nodes of the HA pair: <code>system node image show</code></p>
+<p>Confirm that the new ONTAP software is running on both nodes of the HA pair:</p>
+<div class="paragraph">
+<p><code>set -privilege advanced</code></p>
+</div>
+<div class="paragraph">
+<p><code>system node image show</code></p>
+</div>
 <div class="paragraph">
 <p>In the following example, image2 is the updated version of ONTAP and is the default version on both nodes:</p>
 </div>

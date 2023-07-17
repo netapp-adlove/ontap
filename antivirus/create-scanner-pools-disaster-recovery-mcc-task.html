@@ -37252,11 +37252,19 @@
 <p class="page-details">
   
     
-    <time datetime="2022-02-04 20:44:16 +0000">02/04/2022</time>
+    <time datetime="2023-05-10 03:23:14 +0000">05/10/2023</time>
     
   
 
 <span>Contributors
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-powr">
+    <img  class="avatar avatar-small"
+          alt="netapp-powr"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/115187960?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
   <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-ahibbard">
     <img  class="avatar avatar-small"
           alt="netapp-ahibbard"
@@ -37280,10 +37288,16 @@
 <p>SVMs and Vscan servers must be in the same domain or in trusted domains.</p>
 </li>
 <li>
-<p>For scanner pools defined for an individual SVM, you must have configured the ONTAP Antivirus Connector with the SVM management LIF or the SVM data LIF.</p>
+<p>For scanner pools defined for an individual SVM, you must have configured ONTAP Antivirus Connector with the SVM management LIF or SVM data LIF.</p>
 </li>
 <li>
-<p>For scanner pools defined for all of the SVMs in a cluster, you must have configured the ONTAP Antivirus Connector with the cluster management LIF.</p>
+<p>For scanner pools defined for all the SVMs in a cluster, you must have configured ONTAP Antivirus Connector with the cluster management LIF.</p>
+</li>
+<li>
+<p>The list of privileged users must include the domain user account the Vscan server uses to connect to the SVM.</p>
+</li>
+<li>
+<p>Once the scanner pool is configured, check the connection status to the servers.</p>
 </li>
 </ul>
 </div>
@@ -37292,26 +37306,15 @@
 <p>MetroCluster configurations protect data by implementing two physically separate mirrored clusters. Each cluster synchronously replicates the data and SVM configuration of the other. A primary SVM on the local cluster serves data when the cluster is online. A secondary SVM on the local cluster serves data when the remote cluster is offline.</p>
 </div>
 <div class="paragraph">
-<p>This means that you must create primary and secondary scanner pools on each cluster in a MetroCluster configuration, corresponding to the primary and secondary SVMs on the cluster. The secondary pool becomes active when the cluster begins serving data from the secondary SVM. The following illustration shows a typical MetroCluster configuration.</p>
+<p>This means that you must create primary and secondary scanner pools on each cluster in a MetroCluster configuration, The secondary pool becomes active when the cluster begins serving data from the secondary SVM. For Disaster Recovery (DR) the configuration is similar to MetroCluster.</p>
+</div>
+<div class="paragraph">
+<p>This figure shows a typical MetroCluster/DR configuration.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../media/metrocluster-av-config.gif" alt="metrocluster av config">
+<img src="../media/metrocluster-av-config.png" alt="metrocluster av config">
 </div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/ontap/images/note.svg" alt="Note">
-</td>
-<td class="content">
-<div class="paragraph">
-<p>The list of privileged users must include the domain user account the Vscan server uses to connect to the SVM.</p>
-</div>
-</td>
-</tr>
-</table>
 </div>
 <div class="olist arabic">
 <div class="title">Steps</div>
@@ -37375,7 +37378,10 @@ scanner-pool pool2_for_site2 -hostnames scan2 -privileged-users cifs
 </div>
 </li>
 <li>
-<p>Verify that the scanner pools were created: <code>vserver vscan scanner-pool show -vserver <em>data_SVM|cluster_admin_SVM</em> -scanner-pool <em>scanner_pool</em></code></p>
+<p>Verify that the scanner pools were created:</p>
+<div class="paragraph">
+<p><code>vserver vscan scanner-pool show -vserver <em>data_SVM|cluster_admin_SVM</em> -scanner-pool <em>scanner_pool</em></code></p>
+</div>
 <div class="paragraph">
 <p>For a complete list of options, see the man page for the command.</p>
 </div>

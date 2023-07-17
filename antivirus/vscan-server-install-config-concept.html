@@ -9,14 +9,14 @@
   <meta property="og:title" content="Vscan server installation and configuration" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/us-en/ontap/antivirus/vscan-server-install-config-concept.html" />
-	<meta property="og:description" content="You must set up one or more Vscan servers to ensure that files on your system are scanned for viruses. Follow the instructions provided by your vendor to ins..." />
+	<meta property="og:description" content="You must set up and configure one or more Vscan servers to enable antivirus scanning." />
   <meta property="og:image" content="https://docs.netapp.com/us-en/ontap/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="You must set up one or more Vscan servers to ensure that files on your system are scanned for viruses. Follow the instructions provided by your vendor to ins...">
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="You must set up and configure one or more Vscan servers to enable antivirus scanning.">
   <meta name="keywords" content=" vscan, server installation, configuration"><!-- Icons -->
   <link rel="icon" href="/us-en/ontap/images/favicon.ico" type="image/x-icon">
 
@@ -37252,11 +37252,19 @@
 <p class="page-details">
   
     
-    <time datetime="2021-10-14 21:50:12 +0000">10/14/2021</time>
+    <time datetime="2023-05-09 21:06:57 +0000">05/09/2023</time>
     
   
 
 <span>Contributors
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-powr">
+    <img  class="avatar avatar-small"
+          alt="netapp-powr"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/115187960?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
 </span>
 
 
@@ -37265,7 +37273,18 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>You must set up one or more Vscan servers to ensure that files on your system are scanned for viruses. Follow the instructions provided by your vendor to install and configure the antivirus software on the server. Follow the instructions in the readme file provided by NetApp to install and configure the ONTAP Antivirus Connector.</p>
+<p>You must set up and configure one or more Vscan servers to enable antivirus scanning.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>To install and configure the antivirus software on the server, follow the instructions provided by your vendor.</p>
+</li>
+<li>
+<p>To install and configure the ONTAP Antivirus Connector, follow the instructions in the <code>README.txt</code> file available on the
+<a href="https://mysupport.netapp.com/site/products/all/details/ontap-antivirus-connector/downloads-tab">NetApp support site</a>.</p>
+</li>
+</ul>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -37275,7 +37294,7 @@
 </td>
 <td class="content">
 <div class="paragraph">
-<p>For disaster recovery and MetroCluster configurations, you must set up separate Vscan servers for the local and partner clusters.</p>
+<p>For disaster recovery and MetroCluster configurations, you must set up and configure separate Vscan servers for the primary/local and secondary/partner ONTAP clusters.</p>
 </div>
 </td>
 </tr>
@@ -37292,10 +37311,8 @@
 <p>For information about antivirus software requirements, see the vendor documentation.</p>
 </li>
 <li>
-<p>For information about the vendors, software, and versions supported by Vscan, see the NetAppInteroperability Matrix.</p>
-<div class="paragraph">
-<p><a href="http://mysupport.netapp.com/matrix">mysupport.netapp.com/matrix</a></p>
-</div>
+<p>For information about the vendors, software, and versions supported by Vscan, see the
+<a href="https://imt.netapp.com/matrix/">NetApp Interoperability Matrix Tool (IMT)</a>.</p>
 </li>
 </ul>
 </div>
@@ -37307,33 +37324,27 @@
 <div class="ulist">
 <ul>
 <li>
-<p>You can download the ONTAP Antivirus Connector from the Software Download page on the NetApp Support Site. <a href="http://mysupport.netapp.com/NOW/cgi-bin/software">NetApp Downloads: Software</a></p>
+<p>You can download this software from the
+<a href="https://mysupport.netapp.com/site/products/all/details/ontap-antivirus-connector/downloads-tab/download/63048/1.0.6">NetApp Support Site</a> (requires login).</p>
 </li>
 <li>
-<p>For information about the Windows versions supported by the ONTAP Antivirus Connector, see the NetAppInteroperability Matrix.</p>
-<div class="paragraph">
-<p><a href="http://mysupport.netapp.com/matrix">mysupport.netapp.com/matrix</a></p>
+<p>For information about software version support, see the
+<a href="https://imt.netapp.com/matrix/">NetApp Interoperability Matrix Tool (IMT)</a>.</p>
+</li>
+</ul>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/ontap/images/note.svg" alt="Note">
-</td>
-<td class="content">
-<div class="paragraph">
-<p>You can install different versions of Windows servers for different Vscan servers in a cluster.</p>
 </div>
-</td>
-</tr>
-</table>
 </div>
+<div class="sect1">
+<h2 id="vscan-server-configuration-requirements">Vscan server configuration requirements</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>You must install .NET 3.0 or later and you must enable SMB 2.0 on the Vscan server. For SMB servers with an export policy, you must add all Vscan servers to the policy.</p>
 </li>
 <li>
-<p>.NET 3.0 or later must be installed on the Windows server.</p>
-</li>
-<li>
-<p>SMB 2.0 must be enabled on the Windows server.</p>
+<p>You can install different versions of Windows Server OS on different Vscan servers in a cluster. At a minimum, ONTAP Antivirus Connector requires Windows Server 2008.</p>
 </li>
 </ul>
 </div>

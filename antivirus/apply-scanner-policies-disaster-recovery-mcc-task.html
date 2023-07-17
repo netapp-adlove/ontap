@@ -37252,11 +37252,19 @@
 <p class="page-details">
   
     
-    <time datetime="2022-02-04 20:44:16 +0000">02/04/2022</time>
+    <time datetime="2023-05-10 03:23:14 +0000">05/10/2023</time>
     
   
 
 <span>Contributors
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-powr">
+    <img  class="avatar avatar-small"
+          alt="netapp-powr"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/115187960?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
   <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-ahibbard">
     <img  class="avatar avatar-small"
           alt="netapp-ahibbard"
@@ -37288,7 +37296,13 @@
 <p>You can apply only one scanner policy to a scanner pool.</p>
 </li>
 <li>
-<p>If you created a scanner pool for all of the SVMs in a cluster, you must apply a scanner policy on each SVM individually.</p>
+<p>If you created a scanner pool for all the SVMs in a cluster, you must apply a scanner policy on each SVM individually.</p>
+</li>
+<li>
+<p>For disaster recovery and MetroCluster configurations, you must apply a scanner policy to every scanner pool in the local cluster and remote cluster.</p>
+</li>
+<li>
+<p>In the policy that you create for the local cluster, you must specify the local cluster in the <code>cluster</code> parameter. In the policy that you create for the remote cluster, you must specify the remote cluster in the <code>cluster</code> parameter. The remote cluster can then take over virus scanning operations in case of a disaster.</p>
 </li>
 </ul>
 </div>
@@ -37309,13 +37323,10 @@
 <p><code>Primary</code> specifies that the scanner pool is active.</p>
 </li>
 <li>
-<p><code>Secondary</code> specifies that the scanner pool is active only if none of the Vscan servers in the primary scanner pool is connected.</p>
+<p><code>Secondary</code> specifies that the scanner pool is active only if none of the Vscan servers in the primary scanner pool are connected.</p>
 </li>
 <li>
 <p><code>Idle</code> specifies that the scanner pool is inactive.</p>
-</li>
-</ul>
-</div>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -37347,6 +37358,9 @@ cluster1::&gt;vserver vscan scanner-pool apply-policy -vserver cifssvm1
 cluster1::&gt;vserver vscan scanner-pool apply-policy -vserver cifssvm1
 -scanner-pool pool2_for_site2 -scanner-policy secondary -cluster cluster2</pre>
 </div>
+</div>
+</li>
+</ul>
 </div>
 </li>
 <li>

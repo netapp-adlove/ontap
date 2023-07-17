@@ -9,14 +9,14 @@
   <meta property="og:title" content="Create an on-access policy" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/us-en/ontap/antivirus/create-on-access-policy-task.html" />
-	<meta property="og:description" content="An on-access policy defines the scope of an on-access scan. You can specify the maximum size of the files to be scanned, the extensions of the files to be in..." />
+	<meta property="og:description" content="An on-access policy defines the scope of an on-access scan. You can create an on-access policy for an individual SVM or for all the SVMs in a cluster. If you..." />
   <meta property="og:image" content="https://docs.netapp.com/us-en/ontap/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="An on-access policy defines the scope of an on-access scan. You can specify the maximum size of the files to be scanned, the extensions of the files to be in...">
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="An on-access policy defines the scope of an on-access scan. You can create an on-access policy for an individual SVM or for all the SVMs in a cluster. If you...">
   <meta name="keywords" content=" create, on-access, policy"><!-- Icons -->
   <link rel="icon" href="/us-en/ontap/images/favicon.ico" type="image/x-icon">
 
@@ -37252,11 +37252,19 @@
 <p class="page-details">
   
     
-    <time datetime="2022-02-04 20:44:16 +0000">02/04/2022</time>
+    <time datetime="2023-05-10 03:38:33 +0000">05/10/2023</time>
     
   
 
 <span>Contributors
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-powr">
+    <img  class="avatar avatar-small"
+          alt="netapp-powr"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/115187960?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
   <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-ahibbard">
     <img  class="avatar avatar-small"
           alt="netapp-ahibbard"
@@ -37271,31 +37279,62 @@
 </p>
 
 <div class="paragraph lead">
-<p>An on-access policy defines the scope of an on-access scan. You can specify the maximum size of the files to be scanned, the extensions of the files to be included in the scan, and the extensions and paths of the files to be excluded from the scan. You can create an on-access policy for an individual SVM or for all the SVMs in a cluster.</p>
+<p>An on-access policy defines the scope of an on-access scan. You can create an on-access policy for an individual SVM or for all the SVMs in a cluster. If you created an on-access policy for all the SVMs in a cluster, you must enable the policy on each SVM individually.</p>
 </div>
-<div class="paragraph">
+<div class="ulist">
 <div class="title">About this task</div>
-<p>By default, ONTAP creates an on-access policy named &#8220;default_CIFS&#8221; and enables it for all the SVMs in a cluster.</p>
-</div>
-<div class="paragraph">
-<p>You can set the <code>scan-mandatory</code> option to off to specify that file access is allowed when no Vscan servers are available for virus scanning. Keep in mind that any file that qualifies for scan exclusion based on the <code>paths-to-exclude</code>, <code>file-ext-to-exclude</code>, or <code>max-file-size</code> parameters is not considered for scanning even if the <code>scan-mandatory</code> option is set to on.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/ontap/images/note.svg" alt="Note">
-</td>
-<td class="content">
-<div class="paragraph">
-<p>For potential issues related to the <code>scan-mandatory</code> option, see <a href="vscan-server-connection-concept.html">Potential connectivity issues involving the scan-mandatory option</a>.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
+<ul>
+<li>
+<p>You can specify the maximum file size to scan, file extensions and paths to include in the scan, and file extensions and paths to exclude from the scan.</p>
+</li>
+<li>
+<p>You can set the <code>scan-mandatory</code> option to off to specify that file access is allowed when no Vscan servers are available for virus scanning.</p>
+</li>
+<li>
+<p>By default, ONTAP creates an on-access policy named "default_CIFS" and enables it for all the SVMs in a cluster.</p>
+</li>
+<li>
+<p>Any file that qualifies for scan exclusion based on the <code>paths-to-exclude</code>, <code>file-ext-to-exclude</code>, or <code>max-file-size</code> parameters is not considered for scanning, even if the <code>scan-mandatory</code> option is set to on. (Check this <a href="vscan-server-connection-concept.html">troubleshooting</a> section for connectivity issues related to the <code>scan-mandatory</code> option.)</p>
+</li>
+<li>
 <p>By default, only read-write volumes are scanned. You can specify filters that enable scanning of read-only volumes or that restrict scanning to files opened with execute access.</p>
+</li>
+<li>
+<p>Virus scanning is not performed on an SMB share for which the continuously-available parameter is set to Yes.</p>
+</li>
+<li>
+<p>See the <a href="architecture-concept.html">Antivirus architecture</a> section for details about the <em>Vscan file-operations profile</em>.</p>
+</li>
+<li>
+<p>You can create a maximum of ten (10) on-access policies per SVM. However, you can enable only one on-access policy at a time.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>You can exclude a maximum of one hundred (100) paths and file extensions from virus scanning in an on-access policy.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Some file exclusion recommendations:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Consider excluding large files (file size can be specified) from virus scanning because they can result in a slow response or scan request timeouts for CIFS users. The default file size for exclusion is 2GB.</p>
+</li>
+<li>
+<p>Consider excluding file extensions such as <code>.vhd</code> and <code>.tmp</code> because files with these extensions might not be appropriate for scanning.</p>
+</li>
+<li>
+<p>Consider excluding file paths such as the quarantine directory or paths in which only virtual hard drives or databases are stored.</p>
+</li>
+<li>
+<p>Verify that all exclusions are specified in the same policy, because only one policy can be enabled at a time. NetApp highly recommends having the same set of exclusions specified in the antivirus engine.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
 </div>
 <div class="olist arabic">
 <div class="title">Steps</div>
@@ -37315,7 +37354,7 @@
 </li>
 <li>
 <p>Set <code>-scan-files-with-no-ext</code> to true to scan files without extensions.
-The following command creates an on-access policy named <code>Policy1</code> on the <code>vs1</code>SVM:</p>
+The following command creates an on-access policy named <code>Policy1</code> on the <code>vs1</code> SVM:</p>
 </li>
 </ul>
 </div>
