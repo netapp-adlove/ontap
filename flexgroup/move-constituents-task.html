@@ -9,14 +9,14 @@
   <meta property="og:title" content="Move the constituents of a FlexGroup volume" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/us-en/ontap/flexgroup/move-constituents-task.html" />
-	<meta property="og:description" content="You can move the constituents of a FlexGroup volume from one aggregate to another for balancing the load when certain constituents experience more traffic. M..." />
+	<meta property="og:description" content="You can move the constituents of a FlexGroup volume from one aggregate to another to balance the load when certain constituents experience more traffic. Movi..." />
   <meta property="og:image" content="https://docs.netapp.com/us-en/ontap/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="You can move the constituents of a FlexGroup volume from one aggregate to another for balancing the load when certain constituents experience more traffic. M...">
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="You can move the constituents of a FlexGroup volume from one aggregate to another to balance the load when certain constituents experience more traffic. Movi...">
   <meta name="keywords" content=" constituents, flexgroup, volume, flex group, balancing, balance, traffic, free, space, aggregate, snapmirror, snap mirror,"><!-- Icons -->
   <link rel="icon" href="/us-en/ontap/images/favicon.ico" type="image/x-icon">
 
@@ -37252,7 +37252,7 @@
 <p class="page-details">
   
     
-    <time datetime="2021-12-09 22:31:46 +0000">12/09/2021</time>
+    <time datetime="2023-07-17 18:24:36 +0000">07/17/2023</time>
     
   
 
@@ -37271,7 +37271,7 @@
 </p>
 
 <div class="paragraph lead">
-<p>You can move the constituents of a FlexGroup volume from one aggregate to another for balancing the load when certain constituents experience more traffic. Moving constituents also helps in freeing up space on an aggregate for resizing the existing constituents.</p>
+<p>You can move the constituents of a FlexGroup volume from one aggregate to another to balance the load when certain constituents experience more traffic. Moving constituents also helps in freeing up space on an aggregate for resizing the existing constituents.</p>
 </div>
 <div class="paragraph">
 <div class="title">What you&#8217;ll need</div>
@@ -37285,10 +37285,13 @@
 <div class="title">Steps</div>
 <ol class="arabic">
 <li>
-<p>Identify the FlexGroup volume constituent that you want to move: <code>volume show -vserver svm_name -is-constituent *</code></p>
+<p>Identify the FlexGroup volume constituent that you want to move:</p>
+<div class="paragraph">
+<p><code>volume show -vserver svm_name -is-constituent true</code></p>
+</div>
 <div class="listingblock">
 <div class="content">
-<pre>cluster1::&gt; volume show -vserver vs2 -is-constituent *
+<pre>cluster1::&gt; volume show -vserver vs2 -is-constituent true
 Vserver   Volume       Aggregate    State      Type       Size  Available Used%
 --------- ------------ ------------ ---------- ---- ---------- ---------- -----
 vs2       fg1          -            online     RW        400TB    15.12TB   62%
@@ -37299,7 +37302,10 @@ vs2       fg1__0002    aggr2        online     RW         25TB     2.50TB   90%
 </div>
 </li>
 <li>
-<p>Identify an aggregate to which you can move the FlexGroup volume constituent: <code>volume move target-aggr show -vserver svm_name -volume vol_constituent_name</code></p>
+<p>Identify an aggregate to which you can move the FlexGroup volume constituent:</p>
+<div class="paragraph">
+<p><code>volume move target-aggr show -vserver svm_name -volume vol_constituent_name</code></p>
+</div>
 <div class="paragraph">
 <p>The available space in the aggregate that you select must be greater than the size of the FlexGroup volume constituent that you are moving.</p>
 </div>
@@ -37318,7 +37324,10 @@ node12a_aggr4    100.36TB         hdd
 </div>
 </li>
 <li>
-<p>Verify that the FlexGroup volume constituent can be moved to the intended aggregate: <code>volume move start -vserver svm_name -volume vol_constituent_name -perform-validation-only true</code></p>
+<p>Verify that the FlexGroup volume constituent can be moved to the intended aggregate:</p>
+<div class="paragraph">
+<p><code>volume move start -vserver svm_name -volume vol_constituent_name -destination-aggregate aggr_name -perform-validation-only true</code></p>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre>cluster1::&gt; volume move start -vserver vs2 -volume fg1_0002 -destination-aggregate node12a_aggr3 -perform-validation-only true
@@ -37327,7 +37336,10 @@ Validation succeeded.</pre>
 </div>
 </li>
 <li>
-<p>Move the FlexGroup volume constituent: <code>volume move start -vserver svm_name -volume vol_constituent_name -destination-aggregate aggr_name [-allow-mixed-aggr-types {true|false}]</code></p>
+<p>Move the FlexGroup volume constituent:</p>
+<div class="paragraph">
+<p><code>volume move start -vserver svm_name -volume vol_constituent_name -destination-aggregate aggr_name [-allow-mixed-aggr-types {true|false}]</code></p>
+</div>
 <div class="paragraph">
 <p>The volume move operation runs as a background process.</p>
 </div>
@@ -37369,7 +37381,10 @@ Validation succeeded.</pre>
 </div>
 </li>
 <li>
-<p>Verify the state of the volume move operation: <code>volume move show -volume vol_constituent_name</code></p>
+<p>Verify the state of the volume move operation:</p>
+<div class="paragraph">
+<p><code>volume move show -volume vol_constituent_name</code></p>
+</div>
 <div class="paragraph">
 <p>The following example shows the state of a FlexGroup constituent volume that completed the replication phase and is in the cutover phase of the volume move operation:</p>
 </div>

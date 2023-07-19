@@ -37252,11 +37252,19 @@
 <p class="page-details">
   
     
-    <time datetime="2021-10-23 19:32:49 +0000">10/23/2021</time>
+    <time datetime="2023-07-18 13:39:49 +0000">07/18/2023</time>
     
   
 
 <span>Contributors
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-ahibbard">
+    <img  class="avatar avatar-small"
+          alt="netapp-ahibbard"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/85892662?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
 </span>
 
 
@@ -37286,7 +37294,7 @@
 </div>
 </li>
 <li>
-<p>You cannot modify existing volumes for utf8mb4 support; you must create a new utf8mb4-ready volume, and then migrate the data using client-based copy tools.</p>
+<p>If you are using ONTAP 9.6 and earlier, you cannot modify existing volumes for utf8mb4 support; you must create a new utf8mb4-ready volume, and then migrate the data using client-based copy tools. If you are using ONTAP 9.7 or later, you can modify existing volumes for utf8mb4 with a support request. For more information, see <a href="https://kb.netapp.com/onprem/ontap/da/NAS/Can_the_volume_language_be_changed_after_creation_in_ONTAP" target="_blank" rel="noopener">Can the volume language be changed after creation in ONTAP?</a>.</p>
 <div class="paragraph">
 <p>You can update SVMs for utf8mb4 support, but existing volumes retain their original language codes.</p>
 </div>
@@ -37297,9 +37305,7 @@
 <img src="/us-en/ontap/images/note.svg" alt="Note">
 </td>
 <td class="content">
-<div class="paragraph">
-<p>LUN names with 4-byte UTF-8 characters are not currently supported.</p>
-</div>
+LUN names with 4-byte UTF-8 characters are not currently supported.
 </td>
 </tr>
 </table>
@@ -37339,9 +37345,7 @@
 <img src="/us-en/ontap/images/note.svg" alt="Note">
 </td>
 <td class="content">
-<div class="paragraph">
-<p>In releases before ONTAP 9.5, the junction-path of the qtree&#8217;s parent volume can contain qtree and directory names with Unicode characters. The <code>volume show</code> command displays these names correctly when the parent volume has a UTF-8 language setting. However, if the parent volume language is not one of the UTF-8 language settings, some parts of the junction-path are displayed using a numeric NFS alternate name.</p>
-</div>
+In releases before ONTAP 9.5, the junction-path of the qtree&#8217;s parent volume can contain qtree and directory names with Unicode characters. The <code>volume show</code> command displays these names correctly when the parent volume has a UTF-8 language setting. However, if the parent volume language is not one of the UTF-8 language settings, some parts of the junction-path are displayed using a numeric NFS alternate name.
 </td>
 </tr>
 </table>
