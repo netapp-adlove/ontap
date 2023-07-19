@@ -37293,7 +37293,7 @@
 <li>
 <p>Backend storage for modern clients capable of performing I/O using both NAS and S3 protocols</p>
 <div class="paragraph">
-<p>You can now provide integrated access for applications such Spark and Kafka that can read and write the same data using both NAS and S3 protocols.</p>
+<p>You can now provide integrated access for applications such as Spark and Kafka that can read and write the same data using both NAS and S3 protocols.</p>
 </div>
 </li>
 </ol>
@@ -37321,10 +37321,10 @@
 <h2 id="data-protection-for-s3-nas-buckets">Data protection for S3 NAS buckets</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>S3 NAS “buckets” are simply mappings of NAS data for S3 clients, they are not standard S3 buckets. Therefore, there is no need to protect S3 NAS buckets using NetApp S3 SnapMirror functionality. Instead, you can replicate source SVMs containing S3 NAS buckets using SVM DR, a standard SnapMirror data protection relationship with destination SVMs. SVM DR is the only supported SnapMirror replication method with S3 multiprotocol. SnapMirror Synchronous is not supported.</p>
+<p>S3 NAS “buckets” are simply mappings of NAS data for S3 clients, they are not standard S3 buckets. Therefore, there is no need to protect S3 NAS buckets using NetApp S3 SnapMirror functionality. Instead, you can protect volumes containing S3 NAS buckets using Asynchronous SnapMirror volume replication. SnapMirror Synchronous and SVM disaster recovery are not supported.</p>
 </div>
 <div class="paragraph">
-<p>Learn about <a href="../data-protection/snapmirror-svm-replication-concept.html">SnapMirror SVM replication</a>.</p>
+<p>Learn about <a href="../data-protection/data-protection/snapmirror-disaster-recovery-concept.html#data-protection-relationships">Asynchronous SnapMirror</a>.</p>
 </div>
 </div>
 </div>

@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
   <head class="at-element-marker">
-  <title>Delete Enterprise-mode WORM files</title>
+  <title></title>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
   <meta http-equiv="language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="Delete Enterprise-mode WORM files" />
+  <meta property="og:title" content="" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/us-en/ontap/snaplock/implement-privileged-delete-functionality-task.html" />
-	<meta property="og:description" content="You can use the privileged delete feature to delete Enterprise-mode WORM files during the retention period." />
+	<meta property="og:description" content="" />
   <meta property="og:image" content="https://docs.netapp.com/us-en/ontap/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="You can use the privileged delete feature to delete Enterprise-mode WORM files during the retention period.">
-  <meta name="keywords" content=" delete, worm, file, priveleged, delete, enterprise, mode, retention, period"><!-- Icons -->
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="">
+  <meta name="keywords" content=" "><!-- Icons -->
   <link rel="icon" href="/us-en/ontap/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed --><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -44,6 +44,9 @@
   <link rel="alternate" hreflang="fr" href="https://docs.netapp.com/fr-fr/ontap/snaplock/implement-privileged-delete-functionality-task.html" />
   <link rel="alternate" hreflang="it" href="https://docs.netapp.com/it-it/ontap/snaplock/implement-privileged-delete-functionality-task.html" />
   <link rel='stylesheet' href='/us-en/ontap/css/na-feature.css' type='text/css'><!-- Top level site integrations --><script>
+    pageRedirect("https://docs.netapp.com/us-en/ontap/snaplock/delete-worm-files-concept.html");
+    function pageRedirect(url) { location.href = url; }
+  </script><script>
     function addAdobeLaunch(adobeId) {
       var head = document.getElementsByTagName('head')[0];
       var adobe = document.createElement("script");
@@ -177,7 +180,7 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/ontap/issues/new?template=new-from-page.yml&page-url=https://docs.netapp.com/us-en/ontap/snaplock/implement-privileged-delete-functionality-task.html&page-title=Delete Enterprise-mode WORM files" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/discuss-sm.svg" alt="" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/ontap/blob/main/snaplock/implement-privileged-delete-functionality-task.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/edit-sm.svg" alt="" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/ontap/images/article-sm.svg" alt="" class="github-icon" />Learn how to contribute</a></div>
+  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/ontap/issues/new?template=new-from-page.yml&page-url=https://docs.netapp.com/us-en/ontap/snaplock/implement-privileged-delete-functionality-task.html&page-title=" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/discuss-sm.svg" alt="" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/ontap/blob/main/redirect/implement-privileged-delete-functionality-task.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/edit-sm.svg" alt="" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/ontap/images/article-sm.svg" alt="" class="github-icon" />Learn how to contribute</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">ON THIS PAGE</div>
@@ -37243,14 +37246,14 @@
 </div>
 
       <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Delete Enterprise-mode WORM files</h1>
+  <h1 class="n-doc__component-detail-heading"></h1>
 </div>
 
 
 <p class="page-details">
   
     
-    <time datetime="2023-01-02 03:26:13 +0000">01/02/2023</time>
+    <time datetime="2023-07-17 17:43:10 +0000">07/17/2023</time>
     
   
 
@@ -37263,56 +37266,12 @@
           style="border-radius: 50%;"/>
   </a>
   
-  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-ahibbard">
-    <img  class="avatar avatar-small"
-          alt="netapp-ahibbard"
-          width="20" height="20"
-          src="https://avatars.githubusercontent.com/u/85892662?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
 </span>
 
 
 </p>
 
-<div class="paragraph lead">
-<p>You can use the privileged delete feature to delete Enterprise-mode WORM files during the retention period.</p>
-</div>
-<div class="ulist">
-<div class="title">What you&#8217;ll need</div>
-<ul>
-<li>
-<p>You must be a SnapLock administrator to perform this task.</p>
-</li>
-<li>
-<p>You must have created a SnapLock audit log and enabled the privileged delete feature on the Enterprise volume.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<div class="title">About this task</div>
-<p>You cannot use a privileged delete operation to delete an expired WORM file. You can use the <code>volume file retention show</code> command to view the retention time of the WORM file that you want to delete. For more information, see the man page for the command.</p>
-</div>
-<div class="olist arabic">
-<div class="title">Step</div>
-<ol class="arabic">
-<li>
-<p>Delete a WORM file on an Enterprise volume:</p>
-<div class="paragraph">
-<p><code><strong>volume file privileged-delete -vserver <em>SVM_name</em> -file <em>file_path</em></strong></code></p>
-</div>
-<div class="paragraph">
-<p>The following command deletes the file <code>/vol/dataVol/f1</code> on the SVM<code>SVM1</code>:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>SVM1::&gt; volume file privileged-delete -file /vol/dataVol/f1</pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
+
 
     </article>
     <!-- Page Container -->
