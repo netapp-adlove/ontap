@@ -37252,7 +37252,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-23 21:29:19 +0000">05/23/2022</time>
+    <time datetime="2023-07-21 09:33:17 -0400">07/21/2023</time>
     
   
 
@@ -37262,6 +37262,22 @@
           alt="netapp-thomi"
           width="20" height="20"
           src="https://avatars.githubusercontent.com/u/54111336?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-ahibbard">
+    <img  class="avatar avatar-small"
+          alt="netapp-ahibbard"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/85892662?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-lenida">
+    <img  class="avatar avatar-small"
+          alt="netapp-lenida"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/54081920?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -37275,8 +37291,8 @@
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
 </colgroup>
 <thead>
 <tr>
@@ -37291,6 +37307,27 @@
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>system license add</code></p>
+</div>
+<div class="paragraph">
+<div class="title">Examples</div>
+<p>The following example adds a list of licenses with the keys AAAAAAAAAAAAAAAAAAAAAAAAAAAA and BBBBBBBBBBBBBBBBBBBBBBBBBBBB to the cluster:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>cluster1::&gt; system license add -license-code AAAAAAAAAAAAAAAAAAAAAAAAAAAA, BBBBBBBBBBBBBBBBBBBBBBBBBBBB</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>The following example installs the licenses from the local node "/mroot/etc/lic_file":</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>cluster1::&gt; system license add -use-license-file true</p>
+</div>
+</div>
 </div></div></td>
 </tr>
 <tr>
@@ -37355,7 +37392,45 @@
 </ul>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>system license status show</code></p>
+<p><code>system license show-status</code></p>
+</div>
+<div class="paragraph">
+<div class="title">Example</div>
+<p>The following example displays the license status of the cluster:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>cluster1::&gt; system license show-status
+Status    License              Scope     Detailed Status
+--------- -------------------  --------- ----------------------
+partially-installed
+          CIFS                 node      License missing on: Node2-Cluster1.
+          SnapRestore          node      License missing on: Node2-Cluster1.
+valid
+          FCP                  node      -
+          FabricPool           cluster   The system is using 1TB, and can use up to 25TB.
+not-installed
+          NFS                  -         -
+          iSCSI                -         -
+          SnapMirror           -         -
+          FlexClone            -         -
+          SnapVault            -         -
+          SnapLock             -         -
+          SnapManagerSuite     -         -
+          SnapProtectApps      -         -
+          V_StorageAttach      -         -
+          Insight_Balance      -         -
+          OCShift              -         -
+          TPM                  -         -
+          VE                   -         -
+          DP_Optimized         -         -
+not-applicable
+          Cloud                -         -
+          Select               -         -
+20 entries were displayed.</p>
+</div>
+</div>
 </div></div></td>
 </tr>
 <tr>
@@ -37364,6 +37439,27 @@
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>system license delete</code></p>
+</div>
+<div class="paragraph">
+<div class="title">Examples</div>
+<p>The following example deletes a license named CIFS and serial number 1-81-0000000000000000000123456 from the cluster:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>cluster1::&gt; system license delete -serial-number 1-81-0000000000000000000123456 -package CIFS</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>The following example deletes from the cluster all of the licenses under the installed-license Core Bundle for serial number 123456789:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>cluster1::&gt; system license delete { -serial-number 123456789 -installed-license "Core Bundle" }</p>
+</div>
+</div>
 </div></div></td>
 </tr>
 <tr>
@@ -37372,6 +37468,56 @@
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>system license clean-up</code></p>
+</div>
+<div class="paragraph">
+<div class="title">Examples</div>
+<p>The following example simulates and displays the licenses that can be cleaned up:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>cluster-1::&gt; system license clean-up -expired -unused</p>
+</div>
+<div class="paragraph">
+<p>The following licenses were safely deleted:</p>
+</div>
+<div class="paragraph">
+<p>Serial number: 1-80-000011
+Owner: cdancluster-1
+Package                   Reason
+------------------------- -----------------------------------------------------
+CIFS                      License has expired</p>
+</div>
+<div class="paragraph">
+<p>Serial number: 4067154888
+Owner: none
+Package                   Reason
+------------------------- -----------------------------------------------------
+Cloud                     License has expired</p>
+</div>
+<div class="paragraph">
+<p>Serial number: 1-81-0000000000000004067154999
+Owner: none
+Package                   Reason
+------------------------- -----------------------------------------------------
+iSCSI                     License unused by any node in the cluster
+The following licenses are either expired or unused but cannot be safely deleted:</p>
+</div>
+<div class="paragraph">
+<p>Serial number: 4067154778
+Owner: node1
+Package                   Reason
+------------------------- -----------------------------------------------------
+Cloud                     Feature would be impaired upon removal</p>
+</div>
+<div class="paragraph">
+<p>Serial number: 4067154779
+Owner: node2
+Package                   Reason
+------------------------- -----------------------------------------------------
+Cloud                     System generated license</p>
+</div>
+</div>
 </div></div></td>
 </tr>
 <tr>
@@ -37417,6 +37563,12 @@
 <div class="paragraph">
 <div class="title">Related information</div>
 <p><a href="http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-cmpr/GUID-5CB10C70-AC11-41C0-8C16-B4D0DF916E9B.html" target="_blank" rel="noopener">ONTAP 9 Commands</a></p>
+</div>
+<div class="paragraph">
+<p><a href="https://kb.netapp.com/onprem/ontap/os/ONTAP_9.10.1_and_later_licensing_overview" target="_blank" rel="noopener">Knowledge Base article: ONTAP 9.10.1 and later licensing overview</a></p>
+</div>
+<div class="paragraph">
+<p><a href="https://docs.netapp.com/us-en/ontap/task_admin_enable_new_features.html" target="_blank" rel="noopener">Use System Manager to install a NetApp license file</a></p>
 </div>
 
     </article>

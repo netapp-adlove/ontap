@@ -17,7 +17,7 @@
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
   <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="If you want a read/write FlexClone volume to have its own disk space rather than using that of its parent volume, you can split the FlexClone volume from its...">
-  <meta name="keywords" content=" split, flexclone, volume, parent, volume"><!-- Icons -->
+  <meta name="keywords" content=" split, flexclone, volume, parent, volume, clone"><!-- Icons -->
   <link rel="icon" href="/us-en/ontap/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed --><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -37252,18 +37252,42 @@
 <p class="page-details">
   
     
-    <time datetime="2023-07-17 18:51:28 +0000">07/17/2023</time>
+    <time datetime="2023-07-20 09:54:57 -0400">07/20/2023</time>
     
   
 
 <span>Contributors
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-thomi">
+    <img  class="avatar avatar-small"
+          alt="netapp-thomi"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/54111336?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-lenida">
+    <img  class="avatar avatar-small"
+          alt="netapp-lenida"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/54081920?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-ahibbard">
+    <img  class="avatar avatar-small"
+          alt="netapp-ahibbard"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/85892662?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
 </span>
 
 
 </p>
 
 <div class="paragraph lead">
-<p>If you want a read/write FlexClone volume to have its own disk space rather than using that of its parent volume, you can split the FlexClone volume from its parent volume. Because this operation creates a copy of the data that is currently shared between the parent volume and the FlexClone volume, the operation can take some time to complete.</p>
+<p>If you want a read/write FlexClone volume to have its own disk space rather than using that of its parent volume, you can split the FlexClone volume from its parent volume.</p>
 </div>
 <div class="paragraph">
 <div class="title">About this task</div>
@@ -37294,10 +37318,10 @@
 <li>
 <p>Determine the amount of free space required to complete the split operation:</p>
 <div class="paragraph">
-<p><code>volume clone show -estimate -vserver vserver_name -flexclone clone_volume_name -parent-volume parent_vol_name</code></p>
+<p><code>volume clone show -estimate -vserver <em>vserver_name</em> -flexclone <em>clone_volume_name</em> -parent-volume <em>parent_vol_name</em></code></p>
 </div>
 <div class="paragraph">
-<p>The following example provides information about the free space required to split a FlexClone volume clone1 from its parent volume vol1:</p>
+<p>The following example provides information about the free space required to split FlexClone volume &#8220;clone1&#8221; from its parent volume &#8220;vol1&#8221;:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -37334,7 +37358,7 @@ vs1       clone1           40.73MB</pre>
 <p><code>volume clone split start -vserver <em>vserver_name</em> -flexclone <em>clone_volume_name</em></code></p>
 </div>
 <div class="paragraph">
-<p>The following example shows how you can initiate the process to split the FlexClone volume clone1 from its parent volume vol1:</p>
+<p>The following example shows how you can initiate the process to split FlexClone volume &#8220;clone1&#8221; from its parent volume &#8220;vol1&#8221;:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -37371,10 +37395,10 @@ vs1       clone1        0         0       411247   153600         0        37</p
 <p><code>volume show -volume <em>volume_name</em> -fields <em>clone-volume</em></code></p>
 </div>
 <div class="paragraph">
-<p>The value of the <code>clone-volume</code> option is <code>false</code> for a volume that is not a FlexClone volume.</p>
+<p>The value of the <code>clone-volume</code> option is &#8220;false&#8221; for a volume that is not a FlexClone volume.</p>
 </div>
 <div class="paragraph">
-<p>The following example shows how you can verify whether the volume clone1 that is split from its parent is not a FlexClone volume.</p>
+<p>The following example shows how you can verify whether volume &#8220;clone1&#8221; that is split from its parent is not a FlexClone volume.</p>
 </div>
 <div class="listingblock">
 <div class="content">
